@@ -16,11 +16,7 @@ package indexTest.indexTest;
  * limitations under the License.
  */
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,23 +30,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.LongPoint;
-import org.apache.lucene.document.StoredField;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.document.StringField;
-import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.index.Term;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import indexTest.indexTest.Reuters21578Parser;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import indexTest.indexTest.ThreadPoolExample;
@@ -62,46 +49,127 @@ import indexTest.indexTest.ThreadPoolExample;
  * it with no command-line arguments for usage information.
  */
 public class IndexFiles {
+	private static String openMode = null;
+	private static String indexPath = "index";
+	private static String collPath = null;
+	private static List<String> collsPath = null;
+	private static List<String> indexes1Path = null;
+	private static String indexes2Path = null;
+
+	/*
+	 * Collects the following args until the next option (starting with '-') or
+	 * the end of the arguments
+	 */
+	private static List<String> collectArgs(String[] args, int i) {
+		List<String> collectedArgs = new LinkedList<>();
+		for (int j = i; j < args.length; j++) {
+			if (args[j].startsWith("-"))
+				break;
+			collectedArgs.add(args[j]);
+		}
+		return collectedArgs;
+	}
+
+	private static void validateArgs() {
+		// Check if openMode is valid
+		if (openMode == null || !openMode.equals("create") || !openMode.equals("append")
+				|| !openMode.equals("create_or_append")) {
+			System.err.println("openmode " + openMode + " is invalid: " + usage);
+			System.exit(1);
+		}
+
+		// Check if coll or colls are valid
+		if (collPath == null && collsPath.isEmpty()) {
+			System.err.println("coll or colls are required: " + usage);
+			System.exit(1);
+		}
+
+		// if indexes1 or 2 were provided, check if colls is valid
+		if (!indexes1Path.isEmpty() || indexes2Path != null) {
+			if (collsPath == null) {
+				System.err.println("if indexes1 or 2 are provided, colls is required: " + usage);
+				System.exit(1);
+			}
+		}
+	}
+
+	private static List<Path> collListToPathList(List<String> collsPath) {
+		List<Path> pathList = new LinkedList<>();
+		for (String collPath : collsPath) {
+			if (collPath != null) {
+				Path docDir = Paths.get(collPath);
+				if (!Files.isReadable(docDir)) {
+					System.out.println("Warning: Document directory '" + docDir.toAbsolutePath()
+							+ "' does not exist or is not readable and will be ignored");
+					continue;
+				}
+				pathList.add(docDir);
+			}
+		}
+		return pathList;
+	}
 
 	private IndexFiles() {
 	}
 
-	/** Index all text files under a directory. */
+	private static String usage = "java org.apache.lucene.demo.IndexFiles"
+			+ " [-openmode OPENMODE] [-index PATH] [-coll PATH] [-colls PATH1 PATH2 ... PATHN] \n"
+			+ " [-indexes1 PATH0 PATH1 ... PATHN] [-indexes2 PATH0]\n\n";
+
 	public static void main(String[] args) {
-		String usage = "java org.apache.lucene.demo.IndexFiles"
-				+ " [-index INDEX_PATH] [-colls dir1 dir2 dir3] [-update]\n\n"
-				+ "This indexes the documents in DOCS_PATH, creating a Lucene index"
-				+ "in INDEX_PATH that can be searched with SearchFiles";
-		String indexPath = "index";
-		String docsPath = null;
-		String openMode = null;
+
 		for (int i = 0; i < args.length; i++) {
-			if ("-index".equals(args[i])) {
+			switch (args[i]) {
+			case ("-openmode"):
+				openMode = args[i + 1];
+				i++;
+				break;
+			case ("-index"):
 				indexPath = args[i + 1];
 				i++;
-			} else if ("-docs".equals(args[i])) {
-				docsPath = args[i + 1];
+				break;
+			case ("-coll"):
+				collPath = args[i + 1];
 				i++;
-			} else if ("-openmode".equals(args[i])) {
-				openMode = args[i + 1];
+				break;
+			case ("-colls"):
+				collsPath = collectArgs(args, i + 1);
+				i += collsPath.size();
+				break;
+			case ("-indexes1"):
+				indexes1Path = collectArgs(args, i + 1);
+				i += indexes1Path.size();
+				break;
+			case ("-indexes2"):
+				indexes2Path = args[i + 1];
+				i++;
+				break;
+			default:
+				break;
 			}
 		}
 
-		if (docsPath == null) {
-			System.err.println("Usage: " + usage);
-			System.exit(1);
+		validateArgs();
+
+		// Now we have to see which option was provided
+		// if we have collPath:
+		Path docDir = null;
+		if (collPath != null) {
+			docDir = Paths.get(collPath);
+			if (!Files.isReadable(docDir)) {
+				System.out.println("Document directory '" + docDir.toAbsolutePath()
+						+ "' does not exist or is not readable, please check the path");
+				System.exit(1);
+			}
 		}
 
-		final Path docDir = Paths.get(docsPath);
-		if (!Files.isReadable(docDir)) {
-			System.out.println("Document directory '" + docDir.toAbsolutePath()
-					+ "' does not exist or is not readable, please check the path");
-			System.exit(1);
-		}
+		// otherwise, we have a list of coll paths
+		List<Path> docDirList = collListToPathList(collsPath);
 
 		Date start = new Date();
 		try {
-			System.out.println("Indexing to directory '" + indexPath + "'...");
+			// System.out.println("Indexing to directory '" + indexPath +
+			// "'...");
 
 			Directory dir = FSDirectory.open(Paths.get(indexPath));
 			Analyzer analyzer = new StandardAnalyzer();
@@ -139,7 +207,35 @@ public class IndexFiles {
 			// iwc.setRAMBufferSizeMB(256.0);
 
 			IndexWriter writer = new IndexWriter(dir, iwc);
-			indexDocs(writer, docDir, hostname);
+			// if we have only one docDir, we index it
+			if (docDir != null) {
+				indexDocs(writer, docDir, hostname);
+			} else {
+				// else, we index all of them
+				
+				// create n-threads, with n being the number of docDirs, and put them to work
+				final ExecutorService executor = Executors.newFixedThreadPool(docDirList.size());
+				for (Path docPath : docDirList) {	
+					final Runnable worker = new ThreadPoolExample.WorkerThread(writer, docPath, hostname);
+					executor.execute(worker);
+				}
+				
+				/*
+				 * Close the ThreadPool; no more jobs will be accepted, but all the
+				 * previously submitted jobs will be processed.
+				 */
+				executor.shutdown();
+
+				/* Wait up to 1 hour to finish all the previously submitted jobs */
+				try {
+					executor.awaitTermination(1, TimeUnit.HOURS);
+				} catch (final InterruptedException e) {
+					e.printStackTrace();
+					System.exit(-2);
+				}
+
+				System.out.println("Finished all threads");
+			}
 
 			// NOTE: if you want to maximize search performance,
 			// you can optionally call forceMerge here. This can be
@@ -192,16 +288,25 @@ public class IndexFiles {
 			Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
 				@Override
 				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-					System.out.println("Path: " + file.toString());
-					final Runnable worker = new ThreadPoolExample.WorkerThread(writer, file, hostname);
-					//indexDoc(writer, file, attrs.lastModifiedTime().toMillis(), hostname);
-					executor.execute(worker);
+					if (checkFileName(path)) {
+						System.out.println("Path: " + file.toString());
+						final Runnable worker = new ThreadPoolExample.WorkerThread(writer, file, hostname);
+						// indexDoc(writer,file,attrs.lastModifiedTime().toMillis(),
+						// hostname);
+						executor.execute(worker);
+					}
 					return FileVisitResult.CONTINUE;
 				}
 			});
 		} else {
-			indexDoc(writer, path, Files.getLastModifiedTime(path).toMillis(), hostname);
+			if (checkFileName(path)) {
+				final Runnable worker = new ThreadPoolExample.WorkerThread(writer, path, hostname);
+				// indexDoc(writer, file,
+				// attrs.lastModifiedTime().toMillis(),hostname);
+				executor.execute(worker);
+			}
 		}
+
 		/*
 		 * Close the ThreadPool; no more jobs will be accepted, but all the
 		 * previously submitted jobs will be processed.
@@ -219,77 +324,26 @@ public class IndexFiles {
 		System.out.println("Finished all threads");
 	}
 
-	/** Indexes a single document */
-	static void indexDoc(IndexWriter writer, Path file, long lastModified, String hostname) throws IOException {
-		try (InputStream stream = Files.newInputStream(file)) {
-			// make a new, empty document
-			Document doc = new Document();
+	public static boolean checkFileName(Path path) {
+		final String fileNameBegin;
+		final String fileNameEnd;
 
-			String str = IOUtils.toString(stream, "UTF-8");
-			StringBuffer strBuffer = new StringBuffer(str);
-			List<List<String>> documents = Reuters21578Parser.parseString(strBuffer);
-			String field;
-			List<Document> docList = new LinkedList<>();
-			int seqDocNumber = 1;
-			for (List<String> document : documents) {
-				int i = 0;
-				field = document.get(i++);
-				doc.add(new TextField("TITLE", field, Field.Store.NO));
-				field = document.get(i++);
-				doc.add(new TextField("BODY", field, Field.Store.NO));
-				field = document.get(i++);
-				doc.add(new TextField("TOPICS", field, Field.Store.NO));
-				field = document.get(i++);
-				doc.add(new TextField("DATELINE", field, Field.Store.NO));
-				field = document.get(i++);
-				doc.add(new TextField("DATE", field, Field.Store.NO));
-				field = document.get(i++);
-				// Add the path of the file as a field named "path". Use a
-				// field that is indexed (i.e. searchable), but don't tokenize
-				// the field into separate words and don't index term frequency
-				// or positional information:
-				doc.add(new StringField("PathSgm", file.toString(), Field.Store.YES));
-				doc.add(new StoredField("SeqDocNumer", seqDocNumber));
-				doc.add(new StringField("Hostname", hostname, Field.Store.YES));
-				//doc.add(new StoredField("Thread", x));
-				docList.add(doc);
-				doc = new Document();
+		if (path.getFileName().toString().length() == 13) {
+			fileNameBegin = path.getFileName().toString().substring(0, 6);
+			fileNameEnd = path.getFileName().toString().substring(9, 13);
+			try {
+				Integer.parseInt(path.getFileName().toString().substring(6, 9));
+			} catch (NumberFormatException e) {
+				return false;
 			}
-
-			// Add the last modified date of the file a field named "modified".
-			// Use a LongPoint that is indexed (i.e. efficiently filterable with
-			// PointRangeQuery). This indexes to milli-second resolution, which
-			// is often too fine. You could instead create a number based on
-			// year/month/day/hour/minutes/seconds, down the resolution you
-			// require.
-			// For example the long value 2011021714 would mean
-			// February 17, 2011, 2-3 PM.
-			// doc.add(new LongPoint("modified", lastModified));
-
-			// Add the contents of the file to a field named "contents". Specify
-			// a Reader,
-			// so that the text of the file is tokenized and indexed, but not
-			// stored.
-			// Note that FileReader expects the file to be in UTF-8 encoding.
-			// If that's not the case searching for special characters will
-			// fail.
-			//doc.add(new TextField("contents",
-			//		new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))));
-
-			if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
-				// New index, so we just add the document (no old document can
-				// be there):
-				System.out.println("adding " + file);
-				writer.addDocument(doc);
+			if (fileNameBegin.equals("reut2-") && (fileNameEnd.equals(".sgm"))) {
+				return true;
 			} else {
-				// Existing index (an old copy of this document may have been
-				// indexed) so
-				// we use updateDocument instead to replace the old one matching
-				// the exact
-				// path, if present:
-				System.out.println("updating " + file);
-				writer.updateDocument(new Term("path", file.toString()), doc);
+				return false;
 			}
+
 		}
+		return false;
 	}
+
 }
