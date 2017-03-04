@@ -72,8 +72,8 @@ public class IndexFiles {
 
 	private static void validateArgs() {
 		// Check if openMode is valid
-		if (openMode == null || !openMode.equals("create") || !openMode.equals("append")
-				|| !openMode.equals("create_or_append")) {
+		if (openMode == null
+				|| (!openMode.equals("create") && !openMode.equals("append") && !openMode.equals("create_or_append"))) {
 			System.err.println("openmode " + openMode + " is invalid: " + usage);
 			System.exit(1);
 		}
@@ -85,7 +85,7 @@ public class IndexFiles {
 		}
 
 		// if indexes1 or 2 were provided, check if colls is valid
-		if (!indexes1Path.isEmpty() || indexes2Path != null) {
+		if (indexes1Path != null || indexes2Path != null) {
 			if (collsPath == null) {
 				System.err.println("if indexes1 or 2 are provided, colls is required: " + usage);
 				System.exit(1);
@@ -154,6 +154,7 @@ public class IndexFiles {
 		// Now we have to see which option was provided
 		// if we have collPath:
 		Path docDir = null;
+		List<Path> docDirList = null;
 		if (collPath != null) {
 			docDir = Paths.get(collPath);
 			if (!Files.isReadable(docDir)) {
@@ -161,11 +162,10 @@ public class IndexFiles {
 						+ "' does not exist or is not readable, please check the path");
 				System.exit(1);
 			}
+		} else {
+			// otherwise, we have a list of coll paths
+			docDirList = collListToPathList(collsPath);
 		}
-
-		// otherwise, we have a list of coll paths
-		List<Path> docDirList = collListToPathList(collsPath);
-
 		Date start = new Date();
 		try {
 			// System.out.println("Indexing to directory '" + indexPath +
@@ -209,24 +209,29 @@ public class IndexFiles {
 			IndexWriter writer = new IndexWriter(dir, iwc);
 			// if we have only one docDir, we index it
 			if (docDir != null) {
-				indexDocs(writer, docDir, hostname);
+				System.out.println("Indexing only " + docDir);
+				// TODO: move indexDocs and indexDoc to a new class
+				ThreadPoolExample.indexDocs(writer, docDir, hostname);
 			} else {
 				// else, we index all of them
-				
-				// create n-threads, with n being the number of docDirs, and put them to work
+
+				// create n-threads, with n being the number of docDirs, and put
+				// them to work
 				final ExecutorService executor = Executors.newFixedThreadPool(docDirList.size());
-				for (Path docPath : docDirList) {	
+				for (Path docPath : docDirList) {
 					final Runnable worker = new ThreadPoolExample.WorkerThread(writer, docPath, hostname);
 					executor.execute(worker);
 				}
-				
+
 				/*
-				 * Close the ThreadPool; no more jobs will be accepted, but all the
-				 * previously submitted jobs will be processed.
+				 * Close the ThreadPool; no more jobs will be accepted, but all
+				 * the previously submitted jobs will be processed.
 				 */
 				executor.shutdown();
 
-				/* Wait up to 1 hour to finish all the previously submitted jobs */
+				/*
+				 * Wait up to 1 hour to finish all the previously submitted jobs
+				 */
 				try {
 					executor.awaitTermination(1, TimeUnit.HOURS);
 				} catch (final InterruptedException e) {
@@ -253,97 +258,6 @@ public class IndexFiles {
 		} catch (IOException e) {
 			System.out.println(" caught a " + e.getClass() + "\n with message: " + e.getMessage());
 		}
-	}
-
-	/**
-	 * Indexes the given file using the given writer, or if a directory is
-	 * given, recurses over files and directories found under the given
-	 * directory.
-	 * 
-	 * NOTE: This method indexes one document per input file. This is slow. For
-	 * good throughput, put multiple documents into your input file(s). An
-	 * example of this is in the benchmark module, which can create "line doc"
-	 * files, one document per line, using the <a href=
-	 * "../../../../../contrib-benchmark/org/apache/lucene/benchmark/byTask/tasks/WriteLineDocTask.html"
-	 * >WriteLineDocTask</a>.
-	 * 
-	 * @param writer
-	 *            Writer to the index where the given file/dir info will be
-	 *            stored
-	 * @param path
-	 *            The file to index, or the directory to recurse into to find
-	 *            files to index
-	 * @throws IOException
-	 *             If there is a low-level I/O error
-	 */
-	static void indexDocs(final IndexWriter writer, Path path, String hostname) throws IOException {
-		/*
-		 * Create a ExecutorService (ThreadPool is a subclass of
-		 * ExecutorService) with so many thread as cores in my machine. This can
-		 * be tuned according to the resources needed by the threads.
-		 */
-		final int numCores = Runtime.getRuntime().availableProcessors();
-		final ExecutorService executor = Executors.newFixedThreadPool(numCores);
-		if (Files.isDirectory(path)) {
-			Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
-				@Override
-				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-					if (checkFileName(path)) {
-						System.out.println("Path: " + file.toString());
-						final Runnable worker = new ThreadPoolExample.WorkerThread(writer, file, hostname);
-						// indexDoc(writer,file,attrs.lastModifiedTime().toMillis(),
-						// hostname);
-						executor.execute(worker);
-					}
-					return FileVisitResult.CONTINUE;
-				}
-			});
-		} else {
-			if (checkFileName(path)) {
-				final Runnable worker = new ThreadPoolExample.WorkerThread(writer, path, hostname);
-				// indexDoc(writer, file,
-				// attrs.lastModifiedTime().toMillis(),hostname);
-				executor.execute(worker);
-			}
-		}
-
-		/*
-		 * Close the ThreadPool; no more jobs will be accepted, but all the
-		 * previously submitted jobs will be processed.
-		 */
-		executor.shutdown();
-
-		/* Wait up to 1 hour to finish all the previously submitted jobs */
-		try {
-			executor.awaitTermination(1, TimeUnit.HOURS);
-		} catch (final InterruptedException e) {
-			e.printStackTrace();
-			System.exit(-2);
-		}
-
-		System.out.println("Finished all threads");
-	}
-
-	public static boolean checkFileName(Path path) {
-		final String fileNameBegin;
-		final String fileNameEnd;
-
-		if (path.getFileName().toString().length() == 13) {
-			fileNameBegin = path.getFileName().toString().substring(0, 6);
-			fileNameEnd = path.getFileName().toString().substring(9, 13);
-			try {
-				Integer.parseInt(path.getFileName().toString().substring(6, 9));
-			} catch (NumberFormatException e) {
-				return false;
-			}
-			if (fileNameBegin.equals("reut2-") && (fileNameEnd.equals(".sgm"))) {
-				return true;
-			} else {
-				return false;
-			}
-
-		}
-		return false;
 	}
 
 }
