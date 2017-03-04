@@ -91,6 +91,12 @@ public class IndexFiles {
 				System.exit(1);
 			}
 		}
+
+		// if indexes1 is provided, check if it has at least 1 index
+		if (indexes1Path != null && indexes1Path.size() < 2) {
+			System.err.println("indexes1 must have at least one PATH apart from PATH0: " + usage);
+			System.exit(1);
+		}
 	}
 
 	private static List<Path> collListToPathList(List<String> collsPath) {
@@ -107,6 +113,157 @@ public class IndexFiles {
 			}
 		}
 		return pathList;
+	}
+
+	private static void setOpenMode(IndexWriterConfig iwc, String openMode) {
+		switch (openMode) {
+		case "append":
+			iwc.setOpenMode(OpenMode.APPEND);
+			break;
+		case "create":
+			// Create a new index in the directory, removing any
+			// previously indexed documents:
+			iwc.setOpenMode(OpenMode.CREATE);
+			break;
+		case "create_or_append":
+			iwc.setOpenMode(OpenMode.CREATE_OR_APPEND);
+			break;
+		}
+	}
+
+	private static String getHostname() {
+		String hostname = "Unknown";
+		try {
+			InetAddress addr;
+			addr = InetAddress.getLocalHost();
+			hostname = addr.getHostName();
+		} catch (UnknownHostException ex) {
+			System.out.println("Hostname can not be resolved");
+		}
+		return hostname;
+	}
+
+	private static void indexes1Option(List<String> indexes2Path, List<Path> docDirList) throws IOException {
+		// create n-threads, with n being the number of docDirs
+		final ExecutorService executor = Executors.newFixedThreadPool(docDirList.size());
+		
+		List<IndexWriter> writerList = new LinkedList<>();
+		Directory[] dirList = new Directory[docDirList.size()];
+		
+		for (int i = 1; i < indexes2Path.size(); i++) {
+			Directory dir = FSDirectory.open(Paths.get(indexes2Path.get(i)));
+			dirList[i-1] = dir;
+			Analyzer analyzer = new StandardAnalyzer();
+			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+
+			setOpenMode(iwc, openMode);
+
+			String hostname = getHostname();
+
+			IndexWriter writer = new IndexWriter(dir, iwc);
+			writerList.add(writer);
+			
+			final Runnable worker = new ThreadPoolExample.WorkerThread(writer, docDirList.get(i-1), hostname);
+			executor.execute(worker);
+		}
+		/*
+		 * Close the ThreadPool; no more jobs will be accepted, but all the
+		 * previously submitted jobs will be processed.
+		 */
+		executor.shutdown();
+
+		/*
+		 * Wait up to 1 hour to finish all the previously submitted jobs
+		 */
+		try {
+			executor.awaitTermination(1, TimeUnit.HOURS);
+		} catch (final InterruptedException e) {
+			e.printStackTrace();
+			System.exit(-2);
+		}
+
+		System.out.println("Finished all threads");
+
+		for (IndexWriter writer: writerList)
+			writer.close();
+		
+		Directory dir = FSDirectory.open(Paths.get(indexes2Path.get(0)));
+		Analyzer analyzer = new StandardAnalyzer();
+		IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+
+		setOpenMode(iwc, openMode);
+
+		IndexWriter writer = new IndexWriter(dir, iwc);
+		writer.addIndexes(dirList);
+		writer.close();
+		
+		System.out.println("-> " + indexes2Path.get(0) + " created");
+		
+	}
+
+	private static void indexes2Option(List<Path> docDirList) throws IOException {
+		Directory dir = FSDirectory.open(Paths.get(indexes2Path));
+		Analyzer analyzer = new StandardAnalyzer();
+		IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+
+		setOpenMode(iwc, openMode);
+
+		String hostname = getHostname();
+
+		IndexWriter writer = new IndexWriter(dir, iwc);
+
+		// create n-threads, with n being the number of docDirs
+		final ExecutorService executor = Executors.newFixedThreadPool(docDirList.size());
+		for (Path docPath : docDirList) {
+			final Runnable worker = new ThreadPoolExample.WorkerThread(writer, docPath, hostname);
+			executor.execute(worker);
+		}
+
+		/*
+		 * Close the ThreadPool; no more jobs will be accepted, but all the
+		 * previously submitted jobs will be processed.
+		 */
+		executor.shutdown();
+
+		/*
+		 * Wait up to 1 hour to finish all the previously submitted jobs
+		 */
+		try {
+			executor.awaitTermination(1, TimeUnit.HOURS);
+		} catch (final InterruptedException e) {
+			e.printStackTrace();
+			System.exit(-2);
+		}
+
+		System.out.println("Finished all threads");
+
+		writer.close();
+	}
+
+	private static void indexOption(Path docDir, List<Path> docDirList) throws IOException {
+		Directory dir = FSDirectory.open(Paths.get(indexPath));
+		Analyzer analyzer = new StandardAnalyzer();
+		IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+
+		setOpenMode(iwc, openMode);
+
+		String hostname = getHostname();
+
+		IndexWriter writer = new IndexWriter(dir, iwc);
+		// if we have only one docDir, we index it
+		if (docDir != null) {
+			System.out.println("Indexing only " + docDir);
+			// TODO: move indexDocs and indexDoc to a new class
+			ThreadPoolExample.indexDocs(writer, docDir, hostname);
+		} else {
+			// else, we index all of them
+
+			for (Path docPath : docDirList) {
+				ThreadPoolExample.indexDocs(writer, docPath, hostname);
+			}
+		}
+
+		writer.close();
 	}
 
 	private IndexFiles() {
@@ -166,91 +323,23 @@ public class IndexFiles {
 			// otherwise, we have a list of coll paths
 			docDirList = collListToPathList(collsPath);
 		}
+
 		Date start = new Date();
 		try {
 			// System.out.println("Indexing to directory '" + indexPath +
 			// "'...");
 
-			Directory dir = FSDirectory.open(Paths.get(indexPath));
-			Analyzer analyzer = new StandardAnalyzer();
-			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
-
-			switch (openMode) {
-			case "append":
-				iwc.setOpenMode(OpenMode.APPEND);
-				break;
-			case "create":
-				// Create a new index in the directory, removing any
-				// previously indexed documents:
-				iwc.setOpenMode(OpenMode.CREATE);
-				break;
-			case "create_or_append":
-				iwc.setOpenMode(OpenMode.CREATE_OR_APPEND);
-				break;
-			}
-
-			String hostname = "Unknown";
-
-			try {
-				InetAddress addr;
-				addr = InetAddress.getLocalHost();
-				hostname = addr.getHostName();
-			} catch (UnknownHostException ex) {
-				System.out.println("Hostname can not be resolved");
-			}
-
-			// Optional: for better indexing performance, if you
-			// are indexing many documents, increase the RAM
-			// buffer. But if you do this, increase the max heap
-			// size to the JVM (eg add -Xmx512m or -Xmx1g):
-			//
-			// iwc.setRAMBufferSizeMB(256.0);
-
-			IndexWriter writer = new IndexWriter(dir, iwc);
-			// if we have only one docDir, we index it
-			if (docDir != null) {
-				System.out.println("Indexing only " + docDir);
-				// TODO: move indexDocs and indexDoc to a new class
-				ThreadPoolExample.indexDocs(writer, docDir, hostname);
+			if (indexes1Path != null) {
+				System.out.println("*Multiple threads multiple indexes option*");
+				// TODO
+				indexes1Option(indexes1Path, docDirList);
+			} else if (indexes2Path != null) {
+				System.out.println("*Multiple threads one index option*");
+				indexes2Option(docDirList);
 			} else {
-				// else, we index all of them
-
-				// create n-threads, with n being the number of docDirs, and put
-				// them to work
-				final ExecutorService executor = Executors.newFixedThreadPool(docDirList.size());
-				for (Path docPath : docDirList) {
-					final Runnable worker = new ThreadPoolExample.WorkerThread(writer, docPath, hostname);
-					executor.execute(worker);
-				}
-
-				/*
-				 * Close the ThreadPool; no more jobs will be accepted, but all
-				 * the previously submitted jobs will be processed.
-				 */
-				executor.shutdown();
-
-				/*
-				 * Wait up to 1 hour to finish all the previously submitted jobs
-				 */
-				try {
-					executor.awaitTermination(1, TimeUnit.HOURS);
-				} catch (final InterruptedException e) {
-					e.printStackTrace();
-					System.exit(-2);
-				}
-
-				System.out.println("Finished all threads");
+				System.out.println("*No concurrency option*");
+				indexOption(docDir, docDirList);
 			}
-
-			// NOTE: if you want to maximize search performance,
-			// you can optionally call forceMerge here. This can be
-			// a terribly costly operation, so generally it's only
-			// worth it when your index is relatively static (ie
-			// you're done adding documents to it):
-			//
-			// writer.forceMerge(1);
-
-			writer.close();
 
 			Date end = new Date();
 			System.out.println(end.getTime() - start.getTime() + " total milliseconds");
