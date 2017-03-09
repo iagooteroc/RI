@@ -2,9 +2,9 @@ package indexTest.indexTest;
 
 import java.util.Comparator;
 
-class TuplaComparator implements Comparator<Tupla> {
+class TermComparatorTfIdf implements Comparator<Termino> {
     @Override
-    public int compare(Tupla a, Tupla b) {
+    public int compare(Termino a, Termino b) {
     	if (a.getIdf() > b.getIdf()) {
     		return 1;
     	} else if (a.getIdf() < b.getIdf()) {

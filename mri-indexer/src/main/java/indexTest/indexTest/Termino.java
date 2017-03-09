@@ -5,12 +5,19 @@ public class Termino {
 	private double idf;
 	private int df_t;
 	private int numDocs;
+	long tf;
+	String title;
+	String pathSgm;
+	
 
-	public Termino(String term, double idf, int df_t, int numDocs) {
+	public Termino(String term, double idf, int df_t, int numDocs, long tf, String title, String pathSgm) {
 		this.term = term;
 		this.idf = idf;
 		this.df_t = df_t;
 		this.numDocs = numDocs;
+		this.tf = tf;
+		this.title = title;
+		this.pathSgm = pathSgm;
 	}
 	
 	public String getTerm() {
@@ -27,6 +34,30 @@ public class Termino {
 	
 	public int getNumDocs() {
 		return numDocs;
+	}
+
+	public long getTf() {
+		return tf;
+	}
+
+	public void setTf(long tf) {
+		this.tf = tf;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getPathSgm() {
+		return pathSgm;
+	}
+
+	public void setPathSgm(String pathSgm) {
+		this.pathSgm = pathSgm;
 	}
 
 	void setTerm(String term) {

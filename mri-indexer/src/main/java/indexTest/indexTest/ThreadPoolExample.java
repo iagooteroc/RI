@@ -47,9 +47,9 @@ public class ThreadPoolExample {
 			for (List<String> document : documents) {
 				int i = 0;
 				field = document.get(i++);
-				doc.add(new TextField("TITLE", field, Field.Store.NO));
+				doc.add(new TextField("TITLE", field, Field.Store.YES));
 				field = document.get(i++);
-				doc.add(new TextField("BODY", field, Field.Store.NO));
+				doc.add(new TextField("BODY", field, Field.Store.YES));
 				field = document.get(i++);
 				doc.add(new TextField("TOPICS", field, Field.Store.NO));
 				field = document.get(i++);

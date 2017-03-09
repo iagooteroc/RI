@@ -156,7 +156,7 @@ public class IndexFiles {
 			Analyzer analyzer = new StandardAnalyzer();
 			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
 
-			setOpenMode(iwc, openMode);
+			setOpenMode(iwc, "create"); // Debe ser create porque los pathname1..N pueden no existir
 
 			String hostname = getHostname();
 

@@ -16,17 +16,22 @@ import org.apache.lucene.index.PostingsEnum;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.index.Terms;
 import org.apache.lucene.index.TermsEnum;
+import org.apache.lucene.search.DocIdSetIterator;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.util.BytesRef;
 
 public class SimpleReader3 {
-	
+
 	/*
 	 * @param reversed: true prints the best values first
+	 * 
 	 * @param onlyidf: only uses idf and not tf
+	 * 
 	 * @param top: number of total terms to show
 	 */
-	public static void readIndex(String path, String field, boolean reversed, boolean onlyidf, int top) throws IOException {
+	public static void readIndex(String path, String field, boolean reversed, boolean onlyidf, int top)
+			throws IOException {
 		Directory dir = null;
 		DirectoryReader indexReader = null;
 		TermList tl = new TermList(reversed, top);
@@ -68,47 +73,31 @@ public class SimpleReader3 {
 				final TermsEnum termsEnum = terms.iterator();
 
 				while (termsEnum.next() != null) {
-					final String tt = termsEnum.term().utf8ToString();
+					BytesRef br = termsEnum.term();
+					final String tt = br.utf8ToString();
 					int n = indexReader.numDocs();
 					int df_t = termsEnum.docFreq();
-					double idf = Math.log(n/df_t);
-					Term term = new Term("modelDescription", "probability");
+					double idf = Math.log(n / df_t);
+					Term term = new Term(field, br);
 					PostingsEnum postingsEnum = leafReader.postings(term);
-					long tf = postingsEnum.freq();
-					// totalFreq equals -1 if the value was not
-					// stored in the codification of this index
-					System.out.println("\t" + tt);
-					tl.addTerm(new Termino(tt,idf,df_t,n));
-					/*
-					Tupla tupla = new Tupla(tt,idf,df_t);
-					int index = tuplas.indexOf(tupla); 
-					if (index==-1){
-						tuplas.add(new Tupla(tt,idf,df_t));
-					} else {
-						Tupla storedTupla = tuplas.get(index);
-						df_t = storedTupla.getDf_t() + df_t;
-						idf = Math.log(n/df_t);
-						storedTupla.setDf_t(df_t);
-						storedTupla.setIdf(idf);
-					}*/
+					while (postingsEnum.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
+						int docId = postingsEnum.docID();
+						DirectoryReader indexReader2 = DirectoryReader.open(dir);
+						Document doc = indexReader2.document(docId);
+						String title = doc.get("TITLE");
+						String pathSgm = doc.get("PathSgm");
+						//System.out.println(indexReader2.document(docId).get("TITLE"));
+						long tf = postingsEnum.freq(); // TODO: guardarla
+						// totalFreq equals -1 if the value was not
+						// stored in the codification of this index
+						// System.out.println("\t" + tt);
+						tl.addTerm(new Termino(tt, idf, df_t, n, tf, title, pathSgm));
+					}
 				}
-				
-				int doc;
-				final Term term = new Term("modelDescription", "probability");
-				final PostingsEnum postingsEnum = leafReader.postings(term);
-
-				while ((doc = postingsEnum.nextDoc()) != PostingsEnum.NO_MORE_DOCS) {
-					System.out.println(
-							"\nTerm(field=modelDescription, text=probability)" + " appears in doc num: " + doc);
-					final Document d = leafReader.document(doc);
-					System.out.println("modelDescription = " + d.get("modelDescription"));
-				}
-				
-
 			}
 		}
-		//printTuplas(tuplas, 10, false);
-		//TODO: añadir argumentos para que imprima parametrizado
+		// printTuplas(tuplas, 10, false);
+		// TODO: añadir argumentos para que imprima parametrizado
 		tl.printTerms();
 	}
 
@@ -132,7 +121,7 @@ public class SimpleReader3 {
 	 * LeafReaderContext (objeto del cual se obtiene el LeafReader).
 	 */
 	public static void main(final String[] args) throws IOException {
-		readIndex(args[0],"BODY", true, true, 50);
+		readIndex(args[0], "BODY", false, true, 50);
 		System.exit(1);
 
 		if (args.length != 1) {
