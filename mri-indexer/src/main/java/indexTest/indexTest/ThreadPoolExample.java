@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.IOUtils;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
+import org.apache.lucene.document.IntPoint;
 import org.apache.lucene.document.StoredField;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
@@ -52,9 +53,9 @@ public class ThreadPoolExample {
 				field = document.get(i++);
 				doc.add(new TextField("TOPICS", field, Field.Store.NO));
 				field = document.get(i++);
-				doc.add(new TextField("DATELINE", field, Field.Store.NO));
+				doc.add(new StringField("DATELINE", field, Field.Store.NO));
 				field = document.get(i++);
-				doc.add(new TextField("DATE", field, Field.Store.NO));
+				doc.add(new StringField("DATE", field, Field.Store.NO));
 				// Add the path of the file as a field named "path". Use a
 				// field that is indexed (i.e. searchable), but don't
 				// tokenize
@@ -62,7 +63,7 @@ public class ThreadPoolExample {
 				// frequency
 				// or positional information:
 				doc.add(new StringField("PathSgm", file.toString(), Field.Store.YES));
-				doc.add(new StoredField("SeqDocNumer", seqDocNumber++));
+				doc.add(new IntPoint("SeqDocNumer", seqDocNumber++));
 				doc.add(new StringField("Hostname", hostname, Field.Store.YES));
 				doc.add(new StringField("Thread", Thread.currentThread().getName(), Field.Store.YES));
 				// doc.add(new StoredField("Thread", x));

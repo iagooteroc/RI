@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
@@ -19,11 +20,16 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 public class SimpleReader3 {
-
-	public static void readIndex(String path, String field) throws IOException {
+	
+	/*
+	 * @param reversed: true prints the best values first
+	 * @param onlyidf: only uses idf and not tf
+	 * @param top: number of total terms to show
+	 */
+	public static void readIndex(String path, String field, boolean reversed, boolean onlyidf, int top) throws IOException {
 		Directory dir = null;
 		DirectoryReader indexReader = null;
-		ArrayList<Tupla> tuplas = new ArrayList<>();
+		TermList tl = new TermList(reversed, top);
 
 		try {
 			dir = FSDirectory.open(Paths.get(path));
@@ -66,13 +72,27 @@ public class SimpleReader3 {
 					int n = indexReader.numDocs();
 					int df_t = termsEnum.docFreq();
 					double idf = Math.log(n/df_t);
+					Term term = new Term("modelDescription", "probability");
+					PostingsEnum postingsEnum = leafReader.postings(term);
+					long tf = postingsEnum.freq();
 					// totalFreq equals -1 if the value was not
 					// stored in the codification of this index
-					//System.out.println("\t" + tt + "\tidf=" + idf);
-					tuplas.add(new Tupla(tt,idf));
-
+					System.out.println("\t" + tt);
+					tl.addTerm(new Termino(tt,idf,df_t,n));
+					/*
+					Tupla tupla = new Tupla(tt,idf,df_t);
+					int index = tuplas.indexOf(tupla); 
+					if (index==-1){
+						tuplas.add(new Tupla(tt,idf,df_t));
+					} else {
+						Tupla storedTupla = tuplas.get(index);
+						df_t = storedTupla.getDf_t() + df_t;
+						idf = Math.log(n/df_t);
+						storedTupla.setDf_t(df_t);
+						storedTupla.setIdf(idf);
+					}*/
 				}
-				/*
+				
 				int doc;
 				final Term term = new Term("modelDescription", "probability");
 				final PostingsEnum postingsEnum = leafReader.postings(term);
@@ -83,13 +103,13 @@ public class SimpleReader3 {
 					final Document d = leafReader.document(doc);
 					System.out.println("modelDescription = " + d.get("modelDescription"));
 				}
-				*/
+				
 
 			}
 		}
-		Collections.sort(tuplas, new TuplaComparator());
-		Collections.reverse(tuplas);
-		System.out.println(tuplas);
+		//printTuplas(tuplas, 10, false);
+		//TODO: añadir argumentos para que imprima parametrizado
+		tl.printTerms();
 	}
 
 	/**
@@ -112,7 +132,7 @@ public class SimpleReader3 {
 	 * LeafReaderContext (objeto del cual se obtiene el LeafReader).
 	 */
 	public static void main(final String[] args) throws IOException {
-		readIndex(args[0],"BODY");
+		readIndex(args[0],"BODY", true, true, 50);
 		System.exit(1);
 
 		if (args.length != 1) {
