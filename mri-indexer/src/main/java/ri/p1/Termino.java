@@ -1,4 +1,4 @@
-package indexTest.indexTest;
+package ri.p1;
 
 public class Termino {
 	private String term;

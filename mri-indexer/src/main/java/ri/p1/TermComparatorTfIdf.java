@@ -1,4 +1,4 @@
-package indexTest.indexTest;
+package ri.p1;
 
 import java.util.Comparator;
 

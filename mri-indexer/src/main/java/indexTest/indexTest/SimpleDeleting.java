@@ -36,34 +36,6 @@ public class SimpleDeleting {
 			+ " [-indexin INDEXFILE] [-indexout INDEXFILE] [-deldocsterm TERM] \n"
 			+ " [-deldocsquery QUERY] [-mostsimilardoc_title Hilos]\n0" + " [-mostsimilardoc_title N HEADER]\n\n";
 
-	private static void validateArgs() {
-		// Check if index is provided
-		if (indexin == null) {
-			System.err.println("at least indexin: " + usage);
-			System.exit(1);
-		}
-
-		//
-		if (collPath == null && collsPath.isEmpty()) {
-			System.err.println("coll or colls are required: " + usage);
-			System.exit(1);
-		}
-
-		// if indexes1 or 2 were provided, check if colls is valid
-		if (indexes1Path != null || indexes2Path != null) {
-			if (collsPath == null) {
-				System.err.println("if indexes1 or 2 are provided, colls is required: " + usage);
-				System.exit(1);
-			}
-		}
-
-		// if indexes1 is provided, check if it has at least 1 index
-		if (indexes1Path != null && indexes1Path.size() < 2) {
-			System.err.println("indexes1 must have at least one PATH apart from PATH0: " + usage);
-			System.exit(1);
-		}
-	}
-
 	public static void delDocsQuery(String indexFolder, String queryStr) {
 		IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());
 		config.setOpenMode(OpenMode.APPEND);
@@ -88,7 +60,7 @@ public class SimpleDeleting {
 
 		try {
 			query = parser.parse(queryStr);
-		} catch (ParseException e) {
+		} catch (org.apache.lucene.queryparser.classic.ParseException e) {
 			e.printStackTrace();
 		}
 

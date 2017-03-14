@@ -1,4 +1,4 @@
-package indexTest.indexTest;
+package ri.p1;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -18,8 +18,8 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.BytesRef;
 
-public class SimpleReader3 {
-	
+public class Process {
+
 	/*
 	 * @param reversed: true prints the best values first
 	 * 
@@ -28,7 +28,7 @@ public class SimpleReader3 {
 	public static void printIdf(String path, String field, boolean reversed, int top) throws IOException {
 		Directory dir = null;
 		DirectoryReader indexReader = null;
-		ArrayList<TermIdf> ti = new ArrayList<>();
+		ArrayList<TuplaTermIdf> ti = new ArrayList<>();
 
 		try {
 			dir = FSDirectory.open(Paths.get(path));
@@ -47,21 +47,21 @@ public class SimpleReader3 {
 		while (termsEnum.next() != null) {
 			BytesRef br = termsEnum.term();
 			final String tt = br.utf8ToString();
-			int df_t = termsEnum.docFreq();
+			double df_t = termsEnum.docFreq();
 			double idf = Math.log(n / df_t);
 			System.out.println("n: " + n + "\tdft: " + df_t + "\tidf: " + idf);
-			ti.add(new TermIdf(tt, idf));
+			ti.add(new TuplaTermIdf(tt, idf));
 		}
 		indexReader.close();
 		Collections.sort(ti, new TermComparatorIdf());
 		if (reversed)
 			Collections.reverse(ti);
-		for (int i = 1; i <= Math.min(top,ti.size()); i++) {
-			TermIdf tidf = ti.get(i-1);
+		for (int i = 1; i <= Math.min(top, ti.size()); i++) {
+			TuplaTermIdf tidf = ti.get(i - 1);
 			System.out.println("Nº" + i + "\t" + tidf.getTerm() + "\tidf: " + tidf.getIdf());
 		}
 	}
-	
+
 	/*
 	 * @param reversed: true prints the best values first
 	 * 
@@ -99,10 +99,10 @@ public class SimpleReader3 {
 				String pathSgm = doc.get("PathSgm");
 				long freq = pe.freq();
 				double tf = 0;
-				if (freq!=0) {
+				if (freq != 0) {
 					tf = 1 + Math.log(freq);
 				}
-				//System.out.println("\t" + tt + "/" + pathSgm + "/" + title);
+				// System.out.println("\t" + tt + "/" + pathSgm + "/" + title);
 				tl.add(new Termino(tt, idf, df_t, n, tf, title, pathSgm));
 			}
 		}
@@ -110,42 +110,68 @@ public class SimpleReader3 {
 		Collections.sort(tl, new TermComparatorTfIdf());
 		if (reversed)
 			Collections.reverse(tl);
-		for (int i = 1; i <= Math.min(top,tl.size()); i++) {
-			Termino term = tl.get(i-1);
-			System.out.println("Nº" + i + "\t" + term.getValue() + "\t" + term.getTerm() + "\tTf: " + term.getTf() + 
-					"\tDf_t: " + term.getDf_t());
+		for (int i = 1; i <= Math.min(top, tl.size()); i++) {
+			Termino term = tl.get(i - 1);
+			System.out.println("Nº" + i + "\t" + term.getValue() + "\t" + term.getTerm() + "\tTf: " + term.getTf()
+					+ "\tDf_t: " + term.getDf_t());
+			// TODO: poner formato bien
 			/*
-			System.out.println("Nº" + i + "\t" + term.getValue() + "\t" + term.getTerm() + "/" + term.getPathSgm() + "/" + term.getTitle()
-					+ "\ttf: " + term.getTf() + "\tidf: " + term.getIdf());*/
+			 * System.out.println("Nº" + i + "\t" + term.getValue() + "\t" +
+			 * term.getTerm() + "/" + term.getPathSgm() + "/" + term.getTitle()
+			 * + "\ttf: " + term.getTf() + "\tidf: " + term.getIdf());
+			 */
 		}
-		
+
 	}
 
-	/**
-	 * Los índices de Lucene se almacenan en forma de segmentos, cada segmento
-	 * se considera una hoja (leaf) del índice. Este ejemplo lee los contenidos
-	 * de un índice usando AtomicReaders. Un AtomicReader lee los contenidos de
-	 * un segmento o leaf.
-	 * 
-	 * IndexReader instances for indexes on disk are usually constructed with a
-	 * call to one of the static DirectoryReader.open() methods, e.g.
-	 * DirectoryReader.open(Directory). DirectoryReader implements the
-	 * CompositeReader interface, it is not possible to directly get postings.
-	 * 
-	 * LeafReader: These indexes do not consist of several sub-readers, they are
-	 * atomic. They support retrieval of stored fields, doc values, terms, and
-	 * postings.
-	 *
-	 * Si nuestro índice es pequeño solamente tendrá un segmento por lo que la
-	 * llamada indexReader.getContext().leaves() nos dará una lista con un único
-	 * LeafReaderContext (objeto del cual se obtiene el LeafReader).
-	 */
+	private static String usage = "java ri.p1.Process"
+			+ " [-indexin INDEXFILE] [-best_idfterms FIELD N] [-poor_idfterms FIELD N]\n"
+			+ " [-best_tfidfterms FIELD N] [-best_tfidfterms FIELD N]\n\n";
+
 	public static void main(final String[] args) throws IOException {
-		Date start = new Date();
-		//printIdf(args[0], "BODY", false, 50);
-		printTfIdf(args[0], "BODY", false, 50);
-		Date end = new Date();
-		System.out.println(end.getTime() - start.getTime() + " total milliseconds");
+		String indexFile = null;
+		String option = null;
+		String field = null;
+		String n = null;
+		if (args.length != 5)
+			System.err.println("Invalid arguments: " + usage);
+		for (int i = 0; i < args.length; i++) {
+			switch (args[i]) {
+			case "-indexin":
+				indexFile = args[i + 1];
+				i++;
+				break;
+			default:
+				option = args[i];
+				field = args[i + 1];
+				n = args[i + 2];
+				i += 2;
+				break;
+			}
+			Date start = new Date();
+			switch (option) {
+			case "-best_idfterms":
+				printIdf(indexFile, field, true, Integer.parseInt(n));
+				break;
+			case "-poor_idfterms":
+				printIdf(indexFile, field, false, Integer.parseInt(n));
+				break;
+			case "-best_tfidfterms":
+				printTfIdf(indexFile, field, true, Integer.parseInt(n));
+				break;
+			case "-poor_tfidfterms":
+				printTfIdf(indexFile, field, false, Integer.parseInt(n));
+				break;
+			default:
+				System.err.println("Invalid arguments (" + option + "): " + usage);
+				System.exit(1);
+				break;
+			}
+			// printIdf(args[0], "BODY", false, 50);
+			// printTfIdf(args[0], "BODY", false, 50);
+			Date end = new Date();
+			System.out.println(end.getTime() - start.getTime() + " total milliseconds");
+		}
 	}
 
 }

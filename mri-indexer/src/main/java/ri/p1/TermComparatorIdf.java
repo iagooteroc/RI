@@ -1,10 +1,10 @@
-package indexTest.indexTest;
+package ri.p1;
 
 import java.util.Comparator;
 
-class TermComparatorIdf implements Comparator<TermIdf> {
+class TermComparatorIdf implements Comparator<TuplaTermIdf> {
     @Override
-    public int compare(TermIdf a, TermIdf b) {
+    public int compare(TuplaTermIdf a, TuplaTermIdf b) {
     	if (a.getIdf() > b.getIdf()) {
     		return 1;
     	} else if (a.getIdf() < b.getIdf()) {
