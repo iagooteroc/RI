@@ -2,43 +2,26 @@ package ri.p1;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.document.FieldType;
-import org.apache.lucene.document.IntPoint;
-import org.apache.lucene.document.StringField;
-import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.DirectoryReader;
-import org.apache.lucene.index.IndexOptions;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.index.MultiFields;
-import org.apache.lucene.index.PostingsEnum;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.Term;
-import org.apache.lucene.index.Terms;
-import org.apache.lucene.index.TermsEnum;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.search.BooleanClause;
-import org.apache.lucene.search.BooleanQuery;
-import org.apache.lucene.search.DocIdSetIterator;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
-import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.store.LockObtainFailedException;
-import org.apache.lucene.util.BytesRef;
 
 public class ProcessAndIndex {
 
@@ -72,29 +55,15 @@ public class ProcessAndIndex {
 			+ " [-indexin INDEXFILE] [-indexout INDEXFILE] [-deldocsterm TERM] [-deldocsquery QUERY]\n"
 			+ " [-mostsimilardoc_title Hilos]\n0" + " [-mostsimilardoc_title N HEADER]\n\n";
 
-	public static final FieldType TYPE_BODY = new FieldType();
-	static final IndexOptions options = IndexOptions.DOCS_AND_FREQS;
-
-	static {
-		TYPE_BODY.setIndexOptions(options);
-		TYPE_BODY.setTokenized(true);
-		TYPE_BODY.setStored(true);
-		TYPE_BODY.setStoreTermVectors(true);
-		TYPE_BODY.setStoreTermVectorPositions(true);
-		TYPE_BODY.freeze();
-	}
-
 	public static void mostSimilarDocTitle(String indexin, String indexout, int h) throws IOException {
-		String docTitle = null;
 		Directory dir = null;
 		DirectoryReader indexReader = null;
 
 		Directory dir2 = FSDirectory.open(Paths.get(indexout));
 		Analyzer analyzer = new StandardAnalyzer();
 		IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+		iwc.setOpenMode(OpenMode.CREATE);
 		IndexWriter writer = new IndexWriter(dir2, iwc);
-		List<Document> docList = new LinkedList<>();
-		// TODO: hacerlo con h threads
 
 		try {
 			dir = FSDirectory.open(Paths.get(indexin));
@@ -107,81 +76,53 @@ public class ProcessAndIndex {
 			e1.printStackTrace();
 		}
 		IndexSearcher indexSearcher = new IndexSearcher(indexReader);
-		QueryParser parserTitle = new QueryParser("TITLE", new StandardAnalyzer());
-		QueryParser parserBody = new QueryParser("BODY", new StandardAnalyzer());
 
-		int n = indexReader.maxDoc(); // TODO: porque cuentan los eliminados,
-										// no?
-		Document nDoc = new Document();
-		int seqDocNumber = 1;
-		for (int i = 0; i < n; i++) {
-			System.out.println(i);
-			Document doc = indexReader.document(i);
-			docTitle = doc.get("TITLE");
-			Query queryTitle = null;
-			Query queryBody = null;
+		int n = indexReader.numDocs();
+		if (h > 1) {
+			double threads = h;
+			double docs = n;
+			double docsThread = Math.ceil(docs / threads);
+
+			final ExecutorService executor = Executors.newFixedThreadPool(h);
+			System.out.println("Creating " + h + " threads");
+			int index = 0;
+			for (int i = 0; i < h - 1; i++) {
+				final Runnable worker = new ThreadPool2.WorkerThread(writer, indexReader, indexSearcher, index,
+						(int) docsThread, true, 0);
+				executor.execute(worker);
+				index += docsThread;
+			}
+			final Runnable worker = new ThreadPool2.WorkerThread(writer, indexReader, indexSearcher, index,
+					(n - ((int) docsThread) * (h - 1)), true, 0);
+			executor.execute(worker);
+			executor.shutdown();
+
+			/*
+			 * Wait up to 1 hour to finish all the previously submitted jobs
+			 */
 			try {
-				queryTitle = parserTitle.parse(QueryParser.escape(docTitle));
-				queryBody = parserBody.parse(QueryParser.escape(docTitle));
-			} catch (ParseException e) {
-				continue;
+				executor.awaitTermination(1, TimeUnit.HOURS);
+			} catch (final InterruptedException e) {
+				e.printStackTrace();
+				System.exit(-2);
 			}
-			BooleanQuery booleanQuery = new BooleanQuery.Builder().add(queryTitle, BooleanClause.Occur.SHOULD)
-					.add(queryBody, BooleanClause.Occur.SHOULD).build();
-			// 2 porque probablemente saque el mismo doc
-			TopDocs topDocs = indexSearcher.search(booleanQuery, 2);
-			int top1 = topDocs.scoreDocs[0].doc;
-			if (topDocs.scoreDocs.length > 1) {
-				int top2 = topDocs.scoreDocs[1].doc;
-				Document doc2 = indexSearcher.doc(top2);
-				String title2 = doc2.get("TITLE");
-				String body2 = doc2.get("BODY");
-				String pathSgm2 = doc2.get("PathSgm");
-				nDoc.add(new TextField("SimTitle2", title2, Field.Store.YES));
-				nDoc.add(new TextField("SimBody2", body2, Field.Store.YES));
-				nDoc.add(new StringField("SimPathSgm2", pathSgm2, Field.Store.YES));
-			}
-			Document doc1 = indexSearcher.doc(top1);
-
-			String title1 = doc1.get("TITLE");
-			String body1 = doc1.get("BODY");
-			String pathSgm1 = doc1.get("PathSgm");
-
-			nDoc.add(new TextField("TITLE", docTitle, Field.Store.YES));
-			nDoc.add(new Field("BODY", doc.get("BODY"), TYPE_BODY));
-			nDoc.add(new TextField("TOPICS", doc.get("TOPICS"), Field.Store.YES));
-			nDoc.add(new StringField("DATELINE", doc.get("DATELINE"), Field.Store.YES));
-			nDoc.add(new StringField("DATE", doc.get("DATE"), Field.Store.YES));
-			nDoc.add(new StringField("PathSgm", doc.get("PathSgm"), Field.Store.YES));
-			nDoc.add(new IntPoint("SeqDocNumer", seqDocNumber++));
-			nDoc.add(new StringField("Hostname", doc.get("Hostname"), Field.Store.YES));
-			nDoc.add(new StringField("Thread", Thread.currentThread().getName(), Field.Store.YES));
-			nDoc.add(new TextField("SimTitle1", title1, Field.Store.YES));
-			nDoc.add(new TextField("SimBody1", body1, Field.Store.YES));
-			nDoc.add(new StringField("SimPathSgm1", pathSgm1, Field.Store.YES));
-			docList.add(nDoc);
+		} else {
+			ThreadPool2.process(writer, indexReader, indexSearcher, 0, n);
 		}
-		int i = 0;
-		for (Document docf : docList) {
-			System.out.println("Adding doc nº" + i);
-			writer.addDocument(docf);
-			i++;
-		}
+
 		System.out.println("Index created successfully");
 		writer.close();
 	}
 
-	public static void mostSimilarDocBody(String indexin, String indexout, int n, int h) throws IOException {
+	public static void mostSimilarDocBody(String indexin, String indexout, int top, int h) throws IOException {
 		Directory dir = null;
 		DirectoryReader indexReader = null;
-		ArrayList<Termino> tl = new ArrayList<>();
 
 		Directory dir2 = FSDirectory.open(Paths.get(indexout));
 		Analyzer analyzer = new StandardAnalyzer();
 		IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+		iwc.setOpenMode(OpenMode.CREATE);
 		IndexWriter writer = new IndexWriter(dir2, iwc);
-		List<Document> docList = new LinkedList<>();
-		// TODO: hacerlo con h threads
 
 		try {
 			dir = FSDirectory.open(Paths.get(indexin));
@@ -193,97 +134,41 @@ public class ProcessAndIndex {
 			System.out.println("Graceful message: exception " + e1);
 			e1.printStackTrace();
 		}
+		int n = indexReader.numDocs();
 		IndexSearcher indexSearcher = new IndexSearcher(indexReader);
-		QueryParser parserTitle = new QueryParser("TITLE", new StandardAnalyzer());
-		QueryParser parserBody = new QueryParser("BODY", new StandardAnalyzer());
 
-		int nDocs = indexReader.maxDoc(); // TODO: porque cuentan los eliminados, no?
-		Document nDoc = new Document();
-		int seqDocNumber = 1;
-		for (int i = 0; i < nDocs; i++) {
-			System.out.println(i);
-			Terms vector = indexReader.getTermVector(i, "BODY");
-			TermsEnum termsEnum = null;
-			termsEnum = vector.iterator();
-			while (termsEnum.next() != null) {
-				BytesRef br = termsEnum.term();
-				final String tt = br.utf8ToString();
-				double df_t = termsEnum.docFreq();
-				double idf = Math.log(n / df_t);
-				PostingsEnum pe = MultiFields.getTermPositionsEnum(indexReader, "BODY", br);
-				while (pe.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
-					int docId = pe.docID();
-					Document doc = indexReader.document(docId);
-					String title = doc.get("TITLE");
-					String pathSgm = doc.get("PathSgm");
-					long freq = pe.freq();
-					double tf = 0;
-					if (freq != 0) {
-						tf = 1 + Math.log(freq);
-					}
-					// System.out.println("\t" + tt + "/" + pathSgm + "/" + title);
-					tl.add(new Termino(tt, idf, df_t, n, tf, title, pathSgm));
-				}
+		if (h > 1) {
+			double threads = h;
+			double docs = n;
+			double docsThread = Math.ceil(docs / threads);
+			//TODO: Hacer que funcione con 1 thread (y que cuente bien los threads omg)
+			final ExecutorService executor = Executors.newFixedThreadPool(h);
+			System.out.println("Creating " + h + " threads");
+			int index = 0;
+			for (int i = 0; i < h - 1; i++) {
+				final Runnable worker = new ThreadPool2.WorkerThread(writer, indexReader, indexSearcher, index,
+						(int) docsThread, false, top);
+				executor.execute(worker);
+				System.out.println("index: " + index + "\tdocsThreads: " + docsThread);
+				index += docsThread;
 			}
-			Collections.sort(tl, new TermComparatorTfIdf());
-			Collections.reverse(tl);
-			String query = "";
-			for (int j = 1; j <= Math.min(n, tl.size()); j++) {
-				Termino term = tl.get(j - 1);
-				query = query.concat(term.getTerm() + " ");
-			}
-			Document doc = indexReader.document(i);
-			Query queryTitle = null;
-			Query queryBody = null;
+			System.out.println("index: " + index + "\tdocsThreads: " + (n - ((int) docsThread) * (h - 1)));
+			final Runnable worker = new ThreadPool2.WorkerThread(writer, indexReader, indexSearcher, index,
+					(n - ((int) docsThread) * (h - 1)), false, top);
+			executor.execute(worker);
+			executor.shutdown();
+
+			/*
+			 * Wait up to 1 hour to finish all the previously submitted jobs
+			 */
 			try {
-				queryTitle = parserTitle.parse(query);
-				queryBody = parserBody.parse(query);
-			} catch (ParseException e) {
-				continue;
+				executor.awaitTermination(1, TimeUnit.HOURS);
+			} catch (final InterruptedException e) {
+				e.printStackTrace();
+				System.exit(-2);
 			}
-			
-			BooleanQuery booleanQuery = new BooleanQuery.Builder().add(queryTitle, BooleanClause.Occur.SHOULD)
-					.add(queryBody, BooleanClause.Occur.SHOULD).build();
-			
-			nDoc.add(new StringField("SimQuery", query, Field.Store.YES));
-			
-			TopDocs topDocs = indexSearcher.search(booleanQuery, 2); // 2 porque probablemente saque el mismo doc
-			int top1 = topDocs.scoreDocs[0].doc;
-			if (topDocs.scoreDocs.length > 1) {
-				int top2 = topDocs.scoreDocs[1].doc;
-				Document doc2 = indexSearcher.doc(top2);
-				String title2 = doc2.get("TITLE");
-				String body2 = doc2.get("BODY");
-				String pathSgm2 = doc2.get("PathSgm");
-				nDoc.add(new TextField("SimTitle2", title2, Field.Store.YES));
-				nDoc.add(new TextField("SimBody2", body2, Field.Store.YES));
-				nDoc.add(new StringField("SimPathSgm2", pathSgm2, Field.Store.YES));
-			}
-			Document doc1 = indexSearcher.doc(top1);
-
-			String title1 = doc1.get("TITLE");
-			String body1 = doc1.get("BODY");
-			String pathSgm1 = doc1.get("PathSgm");
-
-			nDoc.add(new TextField("TITLE", doc.get("TITLE"), Field.Store.YES));
-			nDoc.add(new Field("BODY", doc.get("BODY"), TYPE_BODY));
-			nDoc.add(new TextField("TOPICS", doc.get("TOPICS"), Field.Store.YES));
-			nDoc.add(new StringField("DATELINE", doc.get("DATELINE"), Field.Store.YES));
-			nDoc.add(new StringField("DATE", doc.get("DATE"), Field.Store.YES));
-			nDoc.add(new StringField("PathSgm", doc.get("PathSgm"), Field.Store.YES));
-			nDoc.add(new IntPoint("SeqDocNumer", seqDocNumber++));
-			nDoc.add(new StringField("Hostname", doc.get("Hostname"), Field.Store.YES));
-			nDoc.add(new StringField("Thread", Thread.currentThread().getName(), Field.Store.YES));
-			nDoc.add(new TextField("SimTitle1", title1, Field.Store.YES));
-			nDoc.add(new TextField("SimBody1", body1, Field.Store.YES));
-			nDoc.add(new StringField("SimPathSgm1", pathSgm1, Field.Store.YES));
-			docList.add(nDoc);
-		}
-		int i = 0;
-		for (Document docf : docList) {
-			System.out.println("Adding doc nº" + i);
-			writer.addDocument(docf);
-			i++;
+		} else {
+			ThreadPool2.process2(writer, indexReader, indexSearcher, 0, n, top);
 		}
 		System.out.println("Index created successfully");
 		writer.close();
