@@ -314,4 +314,6 @@ public class ProcessAndIndex {
 		Date end = new Date();
 		System.out.println(end.getTime() - start.getTime() + " total milliseconds");
 	}
+	
+	
 }

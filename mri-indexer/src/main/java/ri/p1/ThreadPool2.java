@@ -19,6 +19,7 @@ import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexOptions;
+import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.Terms;
 import org.apache.lucene.index.TermsEnum;
@@ -97,11 +98,10 @@ public class ThreadPool2 {
 
 	}
 	
-	public static void process2(IndexWriter writer, DirectoryReader indexReader, IndexSearcher indexSearcher, int index,
+	public static void process2(IndexWriter writer, IndexReader indexReader, IndexSearcher indexSearcher, int index,
 			int count, int top) throws IOException {
 		QueryParser parserTitle = new QueryParser("TITLE", new StandardAnalyzer());
 		QueryParser parserBody = new QueryParser("BODY", new StandardAnalyzer());
-		//int n = indexReader.maxDoc();
 		int n = indexReader.numDocs();
 
 		ArrayList<TermCompact> tl = new ArrayList<>();
@@ -110,7 +110,7 @@ public class ThreadPool2 {
 			if (i % 100 == 0)
 				System.out.println(Thread.currentThread().getName() + "\tindex = " + i + "\t" + (index + count - i) + " to go");
 			Document doc = indexReader.document(i);
-			Terms vector = indexReader.getTermVector(i, "TITLE");
+			Terms vector = indexReader.getTermVector(i, "BODY");
 			if (vector==null) {
 				writer.addDocument(doc);
 				continue;
@@ -124,10 +124,9 @@ public class ThreadPool2 {
 				double idf = Math.log(n / df_t);
 				double tf = 1 + Math.log(termsEnum.totalTermFreq());
 				
-				tl.add(new TermCompact(tt, idf, df_t, tf));
+				tl.add(new TermCompact(tt, idf, tf));
 			}
 			Collections.sort(tl, new TermCComparatorTfIdf());
-			//Collections.reverse(tl);
 			String query = "";
 			for (int j = 1; j <= Math.min(n, tl.size()); j++) {
 				query +=(tl.get(j - 1).getTerm() + " ");
@@ -136,8 +135,8 @@ public class ThreadPool2 {
 			Query queryTitle = null;
 			Query queryBody = null;
 			try {
-				queryTitle = parserTitle.parse(query);
-				queryBody = parserBody.parse(query);
+				queryTitle = parserTitle.parse(QueryParser.escape(query));
+				queryBody = parserBody.parse(QueryParser.escape(query));
 			} catch (ParseException e) {
 				continue;
 			}
@@ -149,37 +148,11 @@ public class ThreadPool2 {
 			
 			TopDocs topDocs = indexSearcher.search(booleanQuery, 2); // 2 porque probablemente saque el mismo doc
 			for (int k = 0; k < Math.min(2, topDocs.scoreDocs.length); k++) {
-				Document tDoc = indexReader.document(k);
+				Document tDoc = indexReader.document(topDocs.scoreDocs[k].doc);
 				doc.add(new TextField("SimTitle", tDoc.get("TITLE"), Field.Store.NO));
 				doc.add(new TextField("SimBody", tDoc.get("BODY"), Field.Store.NO));
 				doc.add(new StringField("SimPathSgm", tDoc.get("PathSgm"), Field.Store.YES));
 			}
-			/*
-			int top1 = topDocs.scoreDocs[0].doc;
-			if (topDocs.scoreDocs.length > 1) {
-				int top2 = topDocs.scoreDocs[1].doc;
-				Document doc2 = indexReader.document(top2);
-				//Document doc2 = indexSearcher.doc(top2);
-				String title2 = doc2.get("TITLE");
-				String body2 = doc2.get("BODY");
-				String pathSgm2 = doc2.get("PathSgm");
-				doc.add(new TextField("SimTitle2", title2, Field.Store.NO));
-				doc.add(new TextField("SimBody2", body2, Field.Store.NO));
-				doc.add(new StringField("SimPathSgm2", pathSgm2, Field.Store.YES));
-			}
-			//Document doc1 = indexSearcher.doc(top1);
-			Document doc1 = indexReader.document(top1);
-
-			String title1 = doc1.get("TITLE");
-			String body1 = doc1.get("BODY");
-			String pathSgm1 = doc1.get("PathSgm");
-			doc.add(new TextField("SimTitle1", title1, Field.Store.NO));
-			doc.add(new TextField("SimBody1", body1, Field.Store.NO));
-			doc.add(new StringField("SimPathSgm1", pathSgm1, Field.Store.YES));
-			*/
-			//TODO: actualizar campo thread?
-			//doc.removeField("Thread");
-			//doc.add(new StringField("Thread", Thread.currentThread().getName(), Field.Store.YES));
 			writer.addDocument(doc);
 		}
 

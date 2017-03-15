@@ -64,7 +64,7 @@ public class ThreadPool {
 				field = document.get(i++);
 				doc.add(new TextField("TOPICS", field, Field.Store.YES));
 				field = document.get(i++);
-				doc.add(new StringField("DATELINE", field, Field.Store.YES));
+				doc.add(new TextField("DATELINE", field, Field.Store.YES));
 				field = document.get(i++);
 				doc.add(new StringField("DATE", field, Field.Store.YES));
 				// Add the path of the file as a field named "path". Use a
