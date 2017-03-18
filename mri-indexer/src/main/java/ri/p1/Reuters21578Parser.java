@@ -107,7 +107,6 @@ public class Reuters21578Parser {
 			Date date = formatter.parse(dateString);
 			dateString = DateTools.dateToString(date, Resolution.MILLISECOND);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		List<String> document = new LinkedList<String>();

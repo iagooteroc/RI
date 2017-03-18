@@ -141,7 +141,6 @@ public class ProcessAndIndex {
 			double threads = h;
 			double docs = n;
 			double docsThread = Math.ceil(docs / threads);
-			//TODO: Hacer que funcione con 1 thread (y que cuente bien los threads omg)
 			final ExecutorService executor = Executors.newFixedThreadPool(h);
 			System.out.println("Creating " + h + " threads");
 			int index = 0;
@@ -194,7 +193,6 @@ public class ProcessAndIndex {
 			e1.printStackTrace();
 		}
 		QueryParser parser = new QueryParser("BODY", new StandardAnalyzer());
-		// QueryParser parser = new QueryParser(null, new StandardAnalyzer());
 
 		try {
 			query = parser.parse(queryStr);
@@ -203,10 +201,8 @@ public class ProcessAndIndex {
 		}
 
 		try {
-			// System.out.println("Deleting documents with query: " + query);
 			writer.deleteDocuments(query);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
@@ -244,7 +240,6 @@ public class ProcessAndIndex {
 		try {
 			writer.deleteDocuments(new Term(field, term));
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 

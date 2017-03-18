@@ -21,7 +21,7 @@ import org.apache.lucene.util.BytesRef;
 public class Process {
 
 	/*
-	 * @param reversed: true prints the best values first
+	 * @param reversed: true prints the worst values first
 	 * 
 	 * @param top: number of total terms to show
 	 */
@@ -49,7 +49,6 @@ public class Process {
 			final String tt = br.utf8ToString();
 			double df_t = termsEnum.docFreq();
 			double idf = Math.log(n / df_t);
-			System.out.println("n: " + n + "\tdft: " + df_t + "\tidf: " + idf);
 			ti.add(new TuplaTermIdf(tt, idf));
 		}
 		indexReader.close();
@@ -63,7 +62,7 @@ public class Process {
 	}
 
 	/*
-	 * @param reversed: true prints the best values first
+	 * @param reversed: true prints the worst values first
 	 * 
 	 * @param top: number of total terms to show
 	 */
@@ -82,7 +81,7 @@ public class Process {
 			System.out.println("Graceful message: exception " + e1);
 			e1.printStackTrace();
 		}
-		double n = indexReader.numDocs();
+		double n = indexReader.maxDoc();
 		final Terms terms = MultiFields.getTerms(indexReader, field);
 		final TermsEnum termsEnum = terms.iterator();
 
@@ -112,21 +111,15 @@ public class Process {
 			Collections.reverse(tl);
 		for (int i = 1; i <= Math.min(top, tl.size()); i++) {
 			Termino term = tl.get(i - 1);
-			System.out.println("Nº" + i + "\t" + term.getValue() + "\t" + term.getTerm() + "\tTf: " + term.getTf()
-					+ "\tDf_t: " + term.getDf_t());
-			// TODO: poner formato bien
-			/*
-			 * System.out.println("Nº" + i + "\t" + term.getValue() + "\t" +
-			 * term.getTerm() + "/" + term.getPathSgm() + "/" + term.getTitle()
-			 * + "\ttf: " + term.getTf() + "\tidf: " + term.getIdf());
-			 */
+			System.out.println("Nº" + i + "\ttf*idf: " + term.getValue() + "\t" + term.getTerm() + "\ttf: " + term.getTf()
+					+ "\tdf_t: " + term.getDf_t() + " " + term.getPathSgm() + "/" + term.getTitle());
 		}
 
 	}
 
 	private static String usage = "java ri.p1.Process"
 			+ " [-indexin INDEXFILE] [-best_idfterms FIELD N] [-poor_idfterms FIELD N]\n"
-			+ " [-best_tfidfterms FIELD N] [-best_tfidfterms FIELD N]\n\n";
+			+ " [-best_tfidfterms FIELD N] [-poor_tfidfterms FIELD N]\n\n";
 
 	public static void main(final String[] args) throws IOException {
 		String indexFile = null;
@@ -141,37 +134,38 @@ public class Process {
 				indexFile = args[i + 1];
 				i++;
 				break;
-			default:
+			case "-best_idfterms":
+			case "-poor_idfterms":
+			case "-best_tfidfterms":
+			case "-poor_tfidfterms":
 				option = args[i];
 				field = args[i + 1];
 				n = args[i + 2];
 				i += 2;
 				break;
 			}
-			Date start = new Date();
-			switch (option) {
-			case "-best_idfterms":
-				printIdf(indexFile, field, true, Integer.parseInt(n));
-				break;
-			case "-poor_idfterms":
-				printIdf(indexFile, field, false, Integer.parseInt(n));
-				break;
-			case "-best_tfidfterms":
-				printTfIdf(indexFile, field, true, Integer.parseInt(n));
-				break;
-			case "-poor_tfidfterms":
-				printTfIdf(indexFile, field, false, Integer.parseInt(n));
-				break;
-			default:
-				System.err.println("Invalid arguments (" + option + "): " + usage);
-				System.exit(1);
-				break;
-			}
-			// printIdf(args[0], "BODY", false, 50);
-			// printTfIdf(args[0], "BODY", false, 50);
-			Date end = new Date();
-			System.out.println(end.getTime() - start.getTime() + " total milliseconds");
 		}
+		Date start = new Date();
+		switch (option) {
+		case "-best_idfterms":
+			printIdf(indexFile, field, false, Integer.parseInt(n));
+			break;
+		case "-poor_idfterms":
+			printIdf(indexFile, field, true, Integer.parseInt(n));
+			break;
+		case "-best_tfidfterms":
+			printTfIdf(indexFile, field, false, Integer.parseInt(n));
+			break;
+		case "-poor_tfidfterms":
+			printTfIdf(indexFile, field, true, Integer.parseInt(n));
+			break;
+		default:
+			System.err.println("Invalid arguments (" + option + "): " + usage);
+			System.exit(1);
+			break;
+		}
+		Date end = new Date();
+		System.out.println(end.getTime() - start.getTime() + " total milliseconds");
 	}
 
 }
