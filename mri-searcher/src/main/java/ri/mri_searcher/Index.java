@@ -24,6 +24,10 @@ import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
+import org.apache.lucene.search.similarities.BM25Similarity;
+import org.apache.lucene.search.similarities.LMDirichletSimilarity;
+import org.apache.lucene.search.similarities.LMJelinekMercerSimilarity;
+import org.apache.lucene.search.similarities.SimilarityBase;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
@@ -34,6 +38,8 @@ public class Index {
 	private static String collPath = null;
 	private static List<String> collsPath = null;
 	private static String filename = null;
+	private static String similarity = null;
+	private static String lambdaormu = null;
 
 	/*
 	 * Collects the following args until the next option (starting with '-') or
@@ -80,6 +86,21 @@ public class Index {
 			break;
 		}
 	}
+	
+	private static void setSimilarity(IndexWriterConfig iwc, String similarity, String lambdaormu) {
+		switch (similarity) {
+		case "default":
+			iwc.setSimilarity(new BM25Similarity());
+			break;
+		case "jm":
+			iwc.setSimilarity(new LMJelinekMercerSimilarity(Float.parseFloat(lambdaormu)));
+			break;
+		case "dir":
+			iwc.setSimilarity(new LMDirichletSimilarity(Float.parseFloat(lambdaormu)));
+			break;
+		}
+		
+	}
 
 	public static void main(String[] args) throws IOException {
 
@@ -105,6 +126,11 @@ public class Index {
 				filename = args[i + 1];
 				i++;
 				break;
+			case ("-indexingmodel"):
+				similarity = args[i + 1];
+				lambdaormu = args[i + 2];
+				i += 2;
+				break;
 			default:
 				break;
 			}
@@ -127,7 +153,7 @@ public class Index {
 		}
 
 		Date start = new Date();
-		index(docDir, docDirList, filename);
+		index(docDir, docDirList, filename, similarity, lambdaormu, openMode, indexPath);
 		Date end = new Date();
 		System.out.println(end.getTime() - start.getTime() + " total milliseconds");
 
@@ -145,10 +171,12 @@ public class Index {
 		return hostname;
 	}
 
-	private static void index(Path docDir, List<Path> docDirList, String filename) throws IOException {
+	private static void index(Path docDir, List<Path> docDirList, String filename, String similarity, String lambdaormu, String openMode, String indexPath) throws IOException {
 		Directory dir = FSDirectory.open(Paths.get(indexPath));
 		Analyzer analyzer = new StandardAnalyzer();
 		IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+
+		setSimilarity(iwc, similarity, lambdaormu);
 
 		setOpenMode(iwc, openMode);
 
@@ -168,7 +196,7 @@ public class Index {
 
 		writer.close();
 	}
-
+	
 	private static void indexDoc(IndexWriter writer, Path file, String hostname) {
 		System.out.println(Thread.currentThread().getId() + " - Indexing " + file);
 		try (InputStream stream = Files.newInputStream(file)) {
@@ -181,7 +209,7 @@ public class Index {
 			for (List<String> document : documents) {
 				int i = 0;
 				field = document.get(i++);
-				doc.add(new IntPoint("I", Integer.parseInt(field.trim())));
+				doc.add(new TextField("I", field, Field.Store.YES));
 				field = document.get(i++);
 				doc.add(new TextField("T", field, Field.Store.YES));
 				field = document.get(i++);

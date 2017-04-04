@@ -25,7 +25,6 @@ public class Parser {
 		 */
 
 		List<List<String>> documents = new LinkedList<List<String>>();
-		System.out.println(lines.length);
 
 		/* The tag REUTERS identifies the beginning and end of each article */
 		int i = 0;
@@ -52,7 +51,6 @@ public class Parser {
 
 	public static List<String> handleDocument(String text) {
 
-		System.out.println(text);
 		/*
 		 * This method returns the Reuters article that is passed as text as a
 		 * list of fields
