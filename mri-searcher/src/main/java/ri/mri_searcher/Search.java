@@ -14,6 +14,7 @@ import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
+import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
@@ -29,11 +30,24 @@ public class Search {
 	private static String cut = null;
 	private static String top = null;
 	private static String queries = null;
+	private static String[] fields_list = null;
 
 	private static String queriesPath = "C:\\Users\\iago_\\Desktop\\Universidad\\3.- Recuperación de Información\\P2\\Cranfield\\cran.qry";
 	private static String relPath = "C:\\Users\\iago_\\Desktop\\Universidad\\3.- Recuperación de Información\\P2\\Cranfield\\cranqrel";
 
 	private static int LAST_QUERY = 225;
+	
+	private static int firstQueryId = 0;
+	
+	private static List<String> collectArgs(String[] args, int i) {
+		List<String> collectedArgs = new ArrayList<>();
+		for (int j = i; j < args.length; j++) {
+			if (args[j].startsWith("-"))
+				break;
+			collectedArgs.add(args[j]);
+		}
+		return collectedArgs;
+	}
 
 	private static boolean isRelevant(List<Integer> relevants, int obtained) {
 		return relevants.contains(obtained);
@@ -137,14 +151,17 @@ public class Search {
 		List<String> queries = null;
 		switch (opt) {
 		case 1:
-			queries = searchQueries(0, LAST_QUERY);
+			queries = searchQueries(1, LAST_QUERY);
+			firstQueryId = 1;
 			break;
 		case 2:
-			queries = searchQueries(int1, int2);
-			break;
-		case 3:
 			queries = new ArrayList<>();
 			queries.add(searchQuery(int1));
+			firstQueryId = int1;
+			break;
+		case 3:
+			queries = searchQueries(int1, int2);
+			firstQueryId = Math.min(int1, int2);
 			break;
 		default:
 			//TODO: print error
@@ -153,7 +170,7 @@ public class Search {
 		return queries;
 	}
 
-	private static void evalQuery(String option) throws IOException {
+	private static List<String> evalQuery(String option) throws IOException {
 		int opt = 0;
 		int int1 = 0, int2 = 0;
 		if (option.equals("all")) {
@@ -167,11 +184,11 @@ public class Search {
 			opt = 2;
 			int1 = Integer.parseInt(option);
 		}
-		List<String> queries = obtainQueries(opt, int1, int2);
-
+		return obtainQueries(opt, int1, int2);
 	}
 
-	private static void search(String[] fieldsproc, String indexin, int top, List<String> queries, int first) throws ParseException, IOException {
+	private static void search(String[] fieldsproc, String indexin, int top, List<String> queries, int first)
+			throws ParseException, IOException {
 		Directory dir = null;
 		DirectoryReader indexReader = null;
 
@@ -183,42 +200,66 @@ public class Search {
 		Query query = null;
 		double countPn = 0;
 		double countRecall = 0;
+		double countAp = 0;
 		for (String queryStr : queries) {
-			query = parser.parse(queryStr);
+			query = parser.parse(QueryParser.escape(queryStr));
 			countPn += pn(top, indexSearcher, query, first);
-			countRecall += recalln(top, indexSearcher, query, first++);
+			countRecall += recalln(top, indexSearcher, query, first);
+			countAp += ap(Integer.parseInt(cut), indexSearcher, query, first++);
 		}
-		double pnMean = countPn/(double) queries.size();
-		double recallnMean = countRecall/(double) queries.size();
+		double pnMean = countPn / (double) queries.size();
+		double recallnMean = countRecall / (double) queries.size();
+		double map = countAp / (double) queries.size();
+		System.out.println("pnMean: " + pnMean);
+		System.out.println("recallnMean: " + recallnMean);
+		System.out.println("MAP: " + map);
 	}
-	
+
 	private static double pn(int n, IndexSearcher indexSearcher, Query query, int queryId) throws IOException {
-		
+
 		TopDocs topDocs = null;
 		topDocs = indexSearcher.search(query, n);
 		List<Integer> relevants = relevantDocs(queryId);
-		
+
 		double count = 0;
 		for (int k = 0; k < Math.min(n, topDocs.scoreDocs.length); k++) {
 			if (isRelevant(relevants, topDocs.scoreDocs[k].doc))
 				count++;
 		}
-		return count/(double)n;
+		return count / (double) n;
+
+	}
+
+	private static double recalln(int n, IndexSearcher indexSearcher, Query query, int queryId) throws IOException {
+
+		TopDocs topDocs = null;
+		topDocs = indexSearcher.search(query, n);
+		List<Integer> relevants = relevantDocs(queryId);
+
+		double count = 0;
+		for (int k = 0; k < Math.min(n, topDocs.scoreDocs.length); k++) {
+			if (isRelevant(relevants, topDocs.scoreDocs[k].doc))
+				count++;
+		}
+		return count / (double) relevants.size();
 
 	}
 	
-private static double recalln(int n, IndexSearcher indexSearcher, Query query, int queryId) throws IOException {
-		
+	private static double ap(int n, IndexSearcher indexSearcher, Query query, int queryId) throws IOException {
+
 		TopDocs topDocs = null;
 		topDocs = indexSearcher.search(query, n);
 		List<Integer> relevants = relevantDocs(queryId);
-		
-		double count = 0;
-		for (int k = 0; k < Math.min(n, topDocs.scoreDocs.length); k++) {
-			if (isRelevant(relevants, topDocs.scoreDocs[k].doc))
-				count++;
+
+		double relevantCount = 0;
+		double precisionCount = 0;
+		for (int k = 0; k < topDocs.scoreDocs.length; k++) {
+			if (isRelevant(relevants, topDocs.scoreDocs[k].doc)) {
+				relevantCount++;
+				precisionCount += relevantCount/(k+1); 
+			}
 		}
-		return count/(double)relevants.size();
+		return relevantCount==0?0:(precisionCount / relevantCount);
 
 	}
 
@@ -246,7 +287,8 @@ private static double recalln(int n, IndexSearcher indexSearcher, Query query, i
 				i++;
 				break;
 			case ("-fieldsproc"):
-				//wat
+				fields_list = collectArgs(args, i + 1).toArray(new String[0]);
+				i += fields_list.length;
 				break;
 			case ("-fieldsvisual"):
 				//wat
@@ -255,26 +297,21 @@ private static double recalln(int n, IndexSearcher indexSearcher, Query query, i
 				break;
 			}
 		}
-		String query = null;
-		List<Integer> rDocs = null;
+		List<String> queryList = null;
 		try {
-			//query = searchQuery(225);
-			//rDocs = relevantDocs(225);
-			//System.out.println(searchQueries(3, 5));
-
-			List<String> queryList = searchQueries(1, 225);
-			System.out.println(queryList.size());
-			/*
-			 * for (String q : queryList) { System.out.println("======\n" + q +
-			 * "======\n"); }
-			 */
-
-			//System.out.println(searchQueries(1, 225));
+			queryList = evalQuery(queries);
+			search(fields_list, indexPath, 10, queryList, firstQueryId);
+			search(fields_list, indexPath, 20, queryList, firstQueryId);
+			//for (String query : queryList) {
+			//	System.out.println(query);
+			//}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		//System.out.println(query);
-		//System.out.println(rDocs);
+		
 	}
 }
