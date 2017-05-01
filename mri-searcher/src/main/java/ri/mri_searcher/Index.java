@@ -11,7 +11,6 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
@@ -19,57 +18,19 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.IntPoint;
+import org.apache.lucene.document.FieldType;
 import org.apache.lucene.document.TextField;
+import org.apache.lucene.index.IndexOptions;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.search.similarities.BM25Similarity;
 import org.apache.lucene.search.similarities.LMDirichletSimilarity;
 import org.apache.lucene.search.similarities.LMJelinekMercerSimilarity;
-import org.apache.lucene.search.similarities.SimilarityBase;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 public class Index {
-
-	private static String openMode = null;
-	private static String indexPath = "index";
-	private static String collPath = null;
-	private static List<String> collsPath = null;
-	private static String filename = null;
-	private static String similarity = null;
-	private static String lambdaormu = null;
-
-	/*
-	 * Collects the following args until the next option (starting with '-') or
-	 * the end of the arguments
-	 */
-	private static List<String> collectArgs(String[] args, int i) {
-		List<String> collectedArgs = new LinkedList<>();
-		for (int j = i; j < args.length; j++) {
-			if (args[j].startsWith("-"))
-				break;
-			collectedArgs.add(args[j]);
-		}
-		return collectedArgs;
-	}
-
-	private static List<Path> collListToPathList(List<String> collsPath) {
-		List<Path> pathList = new LinkedList<>();
-		for (String collPath : collsPath) {
-			if (collPath != null) {
-				Path docDir = Paths.get(collPath);
-				if (!Files.isReadable(docDir)) {
-					System.out.println("Warning: Document directory '" + docDir.toAbsolutePath()
-							+ "' does not exist or is not readable and will be ignored");
-					continue;
-				}
-				pathList.add(docDir);
-			}
-		}
-		return pathList;
-	}
 
 	private static void setOpenMode(IndexWriterConfig iwc, String openMode) {
 		switch (openMode) {
@@ -86,7 +47,7 @@ public class Index {
 			break;
 		}
 	}
-	
+
 	private static void setSimilarity(IndexWriterConfig iwc, String similarity, String lambdaormu) {
 		switch (similarity) {
 		case "default":
@@ -99,45 +60,10 @@ public class Index {
 			iwc.setSimilarity(new LMDirichletSimilarity(Float.parseFloat(lambdaormu)));
 			break;
 		}
-		
+
 	}
 
-	public static void main(String[] args) throws IOException {
-
-		for (int i = 0; i < args.length; i++) {
-			switch (args[i]) {
-			case ("-openmode"):
-				openMode = args[i + 1];
-				i++;
-				break;
-			case ("-index"):
-				indexPath = args[i + 1];
-				i++;
-				break;
-			case ("-coll"):
-				collPath = args[i + 1];
-				i++;
-				break;
-			case ("-colls"):
-				collsPath = collectArgs(args, i + 1);
-				i += collsPath.size();
-				break;
-			case ("-filename"):
-				filename = args[i + 1];
-				i++;
-				break;
-			case ("-indexingmodel"):
-				similarity = args[i + 1];
-				lambdaormu = args[i + 2];
-				i += 2;
-				break;
-			default:
-				break;
-			}
-		}
-
-		// Now we have to see which option was provided
-		// if we have collPath:
+	public static void indexation(String collPath, String indexPath, String filename, String openMode, String similarity, String lambdaormu) throws IOException {
 		Path docDir = null;
 		List<Path> docDirList = null;
 		if (collPath != null) {
@@ -147,16 +73,11 @@ public class Index {
 						+ "' does not exist or is not readable, please check the path");
 				System.exit(1);
 			}
-		} else {
-			// otherwise, we have a list of coll paths
-			docDirList = collListToPathList(collsPath);
 		}
-
 		Date start = new Date();
 		index(docDir, docDirList, filename, similarity, lambdaormu, openMode, indexPath);
 		Date end = new Date();
 		System.out.println(end.getTime() - start.getTime() + " total milliseconds");
-
 	}
 
 	private static String getHostname() {
@@ -171,7 +92,8 @@ public class Index {
 		return hostname;
 	}
 
-	private static void index(Path docDir, List<Path> docDirList, String filename, String similarity, String lambdaormu, String openMode, String indexPath) throws IOException {
+	private static void index(Path docDir, List<Path> docDirList, String filename, String similarity, String lambdaormu,
+			String openMode, String indexPath) throws IOException {
 		Directory dir = FSDirectory.open(Paths.get(indexPath));
 		Analyzer analyzer = new StandardAnalyzer();
 		IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
@@ -196,7 +118,19 @@ public class Index {
 
 		writer.close();
 	}
-	
+
+	public static final FieldType TYPE_BODY = new FieldType();
+	static final IndexOptions options = IndexOptions.DOCS_AND_FREQS;
+
+	static {
+		TYPE_BODY.setIndexOptions(options);
+		TYPE_BODY.setTokenized(true);
+		TYPE_BODY.setStored(true);
+		TYPE_BODY.setStoreTermVectors(true);
+		TYPE_BODY.setStoreTermVectorPositions(true);
+		TYPE_BODY.freeze();
+	}
+
 	private static void indexDoc(IndexWriter writer, Path file, String hostname) {
 		System.out.println(Thread.currentThread().getId() + " - Indexing " + file);
 		try (InputStream stream = Files.newInputStream(file)) {
@@ -217,7 +151,7 @@ public class Index {
 				field = document.get(i++);
 				doc.add(new TextField("B", field, Field.Store.YES));
 				field = document.get(i++);
-				doc.add(new TextField("W", field, Field.Store.YES));
+				doc.add(new Field("W", field, TYPE_BODY));
 				writer.addDocument(doc);
 				doc = new Document();
 			}

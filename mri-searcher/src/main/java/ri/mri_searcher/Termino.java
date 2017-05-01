@@ -5,13 +5,18 @@ public class Termino {
 	private double idf;
 	private double tf;
 	private double value;
-	
+	private String doc;
 
-	public Termino(String term, double idf, double tf) {
+	public Termino(String term, double idf, double tf, String doc) {
 		this.term = term;
 		this.idf = idf;
 		this.tf = tf;
 		this.value = idf*tf;
+		this.doc = doc;
+	}
+	
+	public String getDoc() {
+		return doc;
 	}
 	
 	public double getIdf() {
@@ -25,5 +30,12 @@ public class Termino {
 	public String getTerm() {
 		return term;
 	}
+
+	@Override
+	public String toString() {
+		return "Termino [term=" + term + ", idf=" + idf + ", value=" + value + "]";
+	}
+	
+	
 
 }
