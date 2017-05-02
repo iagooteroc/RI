@@ -1,28 +1,15 @@
------------------
-queryList:
-pnMean 10: 0.19999999999999998
-recallnMean 10: 0.06896551724137931
-pnMean 20: 0.13
-recallnMean 20: 0.08965517241379312
-MAP: 0.7985714285714285
------------------
-rf1:
-pnMean 10: 0.12000000000000002
-recallnMean 10: 0.041379310344827586
-pnMean 20: 0.06999999999999999
-recallnMean 20: 0.04827586206896552
-MAP: 0.5693650793650793
------------------
-rf2:
-pnMean 10: 0.18
-recallnMean 10: 0.06206896551724138
-pnMean 20: 0.11000000000000001
-recallnMean 20: 0.07586206896551725
-MAP: 0.9485714285714286
------------------
-prfjm:
-pnMean 10: 0.06000000000000001
-recallnMean 10: 0.020689655172413793
-pnMean 20: 0.04
-recallnMean 20: 0.027586206896551724
-MAP: 0.7799999999999999
+============NEW QUERY==========
+
+Termino [term=empirically, idf=6.551080335043404, value=0.0]
+Termino [term=reacting, idf=5.452468046375295, value=0.0]
+Termino [term=criteria, idf=4.6792781581418135, value=11.166135082885278] tf: 2.386294361119891doc: 
+criteria for thermodynamic equilibrium in gas flow .
+
+Termino [term=reaction, idf=4.0661736852554045, value=9.703087336459058] tf: 2.386294361119891doc: 
+a reaction-rate parameter for gasdynamics of a chemically
+reacting gas mixture .
+
+
+------------------
+Total Idf: 15
+Total Tf*Idf: 333

@@ -30,6 +30,10 @@ public class Termino {
 	public String getTerm() {
 		return term;
 	}
+	
+	public double getTf() {
+		return tf;
+	}
 
 	@Override
 	public String toString() {
