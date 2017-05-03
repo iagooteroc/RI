@@ -1,15 +1,65 @@
+Indexing only C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield
+indexDocs in C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield
+Checking filename: C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield\cran.all.1400
+1 - Indexing C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield\cran.all.1400
+Checking filename: C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield\cran.qry
+Checking filename: C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield\cranqrel
+Checking filename: C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield\cranqrel.readme
+1754 total milliseconds
 ============NEW QUERY==========
 
-Termino [term=empirically, idf=6.551080335043404, value=0.0]
-Termino [term=reacting, idf=5.452468046375295, value=0.0]
-Termino [term=criteria, idf=4.6792781581418135, value=11.166135082885278] tf: 2.386294361119891doc: 
-criteria for thermodynamic equilibrium in gas flow .
+Termino [term=constructing, idf=5.634789603169249, value=0.0]
+Termino [term=laws, idf=4.75932086581535, value=0.0]
+Termino [term=aerothermoelastic, idf=7.24422751560335, value=23.16142225670233] tf: 3.1972245773362196doc: 
+similarity laws for aerothermoelastic testing .
 
-Termino [term=reaction, idf=4.0661736852554045, value=9.703087336459058] tf: 2.386294361119891doc: 
-a reaction-rate parameter for gasdynamics of a chemically
-reacting gas mixture .
+Termino [term=thermo, idf=6.145615226935241, value=12.897263636672152] tf: 2.09861228866811doc: 
+scale models for thermo-aeroelastic research .
 
 
 ------------------
-Total Idf: 15
-Total Tf*Idf: 333
+Total Idf: 11
+Total Tf*Idf: 1303
+============NEW QUERY==========
+
+Termino [term=aeroelastic, idf=4.471638793363569, value=0.0]
+Termino [term=what, idf=4.471638793363569, value=0.0]
+Termino [term=angular, idf=5.857933154483459, value=13.978752854361133] tf: 2.386294361119891doc: 
+theory of aircraft structural models subjected to aerodynamic
+heating and external loads .
+
+Termino [term=thermo, idf=6.145615226935241, value=12.897263636672152] tf: 2.09861228866811doc: 
+scale models for thermo-aeroelastic research .
+
+
+------------------
+Total Idf: 8
+Total Tf*Idf: 1030
+-----------------
+queryList:
+pnMean 10: 0.44999999999999996
+recallnMean 10: 0.16344827586206895
+pnMean 20: 0.275
+recallnMean 20: 0.2006896551724138
+MAP: 0.14482758620689656
+-----------------
+rf1:
+pnMean 10: 0.55
+recallnMean 10: 0.20344827586206898
+pnMean 20: 0.3
+recallnMean 20: 0.2206896551724138
+MAP: 0.17816091954022986
+-----------------
+rf2:
+pnMean 10: 0.55
+recallnMean 10: 0.2006896551724138
+pnMean 20: 0.35
+recallnMean 20: 0.25517241379310346
+MAP: 0.1925478927203065
+-----------------
+prfdir:
+pnMean 10: 0.44999999999999996
+recallnMean 10: 0.16344827586206895
+pnMean 20: 0.22499999999999998
+recallnMean 20: 0.16344827586206895
+MAP: 0.12143103448275862

@@ -16,6 +16,7 @@ import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.MultiFields;
 import org.apache.lucene.index.PostingsEnum;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.index.Terms;
 import org.apache.lucene.index.TermsEnum;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
@@ -234,10 +235,17 @@ public class Search {
 		Query query = null;
 		double countPn = 0;
 		double countRecall = 0;
+		TopDocs topDocs = null;
+
 		for (String queryStr : queries) {
+			// #print query
+			//System.out.println(QueryParser.escape(queryStr));
 			query = parser.parse(QueryParser.escape(queryStr));
-			countPn += pn(top, indexReader, indexSearcher, query, first);
-			countRecall += recalln(top, indexReader, indexSearcher, query, first);
+			topDocs = indexSearcher.search(query, top);
+			List<Integer> relevants = relevantDocs(first);
+			countPn += pn(topDocs, relevants, indexReader, query, first, top);
+			countRecall += recalln(topDocs, relevants, indexReader, query, first, top);
+			first++;
 		}
 		double pnMean = countPn / (double) queries.size();
 		double recallnMean = countRecall / (double) queries.size();
@@ -259,41 +267,45 @@ public class Search {
 		double countAp = 0;
 		for (String queryStr : queries) {
 			query = parser.parse(QueryParser.escape(queryStr));
-			countAp += ap(Integer.parseInt(cut), indexReader, indexSearcher, query, first++);
+			//TODO: quitar ap
+			double ap = ap(Integer.parseInt(cut), indexReader, indexSearcher, query, first++);
+			countAp += ap;
+			//System.out.println(queryStr + " AP: " + ap);
 		}
 		double map = countAp / (double) queries.size();
 		System.out.println("MAP: " + map);
 	}
 
-	private static double pn(int n, DirectoryReader indexReader, IndexSearcher indexSearcher, Query query, int queryId)
-			throws IOException {
+	private static double pn(TopDocs topDocs, List<Integer> relevants, DirectoryReader indexReader, Query query,
+			int queryId, int n) throws IOException {
 
-		TopDocs topDocs = null;
-		topDocs = indexSearcher.search(query, n);
-		List<Integer> relevants = relevantDocs(queryId);
-
+		Document doc = null;
 		double count = 0;
 		for (int k = 0; k < Math.min(n, topDocs.scoreDocs.length); k++) {
-			Document doc = indexReader.document(topDocs.scoreDocs[k].doc);
-			if (isRelevant(relevants, doc))
+			doc = indexReader.document(topDocs.scoreDocs[k].doc);
+			if (isRelevant(relevants, doc)) {
 				count++;
+			}
 		}
 		return count / (double) n;
 
 	}
 
-	private static double recalln(int n, DirectoryReader indexReader, IndexSearcher indexSearcher, Query query,
-			int queryId) throws IOException {
-
-		TopDocs topDocs = null;
-		topDocs = indexSearcher.search(query, n);
-		List<Integer> relevants = relevantDocs(queryId);
+	private static double recalln(TopDocs topDocs, List<Integer> relevants, DirectoryReader indexReader, Query query,
+			int queryId, int n) throws IOException {
 
 		double count = 0;
 		for (int k = 0; k < Math.min(n, topDocs.scoreDocs.length); k++) {
 			Document doc = indexReader.document(topDocs.scoreDocs[k].doc);
-			if (isRelevant(relevants, doc))
+			/*
+			 * if (isRelevant(relevants, doc)) { System.out.println(k +
+			 * " is relevant"); count++; } else { System.out.println(k +
+			 * " is not relevant"); }
+			 */
+
+			if (isRelevant(relevants, doc)) {
 				count++;
+			}
 		}
 		return count / (double) relevants.size();
 
@@ -315,7 +327,7 @@ public class Search {
 				precisionCount += relevantCount / (k + 1);
 			}
 		}
-		return relevantCount == 0 ? 0 : (precisionCount / relevantCount);
+		return relevantCount == 0 ? 0 : (precisionCount / relevants.size());
 
 	}
 
@@ -392,7 +404,7 @@ public class Search {
 				break;
 			}
 		}
-		//Index.indexation(collPath, indexPath, filename, openMode, similarity, lambdaormu);
+		Index.indexation(collPath, indexPath, filename, openMode, similarity, lambdaormu);
 		List<String> queryList = null;
 		queryList = evalQuery(queries);
 
@@ -402,7 +414,8 @@ public class Search {
 		List<String> lPrfdir = null;
 		int queryId = firstQueryId;
 		if (tq != null) {
-			lRf1 = rf1(queryList, queryId, Integer.parseInt(tq), Integer.parseInt(td), Integer.parseInt(ndr), Integer.parseInt(top));
+			lRf1 = rf1(queryList, queryId, Integer.parseInt(tq), Integer.parseInt(td), Integer.parseInt(ndr),
+					Integer.parseInt(top));
 		}
 		if (ndr2 != null) {
 			lRf2 = rf2(queryList, queryId, Integer.parseInt(ndr2), Integer.parseInt(top));
@@ -457,7 +470,8 @@ public class Search {
 		return lista;
 	}
 
-	private static List<String> rf2(List<String> queryList, int queryId, int ndr, int top) throws IOException, ParseException {
+	private static List<String> rf2(List<String> queryList, int queryId, int ndr, int top)
+			throws IOException, ParseException {
 		String newQuery = null;
 		List<String> lista = new ArrayList<>();
 		for (int i = 0; i < queryList.size(); i++) {
@@ -486,16 +500,19 @@ public class Search {
 		//System.out.println(queryStr + "\n----------------------");
 		while ((i < topDocs.scoreDocs.length) && (rel < n)) {
 			Document tDoc = indexReader.document(topDocs.scoreDocs[i].doc);
-			
+
 			if (isRelevant(relevantDocs, tDoc)) {
 				rel++;
 				int id = Integer.parseInt(tDoc.getField("I").stringValue().trim());
 				//System.out.println("(X)Doc " + indexReader.document(id).getField("I").stringValue() +": " + indexReader.document(id).getField("T").stringValue());
 				lTerms.add(indexReader.getTermVector(topDocs.scoreDocs[i].doc, "W"));
-			} /*else {
-				int id = Integer.parseInt(tDoc.getField("I").stringValue().trim());
-				System.out.println("Doc " + indexReader.document(id).getField("I").stringValue() +": " + indexReader.document(id).getField("T").stringValue());
-			}*/
+			} /*
+				 * else { int id =
+				 * Integer.parseInt(tDoc.getField("I").stringValue().trim());
+				 * System.out.println("Doc " +
+				 * indexReader.document(id).getField("I").stringValue() +": " +
+				 * indexReader.document(id).getField("T").stringValue()); }
+				 */
 			i++;
 			//lTerms.add(indexReader.getTermVector(lRelDoc.get(i), "W"));
 		}
@@ -503,15 +520,8 @@ public class Search {
 	}
 
 	/*
-	 * Antes de que me olvide: Para cada query. -Cogemos los ndr primeros
-	 * documentos relevantes según el cranqrel- MAL -> Cogemos los ndr primeros
-	 * documentos relevantes según una búsqueda de la query. Cogemos los Terms
-	 * de esos documentos con .getTermVector() y obtenemos los mejores por
-	 * tf*idf
-	 */
-	
-	/*
-	 * Función que recorra los términos de la colección hasta encontrar term y obtenga su df_t
+	 * Función que recorra los términos de la colección hasta encontrar term y
+	 * obtenga su df_t
 	 */
 	private static double computeDf_t(BytesRef term, DirectoryReader indexReader) throws IOException {
 		Terms terms = MultiFields.getTerms(indexReader, "W");
@@ -520,7 +530,7 @@ public class Search {
 			BytesRef br = termsEnum.term();
 			if (!br.equals(term))
 				continue;
-			
+
 			return termsEnum.docFreq();
 		}
 		return 0;
@@ -555,6 +565,7 @@ public class Search {
 		List<Termino> tlTfIdf = new ArrayList<>();
 
 		StringBuilder newQuery = new StringBuilder();
+		newQuery.append(query);
 
 		double n = indexReader.maxDoc();
 
@@ -576,8 +587,8 @@ public class Search {
 
 		// Segundo, la lista tlTfIdf con los mejores términos de los documentos relevantes
 		// para la query por TfIdf
-		List<Terms> termList = obtainTermsFromRelevantDocs(indexReader, indexSearcher, query, queryId, fields_list,
-				ndr, top);
+		List<Terms> termList = obtainTermsFromRelevantDocs(indexReader, indexSearcher, query, queryId, fields_list, ndr,
+				top);
 
 		List<Integer> relevantDocs = relevantDocs(queryId);
 		for (Terms terms2 : termList) {
@@ -585,7 +596,7 @@ public class Search {
 			while (termsEnum.next() != null) {
 				BytesRef br = termsEnum.term();
 				final String tt = br.utf8ToString();
-				
+
 				//double df_t = termsEnum.docFreq();
 				double df_t = computeDf_t(br, indexReader);
 				double idf = Math.log(n / df_t);
@@ -651,7 +662,7 @@ public class Search {
 			i++;
 			//lTerms.add(indexReader.getTermVector(lRelDoc.get(i), "W"));
 		}
-		
+
 		return lTitles;
 	}
 
@@ -659,11 +670,13 @@ public class Search {
 	 * Construye una nueva query con los títulos obtenidos a partir de la query
 	 * que recibe
 	 */
-	private static String buildNewQuery2(String query, int queryId, int ndr, int top) throws IOException, ParseException {
+	private static String buildNewQuery2(String query, int queryId, int ndr, int top)
+			throws IOException, ParseException {
 		Directory dir = null;
 		DirectoryReader indexReader = null;
 
 		StringBuilder newQuery = new StringBuilder();
+		newQuery.append(query);
 
 		try {
 			dir = FSDirectory.open(Paths.get(indexPath));
@@ -677,29 +690,14 @@ public class Search {
 		}
 		IndexSearcher indexSearcher = new IndexSearcher(indexReader);
 
-		List<String> titleList = obtainTitlesFromDocs(indexReader, indexSearcher, query, queryId, fields_list, ndr, top);
+		List<String> titleList = obtainTitlesFromDocs(indexReader, indexSearcher, query, queryId, fields_list, ndr,
+				top);
 
 		for (String title : titleList) {
 			newQuery.append(title + " ");
 		}
 		//System.out.println("======> Query: \n" + newQuery.toString());
 		return newQuery.toString();
-	}
-
-	private static void relevanceFeedback(String query) {
-		Directory dir = null;
-		DirectoryReader indexReader = null;
-		//TODO
-		try {
-			dir = FSDirectory.open(Paths.get(indexPath));
-			indexReader = DirectoryReader.open(dir);
-		} catch (CorruptIndexException e1) {
-			System.out.println("Graceful message: exception " + e1);
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			System.out.println("Graceful message: exception " + e1);
-			e1.printStackTrace();
-		}
 	}
 
 	//==========================================================//
@@ -758,6 +756,7 @@ public class Search {
 		DirectoryReader indexReader = null;
 
 		StringBuilder newQuery = new StringBuilder();
+		newQuery.append(query);
 
 		try {
 			dir = FSDirectory.open(Paths.get(indexPath));
@@ -771,11 +770,11 @@ public class Search {
 		}
 		IndexSearcher indexSearcher = new IndexSearcher(indexReader);
 
-		int n = indexReader.maxDoc();
+		long n = indexReader.getSumTotalTermFreq("W");
 
 		List<Terms> termList = obtainTermsFromDocs(indexReader, indexSearcher, query, queryId, fields_list, nd);
 
-		List<WordInDoc> wordList = null;
+		List<WordInDoc> wordList = new ArrayList<>();
 		List<WordInDoc> result = new ArrayList<>();
 
 		for (Terms terms : termList) {
@@ -784,65 +783,93 @@ public class Search {
 				BytesRef br = termsEnum.term();
 				final String term = br.utf8ToString();
 				//double df_t = termsEnum.docFreq();
-				wordList = new ArrayList<>();
+				//wordList = new ArrayList<>();
 				PostingsEnum pe = MultiFields.getTermPositionsEnum(indexReader, "W", br);
-				long totalFreq = 0;
+				long totalTerm = indexReader.totalTermFreq(new Term("W", br));
 				while (pe.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
 					int docId = pe.docID();
 					//Document doc = indexReader.document(docId);
+					if (!isInTopDocs(prset, docId))
+						continue;
 					Terms vector = indexReader.getTermVector(docId, "W");
 					long docSize = vector.size(); // |D|
 					long freq = pe.freq(); // nº de apariciones de w en D
-					totalFreq += freq; // nº de apariciones de w en la colección hasta ahora
 					//tlTfIdf.add(new Termino(tt, idf, tf, title));
-					TopDocs topDocs = prset;
 					float score = getScore(prset, docId);
-					wordList.add(new WordInDoc(term, freq, docSize, docId, score));
+					WordInDoc word = new WordInDoc(term, freq, totalTerm, docSize, docId, score);
+					if (wordList.contains(word)) {
+						int index = wordList.indexOf(word);
+						WordInDoc storedWord = wordList.get(index);
+						if (storedWord.getValue() < word.getValue())
+							wordList.set(index, word);
+					} else {
+						wordList.add(word);
+					}
+					//wordList.add(new WordInDoc(term, freq, docSize, docId, score));
+					//System.out.println(score);
 				}
-				if (prf) {
-					result.addAll(computeWordsJr(wordList, totalFreq, n, nd));
-				} else {
-					result.addAll(computeWordsDir(wordList, totalFreq, n, nd));
-				}
+				
 			}
+		}
+		if (prf) {
+			result.addAll(computeWordsJr(wordList, n, nd));
+		} else {
+			result.addAll(computeWordsDir(wordList, n, nd));
 		}
 		Collections.sort(result, new WordComparator());
 		for (int i = 0; i < Math.min(nw, result.size()); i++) {
 			newQuery.append(result.get(i).getTerm() + " ");
 		}
+		/*
+		 * for (int i = 0; i < result.size(); i++) {
+		 * System.out.println(result.get(i).getTerm() + " - " +
+		 * result.get(i).getValue()); }
+		 */
 		return newQuery.toString();
 	}
 
-	private static List<WordInDoc> computeWordsJr(List<WordInDoc> wordList, long totalFreq, int maxDoc, int nd) {
+	private static boolean isInTopDocs(TopDocs topDocs, int docId) {
+		for (int i = 0; i < topDocs.scoreDocs.length; i++) {
+			if (topDocs.scoreDocs[i].doc == docId)
+				return true;
+		}
+		return false;
+	}
+
+	private static List<WordInDoc> computeWordsJr(List<WordInDoc> wordList, long sumTotalTermFreq, int nd) {
 		float min = Math.min(prset.scoreDocs.length, nd);
 		float lambda = Float.parseFloat(lambdaormu);
-		//TODO: para la score: crear nueva clase que guarde los docId y los score del topDocs
 		for (WordInDoc word : wordList) {
-			System.out.println(word);
-			System.out.println(1/min);
-			System.out.println((float)word.getFreq()/(float)word.getDocSize());
-			System.out.println(((float)totalFreq / (float)maxDoc));
-			System.out.println(word.getDocScore());
-			System.out.println("///////////////////////////////////////");
+			/*
+			 * System.out.println(word); System.out.println(1/min);
+			 * System.out.println((float)word.getFreq()/(float)word.getDocSize()
+			 * ); System.out.println(((float)totalFreq / (float)maxDoc));
+			 * System.out.println(word.getDocScore());
+			 * System.out.println("///////////////////////////////////////");
+			 */
+
 			word.setValue(
-					((float) 1 / min)
-							* ((float) (1 - lambda)
-									* ((float) word.getFreq() / (float) word.getDocSize()
-											+ (float) lambda * ((float) totalFreq / (float) maxDoc)))
-									* word.getDocScore());
+					((float) 1 / min) * ((float) (1 - lambda) * ((float) word.getFreq() / (float) word.getDocSize()
+							+ (float) lambda * ((float) word.getTotalTermFreq() / (float) sumTotalTermFreq))) * word.getDocScore());
+		}
+		for (WordInDoc word : wordList) {
+			System.out.println(word); //backtrack
 		}
 		return wordList;
 	}
 
-	private static List<WordInDoc> computeWordsDir(List<WordInDoc> wordList, long totalFreq, int maxDoc, int nd) {
+	private static List<WordInDoc> computeWordsDir(List<WordInDoc> wordList, long sumTotalTermFreq, int nd) {
 		float min = Math.min(prset.scoreDocs.length, nd);
 		float mu = Float.parseFloat(lambdaormu);
 		//TODO: para la score: crear nueva clase que guarde los docId y los score del topDocs
+		/*for (WordInDoc word : wordList) {
+			word.setValue(((float) 1 / min) * (mu / (float) (word.getDocScore() + mu)) * word.getDocScore());
+		}*/
 		for (WordInDoc word : wordList) {
 			word.setValue(
-					((float) 1 / min)
-							* ( mu / (float) (word.getDocScore() + mu))
-									* word.getDocScore());
+				((float) 1 / min) * 
+					((word.getFreq() + mu * (word.getTotalTermFreq() / sumTotalTermFreq))/ (float) (word.getDocSize() + mu))
+						* word.getDocScore());
 		}
 		return wordList;
 	}
