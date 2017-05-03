@@ -415,7 +415,7 @@ public class Search {
 		int queryId = firstQueryId;
 		if (tq != null) {
 			lRf1 = rf1(queryList, queryId, Integer.parseInt(tq), Integer.parseInt(td), Integer.parseInt(ndr),
-					Integer.parseInt(top));
+					Integer.parseInt(top), fields_list);
 		}
 		if (ndr2 != null) {
 			lRf2 = rf2(queryList, queryId, Integer.parseInt(ndr2), Integer.parseInt(top));
@@ -459,12 +459,12 @@ public class Search {
 
 	}
 
-	private static List<String> rf1(List<String> queryList, int queryId, int tq, int td, int ndr, int top)
-			throws IOException, ParseException {
+	private static List<String> rf1(List<String> queryList, int queryId, int tq, int td, int ndr, int top,
+			String[] fieldprocs) throws IOException, ParseException {
 		String newQuery = null;
 		List<String> lista = new ArrayList<>();
 		for (int i = 0; i < queryList.size(); i++) {
-			newQuery = buildNewQuery(queryList.get(i), queryId++, tq, td, ndr, top);
+			newQuery = buildNewQuery(queryList.get(i), queryId++, tq, td, ndr, top, fieldprocs);
 			lista.add(newQuery);
 		}
 		return lista;
@@ -540,9 +540,8 @@ public class Search {
 	 * Construye una nueva query con los mejores términos obtenidos a partir de
 	 * la query que recibe
 	 */
-	private static String buildNewQuery(String query, int queryId, int tq, int td, int ndr, int top)
-			throws IOException, ParseException {
-
+	private static String buildNewQuery(String query, int queryId, int tq, int td, int ndr, int top,
+			String[] fieldsproc) throws IOException, ParseException {
 		Directory dir = null;
 		DirectoryReader indexReader = null;
 
@@ -570,18 +569,21 @@ public class Search {
 		double n = indexReader.maxDoc();
 
 		// Primero, la lista tlIdf con los mejores términos de la query por Idf
-		Terms terms = MultiFields.getTerms(indexReader, "W");
-		TermsEnum termsEnum = terms.iterator();
+		for (int i = 0; i < fieldsproc.length; i++) {
+			Terms terms = MultiFields.getTerms(indexReader, fieldsproc[i]);
+			TermsEnum termsEnum = terms.iterator();
 
-		while (termsEnum.next() != null) {
-			BytesRef br = termsEnum.term();
-			final String tt = br.utf8ToString();
-			if (!lTerms.contains(tt))
-				continue;
-			//double df_t = termsEnum.docFreq();
-			double df_t = computeDf_t(br, indexReader);
-			double idf = Math.log(n / df_t);
-			tlIdf.add(new Termino(tt, idf, 0, null));
+			while (termsEnum.next() != null) {
+				BytesRef br = termsEnum.term();
+				final String tt = br.utf8ToString();
+				if (!lTerms.contains(tt))
+					continue;
+				//TODO: aqui no hace falta el computeDf_t verdad?
+				double df_t = termsEnum.docFreq();
+				//double df_t = computeDf_t(br, indexReader);
+				double idf = Math.log(n / df_t);
+				tlIdf.add(new Termino(tt, idf, 0, null));
+			}
 		}
 		Collections.sort(tlIdf, new ComparadorDeTerminosIdf());
 
@@ -592,7 +594,7 @@ public class Search {
 
 		List<Integer> relevantDocs = relevantDocs(queryId);
 		for (Terms terms2 : termList) {
-			termsEnum = terms2.iterator();
+			TermsEnum termsEnum = terms2.iterator();
 			while (termsEnum.next() != null) {
 				BytesRef br = termsEnum.term();
 				final String tt = br.utf8ToString();
@@ -600,19 +602,29 @@ public class Search {
 				//double df_t = termsEnum.docFreq();
 				double df_t = computeDf_t(br, indexReader);
 				double idf = Math.log(n / df_t);
-				PostingsEnum pe = MultiFields.getTermPositionsEnum(indexReader, "W", br);
-				while (pe.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
-					int docId = pe.docID();
-					Document doc = indexReader.document(docId);
-					if (!isRelevant(relevantDocs, doc))
-						continue;
-					String title = doc.get("T");
-					long freq = pe.freq();
-					double tf = 0;
-					if (freq != 0) {
-						tf = 1 + Math.log(freq);
+				//TODO: usar fieldsproc
+				for (int i = 0; i < fieldsproc.length; i++) {
+					PostingsEnum pe = MultiFields.getTermPositionsEnum(indexReader, fieldsproc[i], br);
+					while (pe.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
+						int docId = pe.docID();
+						Document doc = indexReader.document(docId);
+						if (!isRelevant(relevantDocs, doc))
+							continue;
+						String title = doc.get("T");
+						long freq = pe.freq();
+						double tf = 0;
+						if (freq != 0) {
+							tf = 1 + Math.log(freq);
+						}
+						Termino t = new Termino(tt, idf, tf, title);
+						if (tlTfIdf.contains(t)) {
+							int index = tlTfIdf.indexOf(t);
+							if (tlTfIdf.get(index).getValue() < t.getValue())
+								tlTfIdf.set(index, t);
+						} else {
+							tlTfIdf.add(t);
+						}
 					}
-					tlTfIdf.add(new Termino(tt, idf, tf, title));
 				}
 			}
 		}
@@ -712,7 +724,6 @@ public class Search {
 		List<Terms> lTerms = new ArrayList<>();
 		MultiFieldQueryParser parser = new MultiFieldQueryParser(fieldsproc, new StandardAnalyzer());
 		Query query = parser.parse(QueryParser.escape(queryStr));
-		List<Integer> relevantDocs = relevantDocs(queryId);
 		TopDocs topDocs = null;
 		topDocs = indexSearcher.search(query, n);
 
@@ -808,7 +819,7 @@ public class Search {
 					//wordList.add(new WordInDoc(term, freq, docSize, docId, score));
 					//System.out.println(score);
 				}
-				
+
 			}
 		}
 		if (prf) {
@@ -848,9 +859,10 @@ public class Search {
 			 * System.out.println("///////////////////////////////////////");
 			 */
 
-			word.setValue(
-					((float) 1 / min) * ((float) (1 - lambda) * ((float) word.getFreq() / (float) word.getDocSize()
-							+ (float) lambda * ((float) word.getTotalTermFreq() / (float) sumTotalTermFreq))) * word.getDocScore());
+			word.setValue(((float) 1 / min)
+					* ((float) (1 - lambda) * ((float) word.getFreq() / (float) word.getDocSize()
+							+ (float) lambda * ((float) word.getTotalTermFreq() / (float) sumTotalTermFreq)))
+					* word.getDocScore());
 		}
 		for (WordInDoc word : wordList) {
 			System.out.println(word); //backtrack
@@ -862,14 +874,13 @@ public class Search {
 		float min = Math.min(prset.scoreDocs.length, nd);
 		float mu = Float.parseFloat(lambdaormu);
 		//TODO: para la score: crear nueva clase que guarde los docId y los score del topDocs
-		/*for (WordInDoc word : wordList) {
-			word.setValue(((float) 1 / min) * (mu / (float) (word.getDocScore() + mu)) * word.getDocScore());
-		}*/
+		/*
+		 * for (WordInDoc word : wordList) { word.setValue(((float) 1 / min) *
+		 * (mu / (float) (word.getDocScore() + mu)) * word.getDocScore()); }
+		 */
 		for (WordInDoc word : wordList) {
-			word.setValue(
-				((float) 1 / min) * 
-					((word.getFreq() + mu * (word.getTotalTermFreq() / sumTotalTermFreq))/ (float) (word.getDocSize() + mu))
-						* word.getDocScore());
+			word.setValue(((float) 1 / min) * ((word.getFreq() + mu * (word.getTotalTermFreq() / sumTotalTermFreq))
+					/ (float) (word.getDocSize() + mu)) * word.getDocScore());
 		}
 		return wordList;
 	}
