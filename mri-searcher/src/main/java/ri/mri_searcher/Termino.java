@@ -62,7 +62,9 @@ public class Termino {
 
 	@Override
 	public String toString() {
-		return "Termino [term=" + term + ", idf=" + idf + ", value=" + value + "]";
+		if (value==0)
+			return term + " idf=" + idf;
+		return term + " idf=" + idf + ", tf=" + tf;
 	}
 	
 	

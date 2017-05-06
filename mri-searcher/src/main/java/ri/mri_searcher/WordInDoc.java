@@ -9,6 +9,9 @@ public class WordInDoc {
 	private int docId;
 	private float score;
 	private float value;
+	private float pd;
+	private float pwd; 
+	private float pqd;
 	
 	public WordInDoc(String term, long freq, long totalTermFreq, long docSize, int docId, float score) {
 		this.term = term;
@@ -19,6 +22,30 @@ public class WordInDoc {
 		this.score = score;
 	}
 	
+	public void setPd(float pd) {
+		this.pd = pd;
+	}
+	
+	public void setPwd(float pwd) {
+		this.pwd = pwd;
+	}
+	
+	public void setPqd(float pqd) {
+		this.pqd = pqd;
+	}
+	
+	public float getPd() {
+		return pd;
+	}
+
+	public float getPwd() {
+		return pwd;
+	}
+
+	public float getPqd() {
+		return pqd;
+	}
+
 	public void setValue(float f) {
 		this.value = f;
 	}

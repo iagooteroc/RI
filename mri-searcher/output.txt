@@ -5,81 +5,5919 @@ Checking filename: C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Infor
 Checking filename: C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield\cran.qry
 Checking filename: C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield\cranqrel
 Checking filename: C:\Users\iago_\Desktop\Universidad\3.- Recuperación de Información\P2\Cranfield\cranqrel.readme
-1706 total milliseconds
-============NEW QUERY==========
+1758 total milliseconds
+========RF1 EXPANDED QUERY 1=========
+constructing idf=5.634789603169249
+laws idf=4.75932086581535
+aeroelastic idf=4.471638793363569
+what idf=4.471638793363569
+heated idf=3.912023005428146
+must idf=3.3524072174927233
+similarity idf=3.332204510175204
+aircraft idf=2.9815476385620343
+speed idf=2.0624439653112647
+when idf=1.8105055120491103
+--------------------------------
+aerothermoelastic idf=7.24422751560335, tf=3.1972245773362196
+angular idf=5.857933154483459, tf=2.386294361119891
+piston idf=4.846332242804979, tf=2.791759469228055
+thermo idf=6.145615226935241, tf=2.09861228866811
+analog idf=5.634789603169249, tf=2.09861228866811
+panels idf=3.6888794541139363, tf=3.0794415416798357
+conflict idf=6.551080335043404, tf=1.6931471805599454
+specialized idf=6.551080335043404, tf=1.6931471805599454
+stressing idf=6.551080335043404, tf=1.6931471805599454
+panel idf=3.7178669909871886, tf=2.9459101490553135
+========RF1 EXPANDED QUERY 2=========
+aeroelastic idf=4.471638793363569
+what idf=4.471638793363569
+structural idf=3.6888794541139363
+associated idf=3.039534896212384
+aircraft idf=2.9815476385620343
+problems idf=2.2606208938950134
+speed idf=2.0624439653112647
+high idf=1.78039571057774
+--------------------------------
+angular idf=5.857933154483459, tf=2.386294361119891
+piston idf=4.846332242804979, tf=2.791759469228055
+panels idf=3.6888794541139363, tf=3.1972245773362196
+flutter idf=3.2188758248682006, tf=3.5649493574615367
+loss idf=4.6792781581418135, tf=2.09861228866811
+aircraft idf=2.9815476385620343, tf=3.1972245773362196
+aeroelastic idf=4.471638793363569, tf=2.09861228866811
+torsion idf=4.248495242049359, tf=2.09861228866811
+structural idf=3.6888794541139363, tf=2.386294361119891
+loads idf=3.236894330370879, tf=2.6094379124341005
+========RF1 EXPANDED QUERY 3=========
+slabs idf=5.452468046375295
+composite idf=5.047002938267131
+what idf=4.471638793363569
+conduction idf=3.4830273999097874
+solved idf=3.3524072174927233
+problems idf=2.2606208938950134
+heat idf=1.7068932485848134
+have idf=1.5606477482646683
+been idf=1.296192526422704
+--------------------------------
+composite idf=5.047002938267131, tf=2.6094379124341005
+refractory idf=6.145615226935241, tf=2.09861228866811
+shielded idf=7.24422751560335, tf=1.6931471805599454
+medium idf=4.353855757707185, tf=2.791759469228055
+slab idf=4.846332242804979, tf=2.386294361119891
+shield idf=6.145615226935241, tf=1.6931471805599454
+exposed idf=4.941642422609304, tf=2.09861228866811
+periodic idf=5.298317366548036, tf=1.6931471805599454
+input idf=5.1647859739235145, tf=1.6931471805599454
+resistance idf=4.1087332996742, tf=2.09861228866811
+========RF1 EXPANDED QUERY 4=========
+empirically idf=6.551080335043404
+reacting idf=5.452468046375295
+chemically idf=5.1647859739235145
+instantaneous idf=5.1647859739235145
+mixtures idf=5.1647859739235145
+criterion idf=4.199705077879927
+validity idf=4.02535169073515
+chemical idf=3.6888794541139363
+equilibrium idf=2.837508268339097
+show idf=2.5528796333742063
+--------------------------------
+criteria idf=4.6792781581418135, tf=2.386294361119891
+reaction idf=4.0661736852554045, tf=2.386294361119891
+sound idf=3.6888794541139363, tf=2.6094379124341005
+thermodynamic idf=3.986130977581868, tf=2.386294361119891
+reacting idf=5.452468046375295, tf=1.6931471805599454
+dissociating idf=5.047002938267131, tf=1.6931471805599454
+whether idf=4.75932086581535, tf=1.6931471805599454
+frozen idf=4.6792781581418135, tf=1.6931471805599454
+equilibrium idf=2.837508268339097, tf=2.791759469228055
+mixture idf=4.2997885364369095, tf=1.6931471805599454
+========RF1 EXPANDED QUERY 5=========
+what idf=4.471638793363569
+kinetic idf=4.199705077879927
+chemical idf=3.6888794541139363
+system idf=3.039534896212384
+applicable idf=2.9675613965872945
+hypersonic idf=2.108429078553088
+--------------------------------
+nitric idf=7.24422751560335, tf=2.386294361119891
+oxide idf=7.24422751560335, tf=2.386294361119891
+freezing idf=5.634789603169249, tf=2.386294361119891
+shuffle idf=7.24422751560335, tf=1.6931471805599454
+bimolecular idf=7.24422751560335, tf=1.6931471805599454
+reactions idf=4.605170185988092, tf=2.6094379124341005
+concentrations idf=6.551080335043404, tf=1.6931471805599454
+ionization idf=5.047002938267131, tf=2.09861228866811
+molecules idf=4.75932086581535, tf=2.09861228866811
+exchange idf=5.857933154483459, tf=1.6931471805599454
+========RF1 EXPANDED QUERY 6=========
+what idf=4.471638793363569
+we idf=4.153185062245034
+do idf=4.02535169073515
+behaviour idf=3.948390649599021
+theoretical idf=1.8643301620628903
+have idf=1.5606477482646683
+experimental idf=1.482176132823173
+flow idf=0.690294111577539
+--------------------------------
+poiseuille idf=6.551080335043404, tf=1.6931471805599454
+finds idf=6.145615226935241, tf=1.6931471805599454
+couette idf=4.941642422609304, tf=2.09861228866811
+mean idf=3.2739356020512282, tf=3.0794415416798357
+channels idf=5.1647859739235145, tf=1.6931471805599454
+he idf=4.6792781581418135, tf=1.6931471805599454
+plates idf=2.9675613965872945, tf=2.6094379124341005
+rest idf=4.53617731450114, tf=1.6931471805599454
+fluctuations idf=4.411014171547134, tf=1.6931471805599454
+concise idf=7.24422751560335, tf=1.0
+========RF1 EXPANDED QUERY 7=========
+relate idf=5.857933154483459
+forebody idf=5.1647859739235145
+ogive idf=4.846332242804979
+equivalent idf=3.6333096029591254
+lower idf=2.995732273553991
+available idf=2.8622008809294686
+pressures idf=2.711628022450094
+attack idf=2.5257286443082556
+possible idf=2.5168396968910094
+zero idf=2.331572629867298
+--------------------------------
+rotation idf=4.53617731450114, tf=2.6094379124341005
+fineness idf=4.2997885364369095, tf=2.6094379124341005
+ogive idf=4.846332242804979, tf=2.09861228866811
+term idf=4.248495242049359, tf=2.09861228866811
+law idf=3.415586119114255, tf=2.6094379124341005
+forebody idf=5.1647859739235145, tf=1.6931471805599454
+cones idf=3.2739356020512282, tf=2.6094379124341005
+error idf=4.0661736852554045, tf=2.09861228866811
+k idf=3.912023005428146, tf=2.09861228866811
+0.5 idf=4.846332242804979, tf=1.6931471805599454
+========RF1 EXPANDED QUERY 8=========
+presently idf=5.857933154483459
+what idf=4.471638793363569
+predicting idf=3.912023005428146
+pressures idf=2.711628022450094
+exact idf=2.580788421491283
+methods idf=2.2269476787884255
+angle idf=2.1262337031865948
+approximate idf=2.0909359211055714
+body idf=1.846064814085597
+--------------------------------
+newtonian idf=3.4600378816850887, tf=2.6094379124341005
+forebody idf=5.1647859739235145, tf=1.6931471805599454
+cones idf=3.2739356020512282, tf=2.6094379124341005
+ogive idf=4.846332242804979, tf=1.6931471805599454
+cone idf=2.7224389385543097, tf=2.791759469228055
+element idf=4.411014171547134, tf=1.6931471805599454
+conical idf=3.1170931305582585, tf=2.386294361119891
+abbreviated idf=7.24422751560335, tf=1.0
+inconsistent idf=7.24422751560335, tf=1.0
+lockheed idf=7.24422751560335, tf=1.0
+========RF1 EXPANDED QUERY 9=========
+papers idf=5.1647859739235145
+internal idf=3.5806658694737035
+studies idf=3.1170931305582585
+transfer idf=1.9409226075442743
+heat idf=1.7068932485848134
+--------------------------------
+slip idf=4.411014171547134, tf=2.09861228866811
+studies.dash idf=7.24422751560335, tf=1.0
+jumps idf=7.24422751560335, tf=1.0
+401 idf=7.24422751560335, tf=1.0
+maslen idf=7.24422751560335, tf=1.0
+sci idf=7.24422751560335, tf=1.0
+slipping idf=7.24422751560335, tf=1.0
+manifested idf=6.551080335043404, tf=1.0
+tubes idf=3.8430301339411947, tf=1.6931471805599454
+reference idf=3.7178669909871886, tf=1.6931471805599454
+========RF1 EXPANDED QUERY 10=========
+densities idf=4.941642422609304
+transport idf=4.153185062245034
+wide idf=3.3940799138932913
+available idf=2.8622008809294686
+properties idf=2.6192547023190786
+air idf=2.0292917579943643
+over idf=1.6873994539038122
+range idf=1.6682784124570338
+--------------------------------
+enthalpies idf=5.857933154483459, tf=2.386294361119891
+computing idf=4.1087332996742, tf=2.386294361119891
+25,000 idf=5.634789603169249, tf=1.6931471805599454
+machine idf=4.411014171547134, tf=2.09861228866811
+carbon idf=5.452468046375295, tf=1.6931471805599454
+h idf=4.353855757707185, tf=2.09861228866811
+traveling idf=5.047002938267131, tf=1.6931471805599454
+atmospheres idf=4.846332242804979, tf=1.6931471805599454
+perfect idf=3.8430301339411947, tf=2.09861228866811
+oxygen idf=4.75932086581535, tf=1.6931471805599454
+========PRF EXPANDED QUERY 1=========
+plate:
+P(D) = 0.1	P(w|D) = 0.026649846	sum(P(qi|D)) = 18.465221
+high:
+P(D) = 0.1	P(w|D) = 0.021919796	sum(P(qi|D)) = 17.458467
+speed:
+P(D) = 0.1	P(w|D) = 0.021672737	sum(P(qi|D)) = 17.458467
+heated:
+P(D) = 0.1	P(w|D) = 0.020175872	sum(P(qi|D)) = 18.465221
+can:
+P(D) = 0.1	P(w|D) = 0.016729409	sum(P(qi|D)) = 18.465221
+========PRF EXPANDED QUERY 2=========
+high:
+P(D) = 0.1	P(w|D) = 0.021919796	sum(P(qi|D)) = 29.74165
+speed:
+P(D) = 0.1	P(w|D) = 0.021672737	sum(P(qi|D)) = 29.74165
+some:
+P(D) = 0.1	P(w|D) = 0.016879527	sum(P(qi|D)) = 29.74165
+flight:
+P(D) = 0.1	P(w|D) = 0.016297475	sum(P(qi|D)) = 29.74165
+structural:
+P(D) = 0.1	P(w|D) = 0.01560655	sum(P(qi|D)) = 29.74165
+========PRF EXPANDED QUERY 3=========
+heat:
+P(D) = 0.1	P(w|D) = 0.044760093	sum(P(qi|D)) = 22.698338
+resistance:
+P(D) = 0.1	P(w|D) = 0.034449022	sum(P(qi|D)) = 21.4122
+one:
+P(D) = 0.1	P(w|D) = 0.022367483	sum(P(qi|D)) = 22.698338
+zero:
+P(D) = 0.1	P(w|D) = 0.023619253	sum(P(qi|D)) = 21.4122
+rate:
+P(D) = 0.1	P(w|D) = 0.021710057	sum(P(qi|D)) = 22.698338
+========PRF EXPANDED QUERY 4=========
+gas:
+P(D) = 0.1	P(w|D) = 0.020165661	sum(P(qi|D)) = 29.41036
+flow:
+P(D) = 0.1	P(w|D) = 0.01918369	sum(P(qi|D)) = 29.41036
+numerical:
+P(D) = 0.1	P(w|D) = 0.027033314	sum(P(qi|D)) = 15.338169
+speeds:
+P(D) = 0.1	P(w|D) = 0.012416804	sum(P(qi|D)) = 29.41036
+equilibrium:
+P(D) = 0.1	P(w|D) = 0.012077622	sum(P(qi|D)) = 29.41036
+========PRF EXPANDED QUERY 5=========
+solution:
+P(D) = 0.1	P(w|D) = 0.036127888	sum(P(qi|D)) = 9.215172
+supersonic:
+P(D) = 0.1	P(w|D) = 0.027352355	sum(P(qi|D)) = 10.033447
+coefficients:
+P(D) = 0.1	P(w|D) = 0.026217561	sum(P(qi|D)) = 10.033447
+rate:
+P(D) = 0.1	P(w|D) = 0.017095782	sum(P(qi|D)) = 15.345021
+initial:
+P(D) = 0.1	P(w|D) = 0.02185446	sum(P(qi|D)) = 11.796237
+========PRF EXPANDED QUERY 6=========
+flow:
+P(D) = 0.1	P(w|D) = 0.03128453	sum(P(qi|D)) = 10.517077
+interference:
+P(D) = 0.1	P(w|D) = 0.029556094	sum(P(qi|D)) = 9.631507
+been:
+P(D) = 0.1	P(w|D) = 0.022146901	sum(P(qi|D)) = 11.035043
+fluid:
+P(D) = 0.1	P(w|D) = 0.020656178	sum(P(qi|D)) = 9.979104
+assumed:
+P(D) = 0.1	P(w|D) = 0.020241622	sum(P(qi|D)) = 9.979104
+========PRF EXPANDED QUERY 7=========
+jet:
+P(D) = 0.1	P(w|D) = 0.0320785	sum(P(qi|D)) = 36.078606
+being:
+P(D) = 0.1	P(w|D) = 0.011513104	sum(P(qi|D)) = 65.749344
+force:
+P(D) = 0.1	P(w|D) = 0.018973242	sum(P(qi|D)) = 36.078606
+pressure:
+P(D) = 0.1	P(w|D) = 0.019584667	sum(P(qi|D)) = 32.25843
+mach:
+P(D) = 0.1	P(w|D) = 0.01793482	sum(P(qi|D)) = 32.25843
+========PRF EXPANDED QUERY 8=========
+method:
+P(D) = 0.1	P(w|D) = 0.019319307	sum(P(qi|D)) = 20.149544
+fluid:
+P(D) = 0.1	P(w|D) = 0.027071001	sum(P(qi|D)) = 14.186915
+body:
+P(D) = 0.1	P(w|D) = 0.018741442	sum(P(qi|D)) = 20.149544
+wing:
+P(D) = 0.1	P(w|D) = 0.025857622	sum(P(qi|D)) = 14.082788
+forebody:
+P(D) = 0.1	P(w|D) = 0.02230597	sum(P(qi|D)) = 16.234245
+========PRF EXPANDED QUERY 9=========
+boundary:
+P(D) = 0.1	P(w|D) = 0.025483299	sum(P(qi|D)) = 14.186316
+layer:
+P(D) = 0.1	P(w|D) = 0.024834245	sum(P(qi|D)) = 14.186316
+separated:
+P(D) = 0.1	P(w|D) = 0.021649277	sum(P(qi|D)) = 15.9111
+heat:
+P(D) = 0.1	P(w|D) = 0.02316765	sum(P(qi|D)) = 14.186316
+transfer:
+P(D) = 0.1	P(w|D) = 0.022526972	sum(P(qi|D)) = 14.186316
+========PRF EXPANDED QUERY 10=========
+air:
+P(D) = 0.1	P(w|D) = 0.03434396	sum(P(qi|D)) = 15.959292
+from:
+P(D) = 0.1	P(w|D) = 0.0234967	sum(P(qi|D)) = 15.959292
+gas:
+P(D) = 0.1	P(w|D) = 0.013683487	sum(P(qi|D)) = 22.899387
+boundary:
+P(D) = 0.1	P(w|D) = 0.013347441	sum(P(qi|D)) = 22.899387
+based:
+P(D) = 0.1	P(w|D) = 0.01995629	sum(P(qi|D)) = 14.729315
+////////////////////////////	Query Original	////////////////////////////
+*****************************************************************************
+Query 1: "what similarity laws must be obeyed when constructing aeroelastic modelsof heated high speed aircraft ."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 20.594776
+I:  184
+T: 
+scale models for thermo-aeroelastic research .
 
-Termino [term=empirically, idf=6.551080335043404, value=0.0]
-Termino [term=reacting, idf=5.452468046375295, value=0.0]
-Termino [term=chemically, idf=5.1647859739235145, value=0.0]
-Termino [term=instantaneous, idf=5.1647859739235145, value=0.0]
-Termino [term=mixtures, idf=5.1647859739235145, value=0.0]
-Termino [term=criterion, idf=4.199705077879927, value=0.0]
-Termino [term=validity, idf=4.02535169073515, value=0.0]
-Termino [term=chemical, idf=3.6888794541139363, value=0.0]
-Termino [term=equilibrium, idf=2.837508268339097, value=0.0]
-Termino [term=show, idf=2.5528796333742063, value=0.0]
-Termino [term=criteria, idf=4.6792781581418135, value=11.166135082885278] tf: 2.386294361119891doc: 
-criteria for thermodynamic equilibrium in gas flow .
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 19.130684
+I:  486
+T: 
+similarity laws for aerothermoelastic testing .
 
-Termino [term=reaction, idf=4.0661736852554045, value=9.703087336459058] tf: 2.386294361119891doc: 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 18.465221
+I:  13
+T: 
+similarity laws for stressing heated wings .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 17.458467
+I:  12
+T: 
+some structural and aerelastic considerations of high
+speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.009613
+I:  1268
+T: 
+stable combustion of a high-velocity gas in a heated
+boundary layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.50962
+I:  878
+T: 
+experimental model techniques and equipment for flutter
+investigations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 12.53459
+I:  51
+T: 
+theory of aircraft structural models subjected to aerodynamic
+heating and external loads .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 11.871371
+I:  14
+T: 
+piston theory - a new aerodynamic tool for the
+aeroelastician .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 10.670862
+I:  875
+T: 
+models for aeroelastic investigation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.435113
+I:  1361
+T: 
+large deflections of structures subjected to heating
+and external loads .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.366222
+I:  141
+T: 
+free-flight techniques for high speed aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.256444
+I:  747
+T: 
+bodt freedom flutter of ground launched rocket models
+at supersonic and high subsonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.143498
+I:  792
+T: 
+some low speed problems of high speed aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.124821
+I:  172
+T: 
+some aerodynamic considerations of nozzle afterbody
+combination .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.829561
+I:  1144
+T: 
+slipstream flow around several tilt-wing vtol aircraft models
+operating near the ground .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.592984
+I:  746
+T: 
+aeroelastic problems in connection with high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.328424
+I:  573
+T: 
+viscous hypersonic similitude .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.1413145
+I:  435
+T: 
+application of similar solutions to calculations of
+laminar heat transfer on bodies with yaw and large
+pressure gradients in high speed flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 9.091846
+I:  195
+T: 
+correlation of theoretical and photo-thermoelastic
+results on thermal stresses in idealized wing structure .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 8.847096
+I:  880
+T: 
+the design and testing of supersonic flutter models .
+
+*****************************************************************************
+Query 3: "what are the structural and aeroelastic problems associated with flightof high speed aircraft ."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.74165
+I:  12
+T: 
+some structural and aerelastic considerations of high
+speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.5812645
+I:  746
+T: 
+aeroelastic problems in connection with high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.259136
+I:  14
+T: 
+piston theory - a new aerodynamic tool for the
+aeroelastician .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.255956
+I:  792
+T: 
+some low speed problems of high speed aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.196415
+I:  724
+T: 
+structural acoustic proof testing .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.998297
+I:  51
+T: 
+theory of aircraft structural models subjected to aerodynamic
+heating and external loads .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.929996
+I:  172
+T: 
+some aerodynamic considerations of nozzle afterbody
+combination .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.899275
+I:  141
+T: 
+free-flight techniques for high speed aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.517379
+I:  1089
+T: 
+aerodynamic characteristics of propeller-driven vtol
+aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.02883
+I:  1169
+T: 
+hangling qualities experience with several vtol research
+aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.609441
+I:  1170
+T: 
+structural loads surveys on two tilt-wing vtol configurations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.51853
+I:  875
+T: 
+models for aeroelastic investigation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.360851
+I:  884
+T: 
+the estimation of fatigue damage on structural elements .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.985175
+I:  726
+T: 
+on structural fatigue under random loading .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.528437
+I:  1042
+T: 
+on transverse vibrations of thin, shallow elastic shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.160946
+I:  36
+T: 
+supersonic flow around blunt bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.986658
+I:  729
+T: 
+stresses in continuous skin stiffener panels under random loading .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.823646
+I:  429
+T: 
+a description of the r. a. e.  high speed supersonic
+tunnel .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.778462
+I:  700
+T: 
+two and three-dimensional unsteady lift problems in high speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.768117
+I:  747
+T: 
+bodt freedom flutter of ground launched rocket models
+at supersonic and high subsonic speeds .
+
+*****************************************************************************
+Query 5: "what problems of heat conduction in composite slabs have been solved sofar ."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.698338
+I:  5
+T: 
+one-dimensional transient heat conduction into a double-layer
+slab subjected to a linear heat input for a small time
+internal .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.4122
+I:  399
+T: 
+conduction of heat in composite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.911654
+I:  181
+T: 
+some problems on heat conduction in stratiform bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.834078
+I:  144
+T: 
+heat flow in composite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.48262
+I:  485
+T: 
+linear heat flow in a composite slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.449514
+I:  542
+T: 
+biot's variational principle in heat conduction .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.434142
+I:  251
+T: 
+a collection of longitudinal stability derivatives
+of wings at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.180183
+I:  828
+T: 
+stresses and small displacements of shallow spherical
+shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.585569
+I:  826
+T: 
+small bending and stretching of sandwich type shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.12438
+I:  980
+T: 
+a method of computing the transient temperature of thick walls from
+arbitrary variation of adiabatic-wall temperature and heat-transfer
+coefficient .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.906751
+I:  944
+T: 
+one dimensional heat conduction through the skin of
+a vehicle upon entering a planetary atmosphere at constant
+velocity and entry angle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.391178
+I:  425
+T: 
+the solution of elastic plate problems by electrical analogies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.344057
+I:  547
+T: 
+boundary layer characteristics of caret wings .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.2896385
+I:  1072
+T: 
+ignition and combustion in a laminar mixing zone .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.271662
+I:  623
+T: 
+on the coupling between heat and mass transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.156411
+I:  584
+T: 
+conduction of heat in a solid with a power law of heat
+transfer at its surface .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.138913
+I:  350
+T: 
+laminar jet mixing of two compressible fluids with heat release .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.060641
+I:  90
+T: 
+periodic temperature distributions in a two-layer composite
+slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.693615
+I:  476
+T: 
+the blasius equation with three-point boundary conditions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.526705
+I:  579
+T: 
+further developments of new methods in heat flow analysis .
+
+*****************************************************************************
+Query 7: "can a criterion be developed to show empirically the validity of flowsolutions for chemically reacting gas mixtures based on the simplifyingassumption of instantaneous local chemical equilibrium ."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.41036
+I:  166
+T: 
+flow of chemically reacting gas mixtures .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.385695
+I:  488
+T: 
 a reaction-rate parameter for gasdynamics of a chemically
 reacting gas mixture .
 
-Termino [term=sound, idf=3.6888794541139363, value=9.625901901964115] tf: 2.6094379124341005doc: 
-flow of chemically reacting gas mixtures .
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.664265
+I:  1189
+T: 
+nonequilibrium flow past a wedge .
 
-Termino [term=thermodynamic, idf=3.986130977581868, value=9.51208187448893] tf: 2.386294361119891doc: 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.40235
+I:  185
+T: 
+some possibilities of using gas mixtures other than in
+aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.453085
+I:  1275
+T: 
+flow about an unsteadily rotating disc .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.871625
+I:  1123
+T: 
+an extension of donnell's equation for a circular cylindrical shell .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.61468
+I:  1255
+T: 
+the flow about a charged body moving in the lower atmosphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.60434
+I:  1061
+T: 
+turbulent mixing of a rocket exhaust jet with a supersonic stream
+including chemical reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.338169
+I:  1085
+T: 
+note on the convergence of numerical solutions of the navier-stokes
+equations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.775827
+I:  1312
+T: 
+tabulated solutions of the equilibrium gas properties
+behind the incidents and reflected normal shock-wave
+in a shock-tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.416002
+I:  575
+T: 
+atomic recombination in a hypersonic wind tunnel nozzle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.39853
+I:  259
+T: 
+second order theory for unsteady supersonic flow
+past slender pointed bodies of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.31923
+I:  236
+T: 
 criteria for thermodynamic equilibrium in gas flow .
 
-Termino [term=reacting, idf=5.452468046375295, value=9.231830899813525] tf: 1.6931471805599454doc: 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.076212
+I:  167
+T: 
+linearized flow of a dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.276785
+I:  401
+T: 
+inviscid hypersonic airflows with coupled non-equilibrium
+processes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.187411
+I:  317
+T: 
+non-equilibrium flow of an ideal dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.006571
+I:  1252
+T: 
+on the approach to chemical and vibrational equilibrium
+behind a strong normal shock wave .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.703356
+I:  1374
+T: 
+theoretical analysis of turbulent mixing of reactive
+gases with application to supersonic combustion of
+hydrogen .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.690421
+I:  1296
+T: 
+non-equilibrium expansions of air with coupled chemical
+reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.650561
+I:  1192
+T: 
+an integral method for calculation of supersonic laminar
+boundary layer with heat transfer on yawed cone .
+
+*****************************************************************************
+Query 9: "what chemical kinetic system is applicable to hypersonic aerodynamicproblems ."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.345021
+I:  103
+T: 
+theory of mixing and chemical reaction in the opposed
+jet diffusion flame .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.437
+I:  1032
+T: 
+on the conservativeness of various distributed force systems .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.796237
+I:  943
+T: 
+compressible free shear layer with finite initial thickness .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.609533
+I:  1296
+T: 
+non-equilibrium expansions of air with coupled chemical
+reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.033447
+I:  1272
+T: 
+oscillatory aerodynamic coefficients for a unified
+supersonic hypersonic strip theory .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.79695
+I:  746
+T: 
+aeroelastic problems in connection with high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.437979
+I:  1379
+T: 
+hypersonic flight and the re-entry problem .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.215172
+I:  28
+T: 
+a note on the explosion solution of sedov with application
+to the newtonian theory of unsteady hypersonic flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.784199
+I:  650
+T: 
+some design problems of hovercraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.702283
+I:  625
+T: 
+viscous and inviscid nonequilibrium gas flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.567848
+I:  172
+T: 
+some aerodynamic considerations of nozzle afterbody
+combination .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.539185
+I:  1295
+T: 
+recent advances in nonequilibrium dissociating gasdynamics .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.515131
+I:  849
+T: 
+a theory of imperfection for the vibrations of elastic bodies of
+revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.379648
+I:  828
+T: 
+stresses and small displacements of shallow spherical
+shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.362061
+I:  488
+T: 
 a reaction-rate parameter for gasdynamics of a chemically
 reacting gas mixture .
 
-Termino [term=dissociating, idf=5.047002938267131, value=8.545318795204752] tf: 1.6931471805599454doc: 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.317034
+I:  36
+T: 
+supersonic flow around blunt bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.9648643
+I:  540
+T: 
+use of local similarity concepts in hypersonic viscous
+interaction problems .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.8937526
+I:  401
+T: 
+inviscid hypersonic airflows with coupled non-equilibrium
+processes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.827276
+I:  552
+T: 
+chemical kinetics of high temperature air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.604606
+I:  1374
+T: 
+theoretical analysis of turbulent mixing of reactive
+gases with application to supersonic combustion of
+hydrogen .
+
+*****************************************************************************
+Query 11: "what theoretical and experimental guides do we have as to turbulentcouette flow behaviour ."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.1276455
+I:  491
+T: 
+on the close relationship between turbulent plane-couette
+and pressure flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.23906
+I:  257
+T: 
+on turbulen flow between parallel plates .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.14527
+I:  315
+T: 
+scale effects at high subsonic and transonic speeds
+and methods for fixing transition in model experiments .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.035043
+I:  251
+T: 
+a collection of longitudinal stability derivatives
+of wings at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.517077
+I:  121
+T: 
+a theory for base pressures in transonic and supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.979104
+I:  228
+T: 
+navier-stokes solutions at large distances from a finite body .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.631507
+I:  610
+T: 
+corner interference effects .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.607314
+I:  386
+T: 
+a generalised porous-wall ?couette type? flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.263557
+I:  148
+T: 
+on displacement thickness .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.258418
+I:  296
+T: 
+notes on waves through gases at pressures small compared
+with the magnetic pressure, with applications to upper
+atmosphere aerodynamics .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.232879
+I:  385
+T: 
+on a generalised porous-wall ?couette type? flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.920044
+I:  355
+T: 
+the injection of air into the dissociated hypersonic laminar boundary
+layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.850593
+I:  651
+T: 
+heat transfer to separated and reattached subsonic
+turbulen flows obtained downstream of a surface step .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.643964
+I:  1110
+T: 
+on supersonic flow past a slightly yawing cone .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.524888
+I:  243
+T: 
+investigation with an interferometer of the turbulent
+mixing of a free supersonic jet .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.507565
+I:  1374
+T: 
+theoretical analysis of turbulent mixing of reactive
+gases with application to supersonic combustion of
+hydrogen .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.145037
+I:  1196
+T: 
+growth of the turbulent wake behind a supersonic sphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.123892
+I:  344
+T: 
+some experimental techniques in mass transfer cooling .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.104271
+I:  544
+T: 
+a theoretical and experimental study of oscillating wedge shaped
+aerofoils in hypersonic flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.097071
+I:  1364
+T: 
+an experimental investigation of the interaction between shock waves and
+ boundary layers .
+
+*****************************************************************************
+Query 13: "is it possible to relate the available pressure distributions for anogive forebody at zero angle of attack to the lower surface pressures ofan equivalent ogive forebody at angle of attack ."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 65.749344
+I:  492
+T: 
+prediction of ogive-forebody pressures at angles of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 36.078606
+I:  973
+T: 
+interaction effects produced by jet exhausting laterally near base of
+ogive-cylinder model in supersonic main stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.25843
+I:  56
+T: 
+an analysis of the applicability of the hypersonic
+similarity law to the study of the flow about bodies
+of revolution at zero angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.834623
+I:  434
+T: 
+contributions of the wing panels to the forces and
+moments of supersonic wing-body combinations at combined
+angles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.374271
+I:  57
+T: 
+applicability of the hypersonic similarity rule to
+pressure distributions which include the effects of
+rotation for bodies of revolution at zero angle of
+attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.423891
+I:  122
+T: 
+a simplified approximate method for the calculation of the pressure
+around conical bodies of arbitrary shape in supersonic and hypersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.994465
+I:  124
+T: 
+a summary of the supersonic pressure drag of bodies
+of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.869932
+I:  1040
+T: 
+on transverse vibrations of thin, shallow elastic shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.862028
+I:  1231
+T: 
+hypersonic flow over an elliptic cone: theory and experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.093546
+I:  232
+T: 
+accuracy of approximate methods for predicting pressure
+on pointed non-lifting bodies of revolution in supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.424425
+I:  248
+T: 
+the application of lighthill formula for numerical
+calculation of pressure distributions on bodies of
+revolution at supersonic speed and zero angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.487303
+I:  225
+T: 
+elliptic cones alone and with wings at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.860697
+I:  1347
+T: 
+approximate analysis of atmospheric entry corridors
+and angles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.662104
+I:  354
+T: 
+laminar heat-transfer and pressure measurements over blunt-nosed
+cones at large angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.42173
+I:  1006
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.411377
+I:  988
+T: 
+nonviscous flow through a pump impeller on a blade-to-blade surface of
+revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.342213
+I:  1307
+T: 
+laminar heat-transfer and pressure measurements at
+a mach number of 6 on sharp and blunt 15 half-angle
+cones at angles of attack up to 90 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.206831
+I:  48
+T: 
+supersonic flow at the surface of a circular cone at
+angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.127031
+I:  1114
+T: 
+steady and fluctuating pressures at transonic speeds
+on two space-vehicle payload shapes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.10559
+I:  443
+T: 
+calculated and measured pressure distributions over the midspan section
+of the naca 4412 airfoil .
+
+*****************************************************************************
+Query 15: "what methods -dash exact or approximate -dash are presently availablefor predicting body pressures at angle of attack."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.149544
+I:  122
+T: 
+a simplified approximate method for the calculation of the pressure
+around conical bodies of arbitrary shape in supersonic and hypersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.806917
+I:  711
+T: 
+an investigation at subsonic speeds of aerodynamic characteristics at
+angles of attack from -dash 4degrees to 100degrees of a delta-wing
+reentry configuration having folding wingtip panels .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.499996
+I:  443
+T: 
+calculated and measured pressure distributions over the midspan section
+of the naca 4412 airfoil .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.234245
+I:  492
+T: 
+prediction of ogive-forebody pressures at angles of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.025345
+I:  232
+T: 
+accuracy of approximate methods for predicting pressure
+on pointed non-lifting bodies of revolution in supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.617272
+I:  1352
+T: 
+aerodynamic investigation of a parabolic body of revolution
+at mach number of 1. 92 and some effects of an annular
+supersonic jet exhausting from the base .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.186915
+I:  1083
+T: 
+an investigation of fluid flow in two dimensions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.082788
+I:  433
+T: 
+application of two dimensional vortex theory to the
+prediction of flow fields behind wings of wing-body
+combinations at subsonic and supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.753753
+I:  556
+T: 
+numerical comparison between exact and approximate
+theories of hypersonic inviscid flow past slender blunt
+nosed bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.336235
+I:  569
+T: 
+an experimental investigation of leading edge shock wave boundary layer
+interaction at mach 5.8 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.766945
+I:  1231
+T: 
+hypersonic flow over an elliptic cone: theory and experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.523617
+I:  69
+T: 
+predicted shock envelopes about two types of vehicles
+at large angles of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.230977
+I:  988
+T: 
+nonviscous flow through a pump impeller on a blade-to-blade surface of
+revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.222205
+I:  476
+T: 
+the blasius equation with three-point boundary conditions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.541146
+I:  461
+T: 
+approximate methods fore predicting separation properties
+of laminar boundary layers .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.510921
+I:  124
+T: 
+a summary of the supersonic pressure drag of bodies
+of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.490767
+I:  923
+T: 
+methods for estimating lift interference of wing-body
+combinations at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.412737
+I:  1193
+T: 
+some exact solutions for cavitating curvilinear bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.995108
+I:  639
+T: 
+analytical study of the tumbling motions of vehicles
+entering planetary atmospheres .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.922446
+I:  947
+T: 
+static aerodynamic characteristics of a short blunt
+10 semi-vertex angle cone at a mach number of 15 in
+helium .
+
+*****************************************************************************
+Query 17: "papers on internal /slip flow/ heat transfer studies ."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.9111
+I:  45
+T: 
+an investigation of separated flows, part ii: flow
+in the cavity and heat transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.186316
+I:  21
+T: 
+on heat transfer in slip flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.022355
+I:  550
+T: 
+laminar heat transfer in tubes under slip-flow conditions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.857943
+I:  571
+T: 
+heat transfer to flat plate in high temperature rarefied
+ultra-high mach number flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.84964
+I:  22
+T: 
+on slip-flow heat transfer to a flat plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.829269
+I:  306
+T: 
+second approximation to laminar compressible boundary
+layer on flat plate in slip flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.007196
+I:  270
+T: 
+on combined free and forced convection laminar magnetohydrodynamic
+flow and heat transfer in channels with transverse
+magnetic field .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.897219
+I:  102
+T: 
+advantages and limitations of models .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.107312
+I:  1215
+T: 
+the effect of slip particularly for highly cooled walls .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.550136
+I:  303
+T: 
+effect of variable heat recombination on stagnation
+point heat transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.224694
+I:  1002
+T: 
+preliminary investigations of spiked bodies at hypersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.430766
+I:  1204
+T: 
+experimental effect of bluntness and gas rarefaction
+on drag coefficients and stagnation heat transfer on
+axisymmetric shapes in hypersonic flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.387799
+I:  326
+T: 
+forst-order slip effects on the compressible laminar
+boundary layer over a slender body of revolution in
+axial flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.380124
+I:  1264
+T: 
+boundary layer transition and heat transfer in shock
+tubes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.222793
+I:  310
+T: 
+hypersonic viscous flow over a flat plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.081685
+I:  1258
+T: 
+heat transfer, recovery factor and pressure distributions
+around a circular cylinder normal to a supersonic rarefied
+air stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.950456
+I:  388
+T: 
+the pressure gradient induced by shear flow past a
+flat plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.947049
+I:  5
+T: 
+one-dimensional transient heat conduction into a double-layer
+slab subjected to a linear heat input for a small time
+internal .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.8476744
+I:  168
+T: 
+heat conduction through a gas with one inert internal
+model .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.8460073
+I:  46
+T: 
+some comments on the inversion of certain large matrices .
+
+*****************************************************************************
+Query 19: "are real-gas transport properties for air available over a wide range ofenthalpies and densities ."
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.899387
+I:  493
+T: 
+real-gas laminar boundary layer skin friction and heat
+transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.118227
+I:  1199
+T: 
+theoretical investigations of a supersonic laminar
+boundary layer with foreign-gas injection .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.959292
+I:  302
+T: 
+approximations for the thermodynamic and transport properties of high
+temperature air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.729315
+I:  524
+T: 
+stagnation point heat transfer in partially ionized
+air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.696989
+I:  949
+T: 
+charts for equilibrium flow properties of air in
+hyper-velocity nozzles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.09976
+I:  691
+T: 
+calculation procedure for thermodynamic transport, and flow properties
+of the combustion products of a hydrocarbon fuel mixture burned in air
+with results for ethylene-air and methane-air mixtures .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.800358
+I:  1010
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.764248
+I:  1009
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.759556
+I:  405
+T: 
+tables of thermal properties of gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.752767
+I:  1286
+T: 
+equilibrium real-gas performance charts for a shypersonic
+shock-tube wind-tunnel employing nitrogen .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.781703
+I:  781
+T: 
+use of subsonic kernel function in an influence-coefficient method of
+aeroelastic analysis and some comparisons with experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.565728
+I:  583
+T: 
+influence coefficients for real gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.531726
+I:  1264
+T: 
+boundary layer transition and heat transfer in shock
+tubes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.390539
+I:  421
+T: 
+analytic study of induced pressure on long bodies of
+revolution with varying nose bluntness at hypersonic
+speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.919731
+I:  1214
+T: 
+the drag of elongated bodies over a wide reynolds number
+range .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.671468
+I:  1143
+T: 
+a one-foot hypervelocity shock tunnel in which high-enthalpy
+real gas flows can be generated with flow times of
+about 180 milliseconds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.124273
+I:  1274
+T: 
+real gas effects in flow over blunt bodies at hypersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.124273
+I:  1319
+T: 
+real gas effects in flow over blunt bodies at hypersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.7587595
+I:  69
+T: 
+predicted shock envelopes about two types of vehicles
+at large angles of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.75054
+I:  332
+T: 
+similitude of hypersonic real-gas flows over slender
+bodies with blunted noses .
+
+=============================================================================
+p@10 Mean: 0.06999999999999999
+p@20 Mean: 0.045
+recall@10 Mean: 0.02413793103448276
+recall@20 Mean: 0.03103448275862069
+MAP: 0.021524356869184455
+=============================================================================
+////////////////////////////	RF1	////////////////////////////
+*****************************************************************************
+Query 1: "what similarity laws must be obeyed when constructing aeroelastic modelsof heated high speed aircraft .constructing laws aeroelastic what heated must similarity aircraft speed when aerothermoelastic angular piston thermo analog panels conflict specialized stressing panel "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 64.83689
+I:  486
+T: 
+similarity laws for aerothermoelastic testing .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 55.16819
+I:  13
+T: 
+similarity laws for stressing heated wings .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 46.28301
+I:  184
+T: 
+scale models for thermo-aeroelastic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 31.809565
+I:  12
+T: 
+some structural and aerelastic considerations of high
+speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 31.715261
+I:  14
+T: 
+piston theory - a new aerodynamic tool for the
+aeroelastician .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 31.398682
+I:  51
+T: 
+theory of aircraft structural models subjected to aerodynamic
+heating and external loads .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.695477
+I:  390
+T: 
+some panel-flutter studies using piston theory .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.391605
+I:  1268
+T: 
+stable combustion of a high-velocity gas in a heated
+boundary layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 24.328651
+I:  658
+T: 
+review of panel flutter and effects of aerodynamic noise
+part i..  panel flutter .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 23.761929
+I:  858
+T: 
+experimental investigation at mach numbers 3. 0 of
+the effects of thermal stress and buckling on the flutter
+of four-bay aluminium alloy panels with length-width
+ratios of 10 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.870226
+I:  1361
+T: 
+large deflections of structures subjected to heating
+and external loads .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.374647
+I:  911
+T: 
+experimental study of the random vibrations of an aircraft
+structure excited by jet noise .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.18866
+I:  878
+T: 
+experimental model techniques and equipment for flutter
+investigations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.363825
+I:  792
+T: 
+some low speed problems of high speed aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.00816
+I:  914
+T: 
+transtability flutter of supersonic aircraft panels .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.821714
+I:  172
+T: 
+some aerodynamic considerations of nozzle afterbody
+combination .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.391455
+I:  686
+T: 
+flutter tests of some simple models at a mach number
+of 7. 2 in helium flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.154585
+I:  141
+T: 
+free-flight techniques for high speed aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.622799
+I:  726
+T: 
+on structural fatigue under random loading .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.519707
+I:  251
+T: 
+a collection of longitudinal stability derivatives
+of wings at supersonic speeds .
+
+*****************************************************************************
+Query 3: "what are the structural and aeroelastic problems associated with flightof high speed aircraft .aeroelastic what structural associated aircraft problems speed high angular piston panels flutter loss aircraft aeroelastic torsion structural loads "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 72.4145
+I:  12
+T: 
+some structural and aerelastic considerations of high
+speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 55.694897
+I:  14
+T: 
+piston theory - a new aerodynamic tool for the
+aeroelastician .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 49.3013
+I:  51
+T: 
+theory of aircraft structural models subjected to aerodynamic
+heating and external loads .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 37.914314
+I:  746
+T: 
+aeroelastic problems in connection with high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.87881
+I:  724
+T: 
+structural acoustic proof testing .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.689255
+I:  1170
+T: 
+structural loads surveys on two tilt-wing vtol configurations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.55559
+I:  875
+T: 
+models for aeroelastic investigation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.082554
+I:  884
+T: 
+the estimation of fatigue damage on structural elements .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.00537
+I:  726
+T: 
+on structural fatigue under random loading .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.738575
+I:  390
+T: 
+some panel-flutter studies using piston theory .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.57698
+I:  747
+T: 
+bodt freedom flutter of ground launched rocket models
+at supersonic and high subsonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.118277
+I:  729
+T: 
+stresses in continuous skin stiffener panels under random loading .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.96973
+I:  1042
+T: 
+on transverse vibrations of thin, shallow elastic shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.451885
+I:  781
+T: 
+use of subsonic kernel function in an influence-coefficient method of
+aeroelastic analysis and some comparisons with experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.267412
+I:  792
+T: 
+some low speed problems of high speed aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.986639
+I:  184
+T: 
+scale models for thermo-aeroelastic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.92229
+I:  883
+T: 
+correlated fatigue data for aircraft structural joints .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.067966
+I:  141
+T: 
+free-flight techniques for high speed aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.516903
+I:  896
+T: 
+the calculation of loads on a supersonic weapon in
+the steady circling case .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.245739
+I:  878
+T: 
+experimental model techniques and equipment for flutter
+investigations .
+
+*****************************************************************************
+Query 5: "what problems of heat conduction in composite slabs have been solved sofar .slabs composite what conduction solved problems heat have been composite refractory shielded medium slab shield exposed periodic input resistance "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 82.919044
+I:  144
+T: 
+heat flow in composite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 71.62822
+I:  5
+T: 
+one-dimensional transient heat conduction into a double-layer
+slab subjected to a linear heat input for a small time
+internal .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 56.81169
+I:  399
+T: 
+conduction of heat in composite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 53.256763
+I:  90
+T: 
+periodic temperature distributions in a two-layer composite
+slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 52.941944
+I:  91
+T: 
+periodic temperature distribution in a two-layer composite slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 49.865147
+I:  485
+T: 
+linear heat flow in a composite slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 44.440815
+I:  181
+T: 
+some problems on heat conduction in stratiform bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.168724
+I:  582
+T: 
+the melting of finite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.899029
+I:  542
+T: 
+biot's variational principle in heat conduction .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.920488
+I:  579
+T: 
+further developments of new methods in heat flow analysis .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.88052
+I:  6
+T: 
+one-dimensional transient heat flow in a multilayer
+slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.699562
+I:  826
+T: 
+small bending and stretching of sandwich type shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.85202
+I:  587
+T: 
+variational analysis of ablation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.813501
+I:  944
+T: 
+one dimensional heat conduction through the skin of
+a vehicle upon entering a planetary atmosphere at constant
+velocity and entry angle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.733135
+I:  251
+T: 
+a collection of longitudinal stability derivatives
+of wings at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.270668
+I:  707
+T: 
+thermal analysis of stagnation regions with emphasis on heat-sustaining
+nose shapes at hypersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.082344
+I:  1073
+T: 
+a practical method for numerical evaluation of solutions
+of partial differential equations of the heat-conduction
+type .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.782356
+I:  425
+T: 
+the solution of elastic plate problems by electrical analogies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.562681
+I:  585
+T: 
+nonlinear heat transfer problem .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.312822
+I:  584
+T: 
+conduction of heat in a solid with a power law of heat
+transfer at its surface .
+
+*****************************************************************************
+Query 7: "can a criterion be developed to show empirically the validity of flowsolutions for chemically reacting gas mixtures based on the simplifyingassumption of instantaneous local chemical equilibrium .empirically reacting chemically instantaneous mixtures criterion validity chemical equilibrium show criteria reaction sound thermodynamic reacting dissociating whether frozen equilibrium mixture "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 88.88774
+I:  166
+T: 
 flow of chemically reacting gas mixtures .
 
-Termino [term=whether, idf=4.75932086581535, value=8.058230705335378] tf: 1.6931471805599454doc: 
-criteria for thermodynamic equilibrium in gas flow .
-
-Termino [term=frozen, idf=4.6792781581418135, value=7.922706620513546] tf: 1.6931471805599454doc: 
-flow of chemically reacting gas mixtures .
-
-Termino [term=equilibrium, idf=2.837508268339097, value=7.921640577148574] tf: 2.791759469228055doc: 
-criteria for thermodynamic equilibrium in gas flow .
-
-Termino [term=mixture, idf=4.2997885364369095, value=7.280174837472128] tf: 1.6931471805599454doc: 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 65.74236
+I:  488
+T: 
 a reaction-rate parameter for gasdynamics of a chemically
 reacting gas mixture .
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 54.80394
+I:  236
+T: 
+criteria for thermodynamic equilibrium in gas flow .
 
-------------------
-Total Idf: 15
-Total Tf*Idf: 200
------------------
-queryList:
-pnMean 10: 0.2
-recallnMean 10: 0.6666666666666666
-pnMean 20: 0.15
-recallnMean 20: 1.0
-MAP: 0.6666666666666666
------------------
-rf1:
-pnMean 10: 0.3
-recallnMean 10: 1.0
-pnMean 20: 0.15
-recallnMean 20: 1.0
-MAP: 1.0
------------------
-rf2:
-pnMean 10: 0.3
-recallnMean 10: 1.0
-pnMean 20: 0.15
-recallnMean 20: 1.0
-MAP: 0.9166666666666666
------------------
-prfdir:
-pnMean 10: 0.3
-recallnMean 10: 1.0
-pnMean 20: 0.15
-recallnMean 20: 1.0
-MAP: 0.8333333333333334
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 48.09172
+I:  1189
+T: 
+nonequilibrium flow past a wedge .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 40.409897
+I:  167
+T: 
+linearized flow of a dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.74725
+I:  1061
+T: 
+turbulent mixing of a rocket exhaust jet with a supersonic stream
+including chemical reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 36.099453
+I:  259
+T: 
+second order theory for unsteady supersonic flow
+past slender pointed bodies of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.002346
+I:  574
+T: 
+inviscid flow with nonequilibrium molecular dissociation for pressure
+distributions encountered in hypersonic flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.855206
+I:  1010
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.360615
+I:  185
+T: 
+some possibilities of using gas mixtures other than in
+aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.991653
+I:  575
+T: 
+atomic recombination in a hypersonic wind tunnel nozzle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.485682
+I:  1011
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.261265
+I:  1374
+T: 
+theoretical analysis of turbulent mixing of reactive
+gases with application to supersonic combustion of
+hydrogen .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.10717
+I:  317
+T: 
+non-equilibrium flow of an ideal dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.035433
+I:  1252
+T: 
+on the approach to chemical and vibrational equilibrium
+behind a strong normal shock wave .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.909538
+I:  1275
+T: 
+flow about an unsteadily rotating disc .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.790504
+I:  1312
+T: 
+tabulated solutions of the equilibrium gas properties
+behind the incidents and reflected normal shock-wave
+in a shock-tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.953278
+I:  1255
+T: 
+the flow about a charged body moving in the lower atmosphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.550734
+I:  1160
+T: 
+recent advances in gaseous detonation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.654066
+I:  401
+T: 
+inviscid hypersonic airflows with coupled non-equilibrium
+processes .
+
+*****************************************************************************
+Query 9: "what chemical kinetic system is applicable to hypersonic aerodynamicproblems .what kinetic chemical system applicable hypersonic nitric oxide freezing shuffle bimolecular reactions concentrations ionization molecules exchange "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 73.63701
+I:  1296
+T: 
+non-equilibrium expansions of air with coupled chemical
+reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 40.410618
+I:  401
+T: 
+inviscid hypersonic airflows with coupled non-equilibrium
+processes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 30.690042
+I:  103
+T: 
+theory of mixing and chemical reaction in the opposed
+jet diffusion flame .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.070307
+I:  1297
+T: 
+ionization nonequilibrium in expanding flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.790405
+I:  552
+T: 
+chemical kinetics of high temperature air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 24.433384
+I:  1032
+T: 
+on the conservativeness of various distributed force systems .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.592474
+I:  943
+T: 
+compressible free shear layer with finite initial thickness .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.316202
+I:  575
+T: 
+atomic recombination in a hypersonic wind tunnel nozzle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.096552
+I:  488
+T: 
+a reaction-rate parameter for gasdynamics of a chemically
+reacting gas mixture .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.908688
+I:  355
+T: 
+the injection of air into the dissociated hypersonic laminar boundary
+layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.507908
+I:  625
+T: 
+viscous and inviscid nonequilibrium gas flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.441319
+I:  1295
+T: 
+recent advances in nonequilibrium dissociating gasdynamics .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.05984
+I:  1298
+T: 
+theory of radiation from luminous shock waves in nitrogen .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.030262
+I:  849
+T: 
+a theory of imperfection for the vibrations of elastic bodies of
+revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.962322
+I:  961
+T: 
+compressible two dimensional jet mixing at constant
+pressure .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.766571
+I:  1272
+T: 
+oscillatory aerodynamic coefficients for a unified
+supersonic hypersonic strip theory .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.759296
+I:  828
+T: 
+stresses and small displacements of shallow spherical
+shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.271107
+I:  28
+T: 
+a note on the explosion solution of sedov with application
+to the newtonian theory of unsteady hypersonic flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.918161
+I:  166
+T: 
+flow of chemically reacting gas mixtures .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.894163
+I:  1010
+T: 
+free-flight measurements of the static and dynamic .
+
+*****************************************************************************
+Query 11: "what theoretical and experimental guides do we have as to turbulentcouette flow behaviour .what we do behaviour theoretical have experimental flow poiseuille finds couette mean channels he plates rest fluctuations concise "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 56.564274
+I:  491
+T: 
+on the close relationship between turbulent plane-couette
+and pressure flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 48.466858
+I:  257
+T: 
+on turbulen flow between parallel plates .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.070086
+I:  251
+T: 
+a collection of longitudinal stability derivatives
+of wings at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.138687
+I:  296
+T: 
+notes on waves through gases at pressures small compared
+with the magnetic pressure, with applications to upper
+atmosphere aerodynamics .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.043087
+I:  1148
+T: 
+knudsen flow through a circular capillary .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.026348
+I:  610
+T: 
+corner interference effects .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.958208
+I:  228
+T: 
+navier-stokes solutions at large distances from a finite body .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.781437
+I:  1363
+T: 
+a characteristic type of instability in the large deflections
+of elastic plates .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.214628
+I:  386
+T: 
+a generalised porous-wall ?couette type? flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.14065
+I:  112
+T: 
+steady motion of conducting fluids in pipes under transverse
+magnetic fields .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.045055
+I:  99
+T: 
+the fundamentals of the statistical theory of turbulence .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.749472
+I:  121
+T: 
+a theory for base pressures in transonic and supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.698467
+I:  315
+T: 
+scale effects at high subsonic and transonic speeds
+and methods for fixing transition in model experiments .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.578392
+I:  1273
+T: 
+magnetohydrodynamic effects on the formation of couette,
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.465757
+I:  385
+T: 
+on a generalised porous-wall ?couette type? flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.840088
+I:  355
+T: 
+the injection of air into the dissociated hypersonic laminar boundary
+layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.287928
+I:  1110
+T: 
+on supersonic flow past a slightly yawing cone .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.044956
+I:  419
+T: 
+the design of intermediate vertical stiffeners on web
+plates subjected to shear .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.006529
+I:  406
+T: 
+on the behaviour of boundary layers at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.580053
+I:  265
+T: 
+some instabilities arising from the interaction between
+shock waves and boundary layer .
+
+*****************************************************************************
+Query 13: "is it possible to relate the available pressure distributions for anogive forebody at zero angle of attack to the lower surface pressures ofan equivalent ogive forebody at angle of attack .relate forebody ogive equivalent lower available pressures attack possible zero rotation fineness ogive term law forebody cones error k 0.5 "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 115.20552
+I:  492
+T: 
+prediction of ogive-forebody pressures at angles of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 89.3905
+I:  57
+T: 
+applicability of the hypersonic similarity rule to
+pressure distributions which include the effects of
+rotation for bodies of revolution at zero angle of
+attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 66.59167
+I:  56
+T: 
+an analysis of the applicability of the hypersonic
+similarity law to the study of the flow about bodies
+of revolution at zero angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 63.77011
+I:  973
+T: 
+interaction effects produced by jet exhausting laterally near base of
+ogive-cylinder model in supersonic main stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 58.23439
+I:  434
+T: 
+contributions of the wing panels to the forces and
+moments of supersonic wing-body combinations at combined
+angles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 50.82306
+I:  124
+T: 
+a summary of the supersonic pressure drag of bodies
+of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 50.48845
+I:  122
+T: 
+a simplified approximate method for the calculation of the pressure
+around conical bodies of arbitrary shape in supersonic and hypersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 49.97879
+I:  1040
+T: 
+on transverse vibrations of thin, shallow elastic shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 44.35216
+I:  232
+T: 
+accuracy of approximate methods for predicting pressure
+on pointed non-lifting bodies of revolution in supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.633804
+I:  225
+T: 
+elliptic cones alone and with wings at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 37.91274
+I:  1231
+T: 
+hypersonic flow over an elliptic cone: theory and experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.18646
+I:  234
+T: 
+a second order shock-expansion method applicable to
+bodies of revolution near zero lift .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.28909
+I:  469
+T: 
+linearised transonic flow about slender bodies at zero
+angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 30.85112
+I:  1307
+T: 
+laminar heat-transfer and pressure measurements at
+a mach number of 6 on sharp and blunt 15 half-angle
+cones at angles of attack up to 90 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.604477
+I:  233
+T: 
+the theoretical wave drag of some bodies of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.527313
+I:  1381
+T: 
+effect of mach number on boundary layer transition
+in the presence of pressure rise and surface roughness
+on an ogive-cylinder body with cold wall conditions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.454723
+I:  248
+T: 
+the application of lighthill formula for numerical
+calculation of pressure distributions on bodies of
+revolution at supersonic speed and zero angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.598467
+I:  354
+T: 
+laminar heat-transfer and pressure measurements over blunt-nosed
+cones at large angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.24694
+I:  1347
+T: 
+approximate analysis of atmospheric entry corridors
+and angles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.065298
+I:  58
+T: 
+pressure measurements on sharp and blunt 5 and 15 half-angle
+cones at mach number 3.86 and angles of attack to
+100 .
+
+*****************************************************************************
+Query 15: "what methods -dash exact or approximate -dash are presently availablefor predicting body pressures at angle of attack.presently what predicting pressures exact methods angle approximate body newtonian forebody cones ogive cone element conical abbreviated inconsistent lockheed "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 72.10019
+I:  122
+T: 
+a simplified approximate method for the calculation of the pressure
+around conical bodies of arbitrary shape in supersonic and hypersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 48.675014
+I:  232
+T: 
+accuracy of approximate methods for predicting pressure
+on pointed non-lifting bodies of revolution in supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 44.093895
+I:  492
+T: 
+prediction of ogive-forebody pressures at angles of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.86006
+I:  1231
+T: 
+hypersonic flow over an elliptic cone: theory and experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.012003
+I:  124
+T: 
+a summary of the supersonic pressure drag of bodies
+of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.507505
+I:  556
+T: 
+numerical comparison between exact and approximate
+theories of hypersonic inviscid flow past slender blunt
+nosed bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.209766
+I:  1352
+T: 
+aerodynamic investigation of a parabolic body of revolution
+at mach number of 1. 92 and some effects of an annular
+supersonic jet exhausting from the base .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.330082
+I:  999
+T: 
+static aerodynamic characteristics of short blunt cones
+with various nose and base cone angles at mach numbers
+of 0. 6 to 5. 5 and angles of attack to 180 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.015825
+I:  947
+T: 
+static aerodynamic characteristics of a short blunt
+10 semi-vertex angle cone at a mach number of 15 in
+helium .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.571333
+I:  19
+T: 
+an investigation of the pressure distribution on conical bodies in
+hypersonic flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.290009
+I:  423
+T: 
+an experimental investigation of the flow over blunt-nosed
+cones at a mach number of 5. 8.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.098038
+I:  1307
+T: 
+laminar heat-transfer and pressure measurements at
+a mach number of 6 on sharp and blunt 15 half-angle
+cones at angles of attack up to 90 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 24.832157
+I:  433
+T: 
+application of two dimensional vortex theory to the
+prediction of flow fields behind wings of wing-body
+combinations at subsonic and supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 24.197973
+I:  1040
+T: 
+on transverse vibrations of thin, shallow elastic shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 24.139746
+I:  1106
+T: 
+free-flight observation of a separated turbulent flow
+including heat transfer up to mach 8. 5.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.82705
+I:  1310
+T: 
+survey of inviscid hypersonic flow theory for geometrically
+slender shapes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.787304
+I:  973
+T: 
+interaction effects produced by jet exhausting laterally near base of
+ogive-cylinder model in supersonic main stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.504679
+I:  626
+T: 
+some features of supersonic and hypersonic flow about
+blunted cones .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.274933
+I:  434
+T: 
+contributions of the wing panels to the forces and
+moments of supersonic wing-body combinations at combined
+angles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.082293
+I:  461
+T: 
+approximate methods fore predicting separation properties
+of laminar boundary layers .
+
+*****************************************************************************
+Query 17: "papers on internal /slip flow/ heat transfer studies .papers internal studies transfer heat slip studies.dash jumps 401 maslen sci slipping manifested tubes reference "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 56.957756
+I:  22
+T: 
+on slip-flow heat transfer to a flat plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 46.5767
+I:  550
+T: 
+laminar heat transfer in tubes under slip-flow conditions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 42.649044
+I:  21
+T: 
+on heat transfer in slip flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 30.619244
+I:  45
+T: 
+an investigation of separated flows, part ii: flow
+in the cavity and heat transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 24.905167
+I:  571
+T: 
+heat transfer to flat plate in high temperature rarefied
+ultra-high mach number flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 24.41276
+I:  306
+T: 
+second approximation to laminar compressible boundary
+layer on flat plate in slip flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.980516
+I:  102
+T: 
+advantages and limitations of models .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.889908
+I:  270
+T: 
+on combined free and forced convection laminar magnetohydrodynamic
+flow and heat transfer in channels with transverse
+magnetic field .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.214624
+I:  1215
+T: 
+the effect of slip particularly for highly cooled walls .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.286352
+I:  303
+T: 
+effect of variable heat recombination on stagnation
+point heat transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.022804
+I:  1264
+T: 
+boundary layer transition and heat transfer in shock
+tubes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.790209
+I:  1002
+T: 
+preliminary investigations of spiked bodies at hypersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.67752
+I:  872
+T: 
+fundamentals of boundary layer heat transfer with streamwise
+temperature variations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.654621
+I:  528
+T: 
+first-order slip effects on the laminar boundary layer over a slender
+body of revolution with zero pressure gradient .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.386791
+I:  378
+T: 
+engineering relations for friction and heat transfer to surfaces in high
+ velocity flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.16337
+I:  1258
+T: 
+heat transfer, recovery factor and pressure distributions
+around a circular cylinder normal to a supersonic rarefied
+air stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.054996
+I:  1161
+T: 
+stagnation point heat transfer measurements in dissociated
+air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.042034
+I:  1204
+T: 
+experimental effect of bluntness and gas rarefaction
+on drag coefficients and stagnation heat transfer on
+axisymmetric shapes in hypersonic flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.932692
+I:  534
+T: 
+consideration of energy separation for laminar slip
+flow in a circular tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.894098
+I:  5
+T: 
+one-dimensional transient heat conduction into a double-layer
+slab subjected to a linear heat input for a small time
+internal .
+
+*****************************************************************************
+Query 19: "are real-gas transport properties for air available over a wide range ofenthalpies and densities .densities transport wide available properties air over range enthalpies computing 25,000 machine carbon h traveling atmospheres perfect oxygen "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 66.16491
+I:  493
+T: 
+real-gas laminar boundary layer skin friction and heat
+transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 44.032463
+I:  405
+T: 
+tables of thermal properties of gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 36.51283
+I:  302
+T: 
+approximations for the thermodynamic and transport properties of high
+temperature air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 36.00287
+I:  524
+T: 
+stagnation point heat transfer in partially ionized
+air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.98822
+I:  949
+T: 
+charts for equilibrium flow properties of air in
+hyper-velocity nozzles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.392464
+I:  691
+T: 
+calculation procedure for thermodynamic transport, and flow properties
+of the combustion products of a hydrocarbon fuel mixture burned in air
+with results for ethylene-air and methane-air mixtures .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.058197
+I:  1199
+T: 
+theoretical investigations of a supersonic laminar
+boundary layer with foreign-gas injection .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.600716
+I:  1010
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.208052
+I:  421
+T: 
+analytic study of induced pressure on long bodies of
+revolution with varying nose bluntness at hypersonic
+speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.563406
+I:  781
+T: 
+use of subsonic kernel function in an influence-coefficient method of
+aeroelastic analysis and some comparisons with experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.839462
+I:  1214
+T: 
+the drag of elongated bodies over a wide reynolds number
+range .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.504797
+I:  328
+T: 
+the boundary layer near the stagnation point in hypersonic
+flow past a sphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.56432
+I:  616
+T: 
+determination of upper-atmosphere air density and scale height from
+satellite observations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 22.333534
+I:  259
+T: 
+second order theory for unsteady supersonic flow
+past slender pointed bodies of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.332214
+I:  583
+T: 
+influence coefficients for real gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.560402
+I:  622
+T: 
+scale height in the upper atmosphere, derived from changes in satellite
+orbits .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.367695
+I:  1312
+T: 
+tabulated solutions of the equilibrium gas properties
+behind the incidents and reflected normal shock-wave
+in a shock-tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 20.190195
+I:  1264
+T: 
+boundary layer transition and heat transfer in shock
+tubes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.972065
+I:  330
+T: 
+taylor instability of finite surface waves .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.443893
+I:  1315
+T: 
+performance estimates for the rae 6in . high-pressure
+shock tube .
+
+=============================================================================
+p@10 Mean: 0.06999999999999999
+p@20 Mean: 0.034999999999999996
+recall@10 Mean: 0.02413793103448276
+recall@20 Mean: 0.02413793103448276
+MAP: 0.02310344827586207
+=============================================================================
+////////////////////////////	RF2	////////////////////////////
+*****************************************************************************
+Query 1: "what similarity laws must be obeyed when constructing aeroelastic modelsof heated high speed aircraft .scale models for thermo-aeroelastic research . similarity laws for aerothermoelastic testing . similarity laws for stressing heated wings . some structural and aerelastic considerations of high
+speed flight . theory of aircraft structural models subjected to aerodynamic
+heating and external loads . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 80.81564
+I:  486
+T: 
+similarity laws for aerothermoelastic testing .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 68.21735
+I:  12
+T: 
+some structural and aerelastic considerations of high
+speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 68.02267
+I:  13
+T: 
+similarity laws for stressing heated wings .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 65.47683
+I:  184
+T: 
+scale models for thermo-aeroelastic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 62.032417
+I:  51
+T: 
+theory of aircraft structural models subjected to aerodynamic
+heating and external loads .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 37.59276
+I:  726
+T: 
+on structural fatigue under random loading .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 36.140408
+I:  875
+T: 
+models for aeroelastic investigation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 35.746437
+I:  878
+T: 
+experimental model techniques and equipment for flutter
+investigations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 34.821987
+I:  14
+T: 
+piston theory - a new aerodynamic tool for the
+aeroelastician .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.69589
+I:  747
+T: 
+bodt freedom flutter of ground launched rocket models
+at supersonic and high subsonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.54571
+I:  1170
+T: 
+structural loads surveys on two tilt-wing vtol configurations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 30.160221
+I:  724
+T: 
+structural acoustic proof testing .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 29.81944
+I:  102
+T: 
+advantages and limitations of models .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.10186
+I:  1268
+T: 
+stable combustion of a high-velocity gas in a heated
+boundary layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.097498
+I:  141
+T: 
+free-flight techniques for high speed aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 28.429195
+I:  880
+T: 
+the design and testing of supersonic flutter models .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.84361
+I:  746
+T: 
+aeroelastic problems in connection with high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 27.74644
+I:  879
+T: 
+flutter model testing at transonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.639622
+I:  172
+T: 
+some aerodynamic considerations of nozzle afterbody
+combination .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.442131
+I:  1361
+T: 
+large deflections of structures subjected to heating
+and external loads .
+
+*****************************************************************************
+Query 3: "what are the structural and aeroelastic problems associated with flightof high speed aircraft .some structural and aerelastic considerations of high
+speed flight . aeroelastic problems in connection with high speed
+flight . piston theory - a new aerodynamic tool for the
+aeroelastician . theory of aircraft structural models subjected to aerodynamic
+heating and external loads . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 89.96922
+I:  12
+T: 
+some structural and aerelastic considerations of high
+speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 62.88724
+I:  14
+T: 
+piston theory - a new aerodynamic tool for the
+aeroelastician .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 62.71095
+I:  51
+T: 
+theory of aircraft structural models subjected to aerodynamic
+heating and external loads .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 52.342846
+I:  746
+T: 
+aeroelastic problems in connection with high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 41.540688
+I:  172
+T: 
+some aerodynamic considerations of nozzle afterbody
+combination .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.539097
+I:  141
+T: 
+free-flight techniques for high speed aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.4553
+I:  1379
+T: 
+hypersonic flight and the re-entry problem .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.09053
+I:  1170
+T: 
+structural loads surveys on two tilt-wing vtol configurations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 37.50262
+I:  606
+T: 
+formulae and approximations for aerodynamic heating rates in high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 37.024338
+I:  726
+T: 
+on structural fatigue under random loading .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.689953
+I:  896
+T: 
+the calculation of loads on a supersonic weapon in
+the steady circling case .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.734116
+I:  724
+T: 
+structural acoustic proof testing .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.777786
+I:  792
+T: 
+some low speed problems of high speed aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.635807
+I:  884
+T: 
+the estimation of fatigue damage on structural elements .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.620293
+I:  875
+T: 
+models for aeroelastic investigation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.546906
+I:  1263
+T: 
+turbulent heat transfer through a highly cooled, partially
+dissociated boundary layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.46225
+I:  1169
+T: 
+hangling qualities experience with several vtol research
+aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.323315
+I:  747
+T: 
+bodt freedom flutter of ground launched rocket models
+at supersonic and high subsonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.30524
+I:  729
+T: 
+stresses in continuous skin stiffener panels under random loading .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.593655
+I:  593
+T: 
+theoretical considerations of flutter at high mach
+number .
+
+*****************************************************************************
+Query 5: "what problems of heat conduction in composite slabs have been solved sofar .one-dimensional transient heat conduction into a double-layer
+slab subjected to a linear heat input for a small time
+internal . conduction of heat in composite slabs . some problems on heat conduction in stratiform bodies . heat flow in composite slabs . linear heat flow in a composite slab . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 152.79704
+I:  5
+T: 
+one-dimensional transient heat conduction into a double-layer
+slab subjected to a linear heat input for a small time
+internal .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 106.000114
+I:  485
+T: 
+linear heat flow in a composite slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 93.483246
+I:  399
+T: 
+conduction of heat in composite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 90.81235
+I:  181
+T: 
+some problems on heat conduction in stratiform bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 85.76837
+I:  144
+T: 
+heat flow in composite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 77.29125
+I:  91
+T: 
+periodic temperature distribution in a two-layer composite slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 66.8036
+I:  582
+T: 
+the melting of finite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 60.672207
+I:  542
+T: 
+biot's variational principle in heat conduction .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 60.221485
+I:  90
+T: 
+periodic temperature distributions in a two-layer composite
+slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 60.123318
+I:  6
+T: 
+one-dimensional transient heat flow in a multilayer
+slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 53.73001
+I:  579
+T: 
+further developments of new methods in heat flow analysis .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 53.547142
+I:  981
+T: 
+solutions to the heat-conduction equation with time dependent boundary
+conditions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 51.368202
+I:  119
+T: 
+conduction of fluctuating heat flow in a wall consisting
+of many layers .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 51.242836
+I:  707
+T: 
+thermal analysis of stagnation regions with emphasis on heat-sustaining
+nose shapes at hypersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 50.912792
+I:  944
+T: 
+one dimensional heat conduction through the skin of
+a vehicle upon entering a planetary atmosphere at constant
+velocity and entry angle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 50.19639
+I:  587
+T: 
+variational analysis of ablation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 48.364647
+I:  395
+T: 
+new methods in heat flow analysis with application
+to flight structures .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 46.044563
+I:  159
+T: 
+numerical methods for transient heat flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 44.91046
+I:  1295
+T: 
+recent advances in nonequilibrium dissociating gasdynamics .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 44.55636
+I:  509
+T: 
+a graphical approximation for temperatures and sublimation rates at
+surfaces subjected to small net and large gross heat transfer rates .
+
+*****************************************************************************
+Query 7: "can a criterion be developed to show empirically the validity of flowsolutions for chemically reacting gas mixtures based on the simplifyingassumption of instantaneous local chemical equilibrium .flow of chemically reacting gas mixtures . a reaction-rate parameter for gasdynamics of a chemically
+reacting gas mixture . criteria for thermodynamic equilibrium in gas flow . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 87.47016
+I:  488
+T: 
+a reaction-rate parameter for gasdynamics of a chemically
+reacting gas mixture .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 83.51173
+I:  166
+T: 
+flow of chemically reacting gas mixtures .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 63.62146
+I:  1189
+T: 
+nonequilibrium flow past a wedge .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 50.362232
+I:  236
+T: 
+criteria for thermodynamic equilibrium in gas flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 50.160698
+I:  185
+T: 
+some possibilities of using gas mixtures other than in
+aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 41.47177
+I:  574
+T: 
+inviscid flow with nonequilibrium molecular dissociation for pressure
+distributions encountered in hypersonic flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 40.9431
+I:  1061
+T: 
+turbulent mixing of a rocket exhaust jet with a supersonic stream
+including chemical reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 40.88927
+I:  167
+T: 
+linearized flow of a dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.785824
+I:  317
+T: 
+non-equilibrium flow of an ideal dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 37.402287
+I:  1312
+T: 
+tabulated solutions of the equilibrium gas properties
+behind the incidents and reflected normal shock-wave
+in a shock-tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.430035
+I:  575
+T: 
+atomic recombination in a hypersonic wind tunnel nozzle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.152077
+I:  1160
+T: 
+recent advances in gaseous detonation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.22922
+I:  1255
+T: 
+the flow about a charged body moving in the lower atmosphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.193457
+I:  259
+T: 
+second order theory for unsteady supersonic flow
+past slender pointed bodies of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.909557
+I:  541
+T: 
+similitude of hypersonic flows over slender bodies
+in non-equilibrium dissociated gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.685507
+I:  576
+T: 
+viscous and inviscid stagnation flow in a dissociated hypervelocity free
+ stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.608654
+I:  1286
+T: 
+equilibrium real-gas performance charts for a shypersonic
+shock-tube wind-tunnel employing nitrogen .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.341913
+I:  1315
+T: 
+performance estimates for the rae 6in . high-pressure
+shock tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.854794
+I:  1009
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.735775
+I:  656
+T: 
+departure from dissociation equilibrium in a hypersonic nozzle .
+
+*****************************************************************************
+Query 9: "what chemical kinetic system is applicable to hypersonic aerodynamicproblems .non-equilibrium expansions of air with coupled chemical
+reactions . a reaction-rate parameter for gasdynamics of a chemically
+reacting gas mixture . inviscid hypersonic airflows with coupled non-equilibrium
+processes . chemical kinetics of high temperature air . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 95.039665
+I:  488
+T: 
+a reaction-rate parameter for gasdynamics of a chemically
+reacting gas mixture .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 71.29561
+I:  1296
+T: 
+non-equilibrium expansions of air with coupled chemical
+reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 70.26491
+I:  401
+T: 
+inviscid hypersonic airflows with coupled non-equilibrium
+processes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 59.18364
+I:  166
+T: 
+flow of chemically reacting gas mixtures .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 56.503384
+I:  552
+T: 
+chemical kinetics of high temperature air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 39.5455
+I:  1295
+T: 
+recent advances in nonequilibrium dissociating gasdynamics .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.105545
+I:  625
+T: 
+viscous and inviscid nonequilibrium gas flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 37.376766
+I:  1061
+T: 
+turbulent mixing of a rocket exhaust jet with a supersonic stream
+including chemical reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 37.245605
+I:  1010
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 36.05019
+I:  103
+T: 
+theory of mixing and chemical reaction in the opposed
+jet diffusion flame .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 35.654995
+I:  1374
+T: 
+theoretical analysis of turbulent mixing of reactive
+gases with application to supersonic combustion of
+hydrogen .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.927353
+I:  355
+T: 
+the injection of air into the dissociated hypersonic laminar boundary
+layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.952843
+I:  575
+T: 
+atomic recombination in a hypersonic wind tunnel nozzle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.35401
+I:  574
+T: 
+inviscid flow with nonequilibrium molecular dissociation for pressure
+distributions encountered in hypersonic flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.961006
+I:  541
+T: 
+similitude of hypersonic flows over slender bodies
+in non-equilibrium dissociated gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.4181
+I:  576
+T: 
+viscous and inviscid stagnation flow in a dissociated hypervelocity free
+ stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.122444
+I:  167
+T: 
+linearized flow of a dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.098774
+I:  317
+T: 
+non-equilibrium flow of an ideal dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 30.941399
+I:  1315
+T: 
+performance estimates for the rae 6in . high-pressure
+shock tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 30.75494
+I:  24
+T: 
+theory of stagnation point heat transfer in dissociated
+air .
+
+*****************************************************************************
+Query 11: "what theoretical and experimental guides do we have as to turbulentcouette flow behaviour .on the close relationship between turbulent plane-couette
+and pressure flows . on turbulen flow between parallel plates . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 52.535286
+I:  491
+T: 
+on the close relationship between turbulent plane-couette
+and pressure flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 40.36233
+I:  257
+T: 
+on turbulen flow between parallel plates .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 23.028843
+I:  386
+T: 
+a generalised porous-wall ?couette type? flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 21.602184
+I:  651
+T: 
+heat transfer to separated and reattached subsonic
+turbulen flows obtained downstream of a surface step .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.628826
+I:  121
+T: 
+a theory for base pressures in transonic and supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.28814
+I:  97
+T: 
+a mixing theory for the interaction between dissipative
+flows and nearly isentropic streams .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.066244
+I:  315
+T: 
+scale effects at high subsonic and transonic speeds
+and methods for fixing transition in model experiments .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.76716
+I:  610
+T: 
+corner interference effects .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.465757
+I:  385
+T: 
+on a generalised porous-wall ?couette type? flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 18.38034
+I:  419
+T: 
+the design of intermediate vertical stiffeners on web
+plates subjected to shear .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.755167
+I:  74
+T: 
+an experimental study of the turbulen coundary layer
+on a shock tube wall .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.605034
+I:  1216
+T: 
+pressure distribution in regions of step-induced turbulent
+separation .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.581188
+I:  407
+T: 
+stationary convection flow of an electrically conducting
+liquid between parallel plates in a magnetic field .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 17.020487
+I:  1190
+T: 
+flow of a gas near a solid surface .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.98905
+I:  346
+T: 
+measurements of turbulent friction on a smooth flat plate in supersonic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.91166
+I:  940
+T: 
+of a turbulent free shear layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.904827
+I:  409
+T: 
+on the base pressure resulting from the interaction of a supersonic
+external stream with a sonic or subsonic jet .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.194084
+I:  798
+T: 
+interaction between shock waves and boundary layers, with a note on the
+effects of the interaction of the performance of supersonic intakes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.168924
+I:  823
+T: 
+plastic torsional buckling strength of cylinders including
+the effects of imperfections .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 16.128918
+I:  1364
+T: 
+an experimental investigation of the interaction between shock waves and
+ boundary layers .
+
+*****************************************************************************
+Query 13: "is it possible to relate the available pressure distributions for anogive forebody at zero angle of attack to the lower surface pressures ofan equivalent ogive forebody at angle of attack .prediction of ogive-forebody pressures at angles of attack . an analysis of the applicability of the hypersonic
+similarity law to the study of the flow about bodies
+of revolution at zero angle of attack . applicability of the hypersonic similarity rule to
+pressure distributions which include the effects of
+rotation for bodies of revolution at zero angle of
+attack . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 130.52818
+I:  492
+T: 
+prediction of ogive-forebody pressures at angles of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 120.67904
+I:  57
+T: 
+applicability of the hypersonic similarity rule to
+pressure distributions which include the effects of
+rotation for bodies of revolution at zero angle of
+attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 116.59874
+I:  56
+T: 
+an analysis of the applicability of the hypersonic
+similarity law to the study of the flow about bodies
+of revolution at zero angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 83.63694
+I:  232
+T: 
+accuracy of approximate methods for predicting pressure
+on pointed non-lifting bodies of revolution in supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 75.4845
+I:  1231
+T: 
+hypersonic flow over an elliptic cone: theory and experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 74.93362
+I:  124
+T: 
+a summary of the supersonic pressure drag of bodies
+of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 67.81394
+I:  248
+T: 
+the application of lighthill formula for numerical
+calculation of pressure distributions on bodies of
+revolution at supersonic speed and zero angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 65.194374
+I:  122
+T: 
+a simplified approximate method for the calculation of the pressure
+around conical bodies of arbitrary shape in supersonic and hypersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 64.511
+I:  973
+T: 
+interaction effects produced by jet exhausting laterally near base of
+ogive-cylinder model in supersonic main stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 62.27437
+I:  27
+T: 
+newtonian flow theory for slender bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 59.984505
+I:  234
+T: 
+a second order shock-expansion method applicable to
+bodies of revolution near zero lift .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 58.77581
+I:  434
+T: 
+contributions of the wing panels to the forces and
+moments of supersonic wing-body combinations at combined
+angles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 55.898296
+I:  1040
+T: 
+on transverse vibrations of thin, shallow elastic shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 55.89097
+I:  225
+T: 
+elliptic cones alone and with wings at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 54.924538
+I:  988
+T: 
+nonviscous flow through a pump impeller on a blade-to-blade surface of
+revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 53.95901
+I:  1350
+T: 
+effects of jet billowing on stability of missile-type
+bodies at mach 3. 85 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 53.907116
+I:  354
+T: 
+laminar heat-transfer and pressure measurements over blunt-nosed
+cones at large angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 53.06367
+I:  1006
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 52.828346
+I:  1186
+T: 
+lift of slender delta wings according to newtonian
+theory .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 52.724796
+I:  498
+T: 
+calculation of potential flow about bodies of revolution
+having axes perpendicular to the free-stream direction .
+
+*****************************************************************************
+Query 15: "what methods -dash exact or approximate -dash are presently availablefor predicting body pressures at angle of attack.a simplified approximate method for the calculation of the pressure
+around conical bodies of arbitrary shape in supersonic and hypersonic
+flow . prediction of ogive-forebody pressures at angles of attack . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 62.98898
+I:  492
+T: 
+prediction of ogive-forebody pressures at angles of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 53.206993
+I:  122
+T: 
+a simplified approximate method for the calculation of the pressure
+around conical bodies of arbitrary shape in supersonic and hypersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 43.488
+I:  1231
+T: 
+hypersonic flow over an elliptic cone: theory and experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.77688
+I:  232
+T: 
+accuracy of approximate methods for predicting pressure
+on pointed non-lifting bodies of revolution in supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 35.84465
+I:  124
+T: 
+a summary of the supersonic pressure drag of bodies
+of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.691605
+I:  443
+T: 
+calculated and measured pressure distributions over the midspan section
+of the naca 4412 airfoil .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.585567
+I:  993
+T: 
+ the extent of the jet interference flow fields .
+jet effects on cylindrical afterbodies housing sonic and supersonic
+nozzles which exhaust against a supersonic stream at angles of attack
+from 90degree to 180degree .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.425808
+I:  433
+T: 
+application of two dimensional vortex theory to the
+prediction of flow fields behind wings of wing-body
+combinations at subsonic and supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.699593
+I:  947
+T: 
+static aerodynamic characteristics of a short blunt
+10 semi-vertex angle cone at a mach number of 15 in
+helium .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.64483
+I:  56
+T: 
+an analysis of the applicability of the hypersonic
+similarity law to the study of the flow about bodies
+of revolution at zero angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.42773
+I:  1304
+T: 
+newtonian flow over a surface .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.333782
+I:  1310
+T: 
+survey of inviscid hypersonic flow theory for geometrically
+slender shapes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 27.273808
+I:  434
+T: 
+contributions of the wing panels to the forces and
+moments of supersonic wing-body combinations at combined
+angles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.831736
+I:  231
+T: 
+practical calculation of second-order supersonic flow
+past non-lifting bodies of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.581377
+I:  626
+T: 
+some features of supersonic and hypersonic flow about
+blunted cones .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 26.11677
+I:  1262
+T: 
+an extension of the linearized characteristics method
+for calculating the supersonic flow around elliptic
+cones .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.888826
+I:  556
+T: 
+numerical comparison between exact and approximate
+theories of hypersonic inviscid flow past slender blunt
+nosed bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.887716
+I:  248
+T: 
+the application of lighthill formula for numerical
+calculation of pressure distributions on bodies of
+revolution at supersonic speed and zero angle of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.820963
+I:  1352
+T: 
+aerodynamic investigation of a parabolic body of revolution
+at mach number of 1. 92 and some effects of an annular
+supersonic jet exhausting from the base .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 25.222485
+I:  360
+T: 
+lift on inclined bodies of revolution in hypersonic flow .
+
+*****************************************************************************
+Query 17: "papers on internal /slip flow/ heat transfer studies .on heat transfer in slip flow . laminar heat transfer in tubes under slip-flow conditions . on slip-flow heat transfer to a flat plate . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 68.07532
+I:  550
+T: 
+laminar heat transfer in tubes under slip-flow conditions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 65.722595
+I:  21
+T: 
+on heat transfer in slip flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 59.48886
+I:  22
+T: 
+on slip-flow heat transfer to a flat plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 59.088562
+I:  306
+T: 
+second approximation to laminar compressible boundary
+layer on flat plate in slip flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 58.93035
+I:  571
+T: 
+heat transfer to flat plate in high temperature rarefied
+ultra-high mach number flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 46.148205
+I:  1215
+T: 
+the effect of slip particularly for highly cooled walls .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.400887
+I:  629
+T: 
+second-order effects in laminar boundary layers .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 36.93478
+I:  45
+T: 
+an investigation of separated flows, part ii: flow
+in the cavity and heat transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 36.89669
+I:  145
+T: 
+skin friction in the laminar boundary layer in compressible
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 36.51124
+I:  269
+T: 
+on a laminar free-convection flow and heat transfer
+of electrically conducting fluid on a vertical flat
+plate in the presence of a transverse magnetic field .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 35.91873
+I:  326
+T: 
+forst-order slip effects on the compressible laminar
+boundary layer over a slender body of revolution in
+axial flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 35.280834
+I:  1282
+T: 
+compressible flat-plate boundary-layer flow with an
+applied magnetic field .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 35.084824
+I:  1393
+T: 
+heat transfer near the forward stagnation point of
+a body of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.750168
+I:  1107
+T: 
+the flow field over blunted flat plates and its effect
+on turbulent boundary growth and heat transfer at a
+mach number of 4. 7.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.708534
+I:  1204
+T: 
+experimental effect of bluntness and gas rarefaction
+on drag coefficients and stagnation heat transfer on
+axisymmetric shapes in hypersonic flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.60007
+I:  23
+T: 
+skin-friction and heat transfer characteristics of
+a laminar boundary layer on a cylinder in axial incompressible
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.47468
+I:  283
+T: 
+laminar heat transfer around blunt bodies in dissociated
+air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.46145
+I:  102
+T: 
+advantages and limitations of models .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.06047
+I:  303
+T: 
+effect of variable heat recombination on stagnation
+point heat transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.8406
+I:  98
+T: 
+heat transfer by laminar flow to a rotating plate .
+
+*****************************************************************************
+Query 19: "are real-gas transport properties for air available over a wide range ofenthalpies and densities .real-gas laminar boundary layer skin friction and heat
+transfer . approximations for the thermodynamic and transport properties of high
+temperature air . tables of thermal properties of gases . "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 54.449024
+I:  405
+T: 
+tables of thermal properties of gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 52.81122
+I:  493
+T: 
+real-gas laminar boundary layer skin friction and heat
+transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 49.776268
+I:  1199
+T: 
+theoretical investigations of a supersonic laminar
+boundary layer with foreign-gas injection .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 49.452797
+I:  302
+T: 
+approximations for the thermodynamic and transport properties of high
+temperature air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 42.41913
+I:  524
+T: 
+stagnation point heat transfer in partially ionized
+air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 38.52056
+I:  691
+T: 
+calculation procedure for thermodynamic transport, and flow properties
+of the combustion products of a hydrocarbon fuel mixture burned in air
+with results for ethylene-air and methane-air mixtures .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 34.3971
+I:  328
+T: 
+the boundary layer near the stagnation point in hypersonic
+flow past a sphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.895412
+I:  583
+T: 
+influence coefficients for real gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 33.824924
+I:  1009
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.80029
+I:  481
+T: 
+mass transfer cooling of a laminary boundary layer
+by injection of a light weight foreign gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 32.375626
+I:  125
+T: 
+measurements of skin friction of the compressible turbulent
+boundary layer on a cone with foreign gas injection .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.7452
+I:  283
+T: 
+laminar heat transfer around blunt bodies in dissociated
+air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.571878
+I:  1003
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 31.336803
+I:  1312
+T: 
+tabulated solutions of the equilibrium gas properties
+behind the incidents and reflected normal shock-wave
+in a shock-tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 30.292547
+I:  982
+T: 
+the temperature history in a thick skin subjected to laminar heating
+during entry into the atmosphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 30.269531
+I:  260
+T: 
+a critical review of skin friction and heat transfer
+solutions of the laminar boundary layer of a flat plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 30.1875
+I:  55
+T: 
+separation, stability and other properties of compressible
+laminar boundary layer with pressure gradient and heat
+transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.503553
+I:  1264
+T: 
+boundary layer transition and heat transfer in shock
+tubes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 29.450783
+I:  1185
+T: 
+an integral method for calculating heat and mass transfer
+in laminar boundary layers .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 28.995457
+I:  1180
+T: 
+approximate analysis of the slot injection of a gas
+in laminar flow .
+
+=============================================================================
+p@10 Mean: 0.06999999999999999
+p@20 Mean: 0.05
+recall@10 Mean: 0.02413793103448276
+recall@20 Mean: 0.034482758620689655
+MAP: 0.02287903667214012
+=============================================================================
+////////////////////////////	PRFJM	////////////////////////////
+*****************************************************************************
+Query 1: "plate high speed heated can "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 13.076995
+I:  13
+T: 
+similarity laws for stressing heated wings .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.276482
+I:  1268
+T: 
+stable combustion of a high-velocity gas in a heated
+boundary layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.1976
+I:  1143
+T: 
+a one-foot hypervelocity shock tunnel in which high-enthalpy
+real gas flows can be generated with flow times of
+about 180 milliseconds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.117109
+I:  211
+T: 
+effect of slight blunting of leading edge of an immersed
+body on the flow around it at hypersonic speed .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.76541
+I:  135
+T: 
+the calculation of wall shearing stress from heat-transfer measurements
+in compressible flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.7574897
+I:  2
+T: 
+simple shear flow past a flat plate in an incompressible fluid of small
+viscosity .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.7527504
+I:  260
+T: 
+a critical review of skin friction and heat transfer
+solutions of the laminar boundary layer of a flat plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.7427397
+I:  481
+T: 
+mass transfer cooling of a laminary boundary layer
+by injection of a light weight foreign gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.596249
+I:  663
+T: 
+viscous flow along a flat plate moving at high speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.563657
+I:  1098
+T: 
+an experimental investigation of ablating material
+at low and high enthalpy potentials .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.4510546
+I:  309
+T: 
+on the motion of a flat plate at high speed in a viscous
+compressible fluid, ii, steady motion .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.434576
+I:  114
+T: 
+response of plates to a decaying and convecting randon
+pressure field .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.293973
+I:  158
+T: 
+temperature charts for induction and constant temperature
+heating .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.2088766
+I:  1282
+T: 
+compressible flat-plate boundary-layer flow with an
+applied magnetic field .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.0874944
+I:  629
+T: 
+second-order effects in laminar boundary layers .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 6.706585
+I:  12
+T: 
+some structural and aerelastic considerations of high
+speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.6743145
+I:  552
+T: 
+chemical kinetics of high temperature air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.6241965
+I:  606
+T: 
+formulae and approximations for aerodynamic heating rates in high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.6204176
+I:  429
+T: 
+a description of the r. a. e.  high speed supersonic
+tunnel .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(X)Document	Score: 6.587026
+I:  52
+T: 
+procedure for calculating flutter at high supersonic
+speed including camber deflections, and comparison
+with experimental results .
+
+*****************************************************************************
+Query 3: "high speed some flight structural "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 19.231592
+I:  12
+T: 
+some structural and aerelastic considerations of high
+speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.167277
+I:  876
+T: 
+on flutter testing in high speed wind tunnels .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.13726
+I:  1263
+T: 
+turbulent heat transfer through a highly cooled, partially
+dissociated boundary layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.005922
+I:  606
+T: 
+formulae and approximations for aerodynamic heating rates in high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.947865
+I:  429
+T: 
+a description of the r. a. e.  high speed supersonic
+tunnel .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.763792
+I:  1170
+T: 
+structural loads surveys on two tilt-wing vtol configurations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.40459
+I:  1169
+T: 
+hangling qualities experience with several vtol research
+aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.403434
+I:  1015
+T: 
+principles of creep buckling weight-strength analysis .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.324976
+I:  747
+T: 
+bodt freedom flutter of ground launched rocket models
+at supersonic and high subsonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.096805
+I:  141
+T: 
+free-flight techniques for high speed aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.9357653
+I:  1111
+T: 
+some research on high speed flutter .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.7192063
+I:  82
+T: 
+theoretical investigation of the ablation of a glass-type
+heat protection shield of varied material properties
+at the stagnation point of a re-entering irbm .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.6379347
+I:  1299
+T: 
+hypersonic viscous shock layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.5275774
+I:  1379
+T: 
+hypersonic flight and the re-entry problem .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.515173
+I:  51
+T: 
+theory of aircraft structural models subjected to aerodynamic
+heating and external loads .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.4810452
+I:  293
+T: 
+recent studies on the effect of cooling on boundary
+layer transition at mach 4.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.4810452
+I:  746
+T: 
+aeroelastic problems in connection with high speed
+flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.3412843
+I:  724
+T: 
+structural acoustic proof testing .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.337845
+I:  700
+T: 
+two and three-dimensional unsteady lift problems in high speed flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.2798367
+I:  1147
+T: 
+heat transfer to bodies traveling at high speed in the upper
+atmosphere .
+
+*****************************************************************************
+Query 5: "heat resistance one zero rate "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.293189
+I:  399
+T: 
+conduction of heat in composite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.442323
+I:  6
+T: 
+one-dimensional transient heat flow in a multilayer
+slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.362104
+I:  5
+T: 
+one-dimensional transient heat conduction into a double-layer
+slab subjected to a linear heat input for a small time
+internal .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.548088
+I:  156
+T: 
+the effect of shallow water on wave resistance .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.189751
+I:  168
+T: 
+heat conduction through a gas with one inert internal
+model .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.188443
+I:  240
+T: 
+a theoretical analysis of heat transfer in regions of separated flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.769755
+I:  91
+T: 
+periodic temperature distribution in a two-layer composite slab .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.319054
+I:  283
+T: 
+laminar heat transfer around blunt bodies in dissociated
+air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.2803135
+I:  414
+T: 
+the problem of resistance in compressible fluids .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.912453
+I:  101
+T: 
+laminar heat transfer over blunt-nosed bodies at hypersonic flight
+speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.88367
+I:  520
+T: 
+wing-tail interference as a cause of 'magnus' effects
+on a finned missile .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.7407913
+I:  1395
+T: 
+low density stagnation point heat transfer measurements
+in the hypersonic shock tunnel .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.74058
+I:  1185
+T: 
+an integral method for calculating heat and mass transfer
+in laminar boundary layers .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.722039
+I:  582
+T: 
+the melting of finite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.4225016
+I:  616
+T: 
+determination of upper-atmosphere air density and scale height from
+satellite observations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.2682104
+I:  1020
+T: 
+note on creep buckling of columns .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.9609423
+I:  983
+T: 
+addendum to 'heat transfer to satellite vehicles re-entering the
+atmosphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.8192067
+I:  572
+T: 
+boundary layer displacement and leading edge bluntness effects in high
+temperature hypersonic flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.7980847
+I:  269
+T: 
+on a laminar free-convection flow and heat transfer
+of electrically conducting fluid on a vertical flat
+plate in the presence of a transverse magnetic field .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.7863216
+I:  152
+T: 
+on the flow of compressible fluid past an obstacle .
+
+*****************************************************************************
+Query 7: "gas flow numerical speeds equilibrium "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 12.823385
+I:  166
+T: 
+flow of chemically reacting gas mixtures .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.884504
+I:  1189
+T: 
+nonequilibrium flow past a wedge .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.449799
+I:  236
+T: 
+criteria for thermodynamic equilibrium in gas flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.675055
+I:  167
+T: 
+linearized flow of a dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.651806
+I:  1374
+T: 
+theoretical analysis of turbulent mixing of reactive
+gases with application to supersonic combustion of
+hydrogen .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.2233715
+I:  110
+T: 
+dynamics of a dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.996775
+I:  317
+T: 
+non-equilibrium flow of an ideal dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.893919
+I:  1180
+T: 
+approximate analysis of the slot injection of a gas
+in laminar flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.712309
+I:  1312
+T: 
+tabulated solutions of the equilibrium gas properties
+behind the incidents and reflected normal shock-wave
+in a shock-tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.63903
+I:  1296
+T: 
+non-equilibrium expansions of air with coupled chemical
+reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.424593
+I:  575
+T: 
+atomic recombination in a hypersonic wind tunnel nozzle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.424593
+I:  656
+T: 
+departure from dissociation equilibrium in a hypersonic nozzle .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.416897
+I:  1009
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.361017
+I:  1286
+T: 
+equilibrium real-gas performance charts for a shypersonic
+shock-tube wind-tunnel employing nitrogen .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.355331
+I:  541
+T: 
+similitude of hypersonic flows over slender bodies
+in non-equilibrium dissociated gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.105649
+I:  24
+T: 
+theory of stagnation point heat transfer in dissociated
+air .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.084098
+I:  1255
+T: 
+the flow about a charged body moving in the lower atmosphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.638813
+I:  576
+T: 
+viscous and inviscid stagnation flow in a dissociated hypervelocity free
+ stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.487196
+I:  410
+T: 
+the supersonic flow about a blunt body of revolution
+for gases at chemical equilibrium .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.467247
+I:  493
+T: 
+real-gas laminar boundary layer skin friction and heat
+transfer .
+
+*****************************************************************************
+Query 9: "solution supersonic coefficients rate initial "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.791947
+I:  1061
+T: 
+turbulent mixing of a rocket exhaust jet with a supersonic stream
+including chemical reactions .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.642986
+I:  1393
+T: 
+heat transfer near the forward stagnation point of
+a body of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.526739
+I:  977
+T: 
+concerning some solutions of the boundary layer equations
+in hydrodynamics .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.5088634
+I:  1272
+T: 
+oscillatory aerodynamic coefficients for a unified
+supersonic hypersonic strip theory .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.0879383
+I:  1259
+T: 
+second-order theory for unsteady supersonic flow past
+slender pointed bodies of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.8890047
+I:  717
+T: 
+motions of a short 10degree blunted cone entering a martian atmosphere
+at arbitrary angles of attack and arbitrary pitching rates .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.6733713
+I:  574
+T: 
+inviscid flow with nonequilibrium molecular dissociation for pressure
+distributions encountered in hypersonic flight .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.616174
+I:  404
+T: 
+two dimensional transonic flow past airfoils .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.5438337
+I:  1344
+T: 
+atmospheric entries with vehicle lift-drag ratio modulated
+to limit deceleration and rate of deceleration vehicles
+with maximum lift-drag ratio of 0. 5.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.4140725
+I:  499
+T: 
+a closed-form solution for the oscillations of a vehicle
+entering a planetary atmosphere .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.41378
+I:  582
+T: 
+the melting of finite slabs .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.2456207
+I:  155
+T: 
+on the solution of the laminar boundary layer equations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.1877747
+I:  1320
+T: 
+divergence of plate airfoils of low aspect ratio at
+supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.0660543
+I:  1207
+T: 
+supersonic airfoil performance with small heat addition .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.044901
+I:  832
+T: 
+accelerating convergence of iteration processes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.043206
+I:  1306
+T: 
+experiments on circular cones at yaw in supersonic
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.016433
+I:  1112
+T: 
+unsteady aerodynamic forces on a slender body of revolution
+in supersonic flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.0067124
+I:  754
+T: 
+heat transfer through laminar boundary layers on
+semi-infinite cylinders of arbitrary cross section .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 5.8713064
+I:  1020
+T: 
+note on creep buckling of columns .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 5.870182
+I:  1192
+T: 
+an integral method for calculation of supersonic laminar
+boundary layer with heat transfer on yawed cone .
+
+*****************************************************************************
+Query 11: "flow interference been fluid assumed "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.727187
+I:  610
+T: 
+corner interference effects .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.127978
+I:  228
+T: 
+navier-stokes solutions at large distances from a finite body .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.642384
+I:  389
+T: 
+simple shear flow past a flat plate in a compressible
+viscous fluid .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.320168
+I:  87
+T: 
+free-convection magnetohydrodynamic flow past a porous flat plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.8518176
+I:  188
+T: 
+an analysis of base pressure at supersonic velocities and
+comparison with experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.663221
+I:  179
+T: 
+an analysis of base pressure at supersonic speeds and
+comparison with experiment .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.45915
+I:  299
+T: 
+magnetohydrodynamic flow past a semi-infinite plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.2964277
+I:  799
+T: 
+some effects of wind-tunnel interference observed in tests on
+two-dimensional aerofoils at high subsonic and transonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.2485266
+I:  414
+T: 
+the problem of resistance in compressible fluids .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.125592
+I:  583
+T: 
+influence coefficients for real gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.68919
+I:  923
+T: 
+methods for estimating lift interference of wing-body
+combinations at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.637699
+I:  387
+T: 
+heat transfer for laminar flow in an annulus with porous
+wall .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.632981
+I:  672
+T: 
+tunnel interference effects .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.596288
+I:  1075
+T: 
+an experimental and theoretical investigation of second-order supersonic
+ wing-body interference, for a non-lifting body with wings at incidence .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.494668
+I:  967
+T: 
+a study of laminar compressible viscous pipe flow accelerated by an
+axial body force, with application to magnetogasdynamics .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.480678
+I:  183
+T: 
+properties of impact pressure probes in free molecule
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.4009414
+I:  131
+T: 
+two-dimensional jet mixing of a compressible fluid .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.336414
+I:  516
+T: 
+free-flight measurements of the dynamic longitudinal
+stability characteristics of a wind tunnel interference
+model (m=0 .92 to 1. 35) .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.3321047
+I:  104
+T: 
+similar solutions of a free convection boundary layer
+equation for an electrically conducting fluid .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.2885
+I:  72
+T: 
+boundary layer behind shock or thin expansion wave
+moving into stationary fluid .
+
+*****************************************************************************
+Query 13: "jet being force pressure mach "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 13.397087
+I:  697
+T: 
+effects on adjacent surfaces from the firing of rocket jets .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.670036
+I:  973
+T: 
+interaction effects produced by jet exhausting laterally near base of
+ogive-cylinder model in supersonic main stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.615135
+I:  1352
+T: 
+aerodynamic investigation of a parabolic body of revolution
+at mach number of 1. 92 and some effects of an annular
+supersonic jet exhausting from the base .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.359237
+I:  696
+T: 
+pressure loads produced on a flat-plate wing by rocket jets exhausting
+in a spanwise direction below the wing and perpendicular to a
+free-stream flow of mach number 2.0 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.003484
+I:  972
+T: 
+aerodynamic interaction effects ahead of a sonic jet exhausting
+perpendicularly form a flat plate into a mach number 6 free stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.9880495
+I:  1349
+T: 
+effects of simulated rocket jet exhaust on stability
+and control of a research type airplane configuration
+at a mach number of 6. 86 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.864398
+I:  1292
+T: 
+effect of jet pluming on the static stability of cone-cylinder-flare
+configurations at a mach number of 9. 65 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.76661
+I:  693
+T: 
+investigation of jet effects on a flat surface downstream of the exit of
+ a simulated turbojet nacelle at a free-stream mach number of 1.39 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.359805
+I:  694
+T: 
+pressure distribution induced on a flat plate by a supersonic and sonic
+jet exhaust at a free-stream mach number of 1.80 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.039386
+I:  282
+T: 
+jet effects on base pressure of conical afterbodies
+at mach 1. 91 and 3. 12 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.790432
+I:  519
+T: 
+base pressure at supersonic speeds in the presence
+of a supersonic jet .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.652426
+I:  636
+T: 
+pressure distribution induced on a flat plate at a free-stream
+mach number of 1.39 by rockets exhausting upstream and downstream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.628699
+I:  174
+T: 
+investigation at supersonic speeds of the effects of
+jet mach number and divergence angle of the nozzle
+upon the pressure of the base annulus of a body of
+revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.624058
+I:  971
+T: 
+surface pressure distributions with a sonic jet normal to adjacent flat
+surfaces at mach 2.92 to 6.4 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.508132
+I:  946
+T: 
+exploratory investigation of the effect of a forward
+facing jet on the bow shock of a blunt body in a mach
+number 6 free stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.48194
+I:  961
+T: 
+compressible two dimensional jet mixing at constant
+pressure .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.416961
+I:  991
+T: 
+wing-flow study of pressure drag reduction at transonic speed by
+projecting a jet of air from the nose of a prolate spheroid of fineness
+ratio 6 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.215588
+I:  993
+T: 
+ the extent of the jet interference flow fields .
+jet effects on cylindrical afterbodies housing sonic and supersonic
+nozzles which exhaust against a supersonic stream at angles of attack
+from 90degree to 180degree .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.192365
+I:  695
+T: 
+some experiments relating to the problem of simulation of hot jet
+engines in studies of jet effects on adjacent surfaces at a free-stream
+mach number of 1.80 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.16226
+I:  692
+T: 
+investigation of the jet effects on a flat surface downstream of the
+exit of a simulated turbojet nacelle at a free-stream mach number of
+2.02 .
+
+*****************************************************************************
+Query 15: "method fluid body wing forebody "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.566734
+I:  434
+T: 
+contributions of the wing panels to the forces and
+moments of supersonic wing-body combinations at combined
+angles .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.218448
+I:  492
+T: 
+prediction of ogive-forebody pressures at angles of attack .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.62868
+I:  1040
+T: 
+on transverse vibrations of thin, shallow elastic shells .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.394607
+I:  233
+T: 
+the theoretical wave drag of some bodies of revolution .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.388027
+I:  432
+T: 
+theoretical damping in roll and rolling moment due
+to differential wing incidence for slender cruciform
+wings and wing-body combinations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.123974
+I:  923
+T: 
+methods for estimating lift interference of wing-body
+combinations at supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.031121
+I:  433
+T: 
+application of two dimensional vortex theory to the
+prediction of flow fields behind wings of wing-body
+combinations at subsonic and supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.81423
+I:  803
+T: 
+the shock pattern of a wing-body combination far from
+the flight path .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.645889
+I:  924
+T: 
+a method for calculating the lift and centre of pressure
+of wing-body-tail combinations at subsonic, transonic
+speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.564409
+I:  230
+T: 
+interference between the wings and tail plane of a
+slender wing-body tailplane combination .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.513376
+I:  973
+T: 
+interaction effects produced by jet exhausting laterally near base of
+ogive-cylinder model in supersonic main stream .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.399808
+I:  410
+T: 
+the supersonic flow about a blunt body of revolution
+for gases at chemical equilibrium .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.3398066
+I:  235
+T: 
+on the minimisation and numerical evaluation of wave
+drag .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.2912173
+I:  1243
+T: 
+supersonic boom of wing-body configurations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.258066
+I:  1239
+T: 
+body under lifting wing .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.224107
+I:  1197
+T: 
+unsteady aerodynamic forces on slender supersonic aircraft
+with flexible wings and bodies .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.2016373
+I:  714
+T: 
+blockage corrections for three-dimensional flow closed
+throat wind tunnels, with considerations of the effect
+of compressibility .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.06754
+I:  1328
+T: 
+the production of aerodynamic forces by heat addition
+on external surfaces of aircraft .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.004945
+I:  599
+T: 
+aerodynamic forces, moments and stability derivatives
+for slender bodies of general cross section .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.987932
+I:  1188
+T: 
+factors affecting lift-drag ratios at mach numbers
+from 5 to 20 .
+
+*****************************************************************************
+Query 17: "boundary layer separated heat transfer "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.668153
+I:  45
+T: 
+an investigation of separated flows, part ii: flow
+in the cavity and heat transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.397415
+I:  240
+T: 
+a theoretical analysis of heat transfer in regions of separated flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 15.198433
+I:  959
+T: 
+heat transfer in separated flows .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 14.455077
+I:  651
+T: 
+heat transfer to separated and reattached subsonic
+turbulen flows obtained downstream of a surface step .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.226383
+I:  1106
+T: 
+free-flight observation of a separated turbulent flow
+including heat transfer up to mach 8. 5.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 11.171767
+I:  89
+T: 
+an investigation of separated flows, part i: the pressure
+field .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.239105
+I:  145
+T: 
+skin friction in the laminar boundary layer in compressible
+flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.982411
+I:  661
+T: 
+summary of laminar boundary layer solutions for
+wedge-type flow over convection and transpiration cooled
+surfaces .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.978828
+I:  348
+T: 
+turbulent boundary layer in compressible fluids .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.94083
+I:  21
+T: 
+on heat transfer in slip flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.891493
+I:  1213
+T: 
+heat transfer to slender cones in hypersonic flow,
+including effects of yaw and nose bluntness .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.831132
+I:  55
+T: 
+separation, stability and other properties of compressible
+laminar boundary layer with pressure gradient and heat
+transfer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.831132
+I:  343
+T: 
+transpiration cooling experiments in a turbulent boundary
+layer at m=3 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.831132
+I:  1192
+T: 
+an integral method for calculation of supersonic laminar
+boundary layer with heat transfer on yawed cone .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.73947
+I:  53
+T: 
+transition reynolds numbers of separated flows at
+supersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.682989
+I:  1395
+T: 
+low density stagnation point heat transfer measurements
+in the hypersonic shock tunnel .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.644218
+I:  655
+T: 
+effects of boundary layer displacement and leading edge bluntness on
+pressure distribution, skin friction, and heat transfer of bodies at
+hypersonic speeds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.641564
+I:  358
+T: 
+on the model of the free shock separation, turbulent
+boundary layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.622672
+I:  872
+T: 
+fundamentals of boundary layer heat transfer with streamwise
+temperature variations .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 9.563572
+I:  62
+T: 
+similar solutions for the compressible laminar boundary
+layer with heat transfer and pressure gradient .
+
+*****************************************************************************
+Query 19: "air from gas boundary based "
+Top Docs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 10.445646
+I:  1199
+T: 
+theoretical investigations of a supersonic laminar
+boundary layer with foreign-gas injection .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.857761
+I:  185
+T: 
+some possibilities of using gas mixtures other than in
+aerodynamic research .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.479934
+I:  1315
+T: 
+performance estimates for the rae 6in . high-pressure
+shock tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.458868
+I:  355
+T: 
+the injection of air into the dissociated hypersonic laminar boundary
+layer .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.158589
+I:  343
+T: 
+transpiration cooling experiments in a turbulent boundary
+layer at m=3 .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.070066
+I:  365
+T: 
+the homogeneous boundary layer at an axisymmetric stagnation
+point with large rates of injection .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 8.013972
+I:  240
+T: 
+a theoretical analysis of heat transfer in regions of separated flow .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.952057
+I:  481
+T: 
+mass transfer cooling of a laminary boundary layer
+by injection of a light weight foreign gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.622164
+I:  1237
+T: 
+foreign-gas injection into a compressible turbulent
+boundary layer on a flat plate .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.5491004
+I:  541
+T: 
+similitude of hypersonic flows over slender bodies
+in non-equilibrium dissociated gases .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.423555
+I:  340
+T: 
+analysis of effects of diffusion of a foreign gas into
+the laminar boundary layer of a supersonic flow of
+air in a tube .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.4181576
+I:  1185
+T: 
+an integral method for calculating heat and mass transfer
+in laminar boundary layers .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.368044
+I:  1009
+T: 
+free-flight measurements of the static and dynamic .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.287174
+I:  1264
+T: 
+boundary layer transition and heat transfer in shock
+tubes .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 7.142184
+I:  125
+T: 
+measurements of skin friction of the compressible turbulent
+boundary layer on a cone with foreign gas injection .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.919011
+I:  975
+T: 
+one dimensional flows of an imperfect diatomic gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.6963573
+I:  1190
+T: 
+flow of a gas near a solid surface .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.6941347
+I:  1143
+T: 
+a one-foot hypervelocity shock tunnel in which high-enthalpy
+real gas flows can be generated with flow times of
+about 180 milliseconds .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.6668806
+I:  110
+T: 
+dynamics of a dissociating gas .
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Document	Score: 6.548658
+I:  170
+T: 
+the interaction of a reflected shock wave with the
+boundary layer in a shock tube .
+
+=============================================================================
+p@10 Mean: 0.01
+p@20 Mean: 0.015
+recall@10 Mean: 0.0034482758620689655
+recall@20 Mean: 0.010344827586206896
+MAP: 0.0034482758620689655
+=============================================================================
