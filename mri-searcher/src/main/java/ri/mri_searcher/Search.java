@@ -30,7 +30,6 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.BytesRef;
 
-
 public class Search {
 
 	private static String similarity = null;
@@ -77,7 +76,6 @@ public class Search {
 		int id = Integer.parseInt(doc.getField("I").stringValue().trim());
 		return relevants.contains(id);
 	}
-
 
 	private static List<Integer> relevantDocs(int num) throws IOException {
 		InputStream stream = Files.newInputStream(Paths.get(relPath));
@@ -412,11 +410,13 @@ public class Search {
 			lRf2 = rf2(queryList, queryId, Integer.parseInt(ndr2), Integer.parseInt(top));
 		}
 		if (ndjm != null) {
-			lPrfjm = prfjm(queryList, queryId, Integer.parseInt(ndjm), Integer.parseInt(nwjm), Boolean.parseBoolean(explain));
+			lPrfjm = prfjm(queryList, queryId, Integer.parseInt(ndjm), Integer.parseInt(nwjm),
+					Boolean.parseBoolean(explain));
 		}
 
 		if (nddir != null) {
-			lPrfdir = prfdir(queryList, queryId, Integer.parseInt(nddir), Integer.parseInt(nwdir), Boolean.parseBoolean(explain));
+			lPrfdir = prfdir(queryList, queryId, Integer.parseInt(nddir), Integer.parseInt(nwdir),
+					Boolean.parseBoolean(explain));
 		}
 
 		try {
@@ -790,9 +790,10 @@ public class Search {
 					WordInDoc word = new WordInDoc(term, freq, totalTerm, docSize, docId, score);
 					if (wordList.contains(word)) {
 						int index = wordList.indexOf(word);
-						WordInDoc storedWord = wordList.get(index);
-						if (storedWord.getValue() < word.getValue())
-							wordList.set(index, word);
+						WordInDoc w = wordList.get(index);
+						if (w.getDocsId().contains(word.getDocId(0)))
+							continue;
+						wordList.get(index).addData(word);
 					} else {
 						wordList.add(word);
 					}
@@ -808,28 +809,20 @@ public class Search {
 			result.addAll(computeWordsDir(wordList, n, nd));
 		}
 		Collections.sort(result, new WordComparator());
-		
+
 		System.out.println("========PRF EXPANDED QUERY " + queryId + "=========");
-		
+
 		for (int i = 0; i < Math.min(nw, result.size()); i++) {
 			newQuery.append(result.get(i).getTerm() + " ");
 			WordInDoc word = result.get(i);
-			if (explain)
-				System.out.println(
-					word.getTerm() + ":\nP(D) = " + word.getPd() + "\tP(w|D) = " + word.getPwd() + "\tsum(P(qi|D)) = "
-							+ word.getPqd());
-			/*
-			 System.out.println(
-					word.getTerm() + ":\nP(D) = " + word.getPd() + "\tP(w|D) = " + word.getPwd() + "\tsum(P(qi|D)) = "
-							+ word.getPqd() + "\tgetFreq = " + word.getFreq() + "\tgetDocSize() = " + word.getDocSize()
-							+ "\tgetTotalTermFreq()= " + word.getTotalTermFreq() + "\tValue = " + word.getValue());
-			 */
+			if (explain) {
+				System.out.println(word.getTerm() + ": ");
+				for (int j = 0; j < word.getDataSize(); j++)
+					
+				System.out.println("P(D) = " + word.getPd() + "\tP(w|D) = " + word.getPwd(j)
+						+ "\tsum(P(qi|D)) = " + word.getPqd(j));
+			}
 		}
-		/*
-		 * for (int i = 0; i < result.size(); i++) {
-		 * System.out.println(result.get(i).getTerm() + " - " +
-		 * result.get(i).getValue()); }
-		 */
 		return newQuery.toString();
 	}
 
@@ -859,24 +852,25 @@ public class Search {
 		return false;
 	}
 
+	/*
+	 * 
+	 */
 	private static List<WordInDoc> computeWordsJr(List<WordInDoc> wordList, long sumTotalTermFreq, int nd) {
 		float min = Math.min(prset.scoreDocs.length, nd);
 		float lambda = Float.parseFloat(lambdaormu);
-		float pd;
+		float pd = 1 / min;
 		float pwd;
 		float pqd;
 		for (WordInDoc word : wordList) {
-
-			pd = 1 / min;
-			pwd = (float) (1 - lambda) * ((float) word.getFreq() / (float) word.getDocSize())
-					+ (float) lambda * ((float) word.getTotalTermFreq() / (float) sumTotalTermFreq);
-			pqd = word.getDocScore();
-			//System.out.println(word.getTerm() + ":\nP(D) = " + pd + "\tP(w|D) = " + pwd + "\tsum(P(qi|D)) = " + pqd + 
-			//		"\tgetFreq = " + word.getFreq() + "\tgetDocSize() = " + word.getDocSize() + "\tgetTotalTermFreq()= " + word.getTotalTermFreq() + "sumTotalTermFreq= " + sumTotalTermFreq);
-			word.setValue(pd * pwd * pqd);
 			word.setPd(pd);
-			word.setPwd(pwd);
-			word.setPqd(pqd);
+			for (int i = 0; i < word.getDataSize(); i++) {
+				pwd = (float) (1 - lambda) * ((float) word.getFreq(i) / (float) word.getDocSize(i))
+						+ (float) lambda * ((float) word.getTotalTermFreq(i) / (float) sumTotalTermFreq);
+				pqd = word.getDocScore(i);
+				word.addPwd(pwd);
+				word.addPqd(pqd);
+				word.addValue(pd * pwd * pqd);
+			}
 		}
 		return wordList;
 	}
@@ -884,9 +878,19 @@ public class Search {
 	private static List<WordInDoc> computeWordsDir(List<WordInDoc> wordList, long sumTotalTermFreq, int nd) {
 		float min = Math.min(prset.scoreDocs.length, nd);
 		float mu = Float.parseFloat(lambdaormu);
+		float pd = 1 / min;
+		float pwd;
+		float pqd;
 		for (WordInDoc word : wordList) {
-			word.setValue(((float) 1 / min) * ((word.getFreq() + mu * (word.getTotalTermFreq() / sumTotalTermFreq))
-					/ (float) (word.getDocSize() + mu)) * word.getDocScore());
+			word.setPd(pd);
+			for (int i = 0; i < word.getDataSize(); i++) {
+				pwd = ((word.getFreq(i) + mu * (word.getTotalTermFreq(i) / sumTotalTermFreq))
+						/ (float) (word.getDocSize(i) + mu));
+				pqd = word.getDocScore(i);
+				word.addPwd(pwd);
+				word.addPqd(pqd);
+				word.addValue(pd * pwd * pqd);
+			}
 		}
 		return wordList;
 	}
